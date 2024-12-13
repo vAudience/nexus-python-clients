@@ -1,0 +1,43 @@
+# AIModelWriteDto
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**accepted_file_mimetypes** | **List[str]** |  | [optional] 
+**constraints** | [**List[AIModelConstraint]**](AIModelConstraint.md) |  | [optional] 
+**description** | **str** |  | [optional] 
+**documentation_url** | **str** |  | [optional] 
+**features** | [**List[AIModelFeature]**](AIModelFeature.md) |  | [optional] 
+**internal_id** | **str** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**max_input_tokens** | **int** |  | [optional] 
+**max_output_tokens** | **int** |  | [optional] 
+**model_id** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**parameter_definitions** | **object** |  | [optional] 
+**parameters** | **Dict[str, object]** |  | [optional] 
+**service_host_locations** | [**List[HostingLocation]**](HostingLocation.md) |  | [optional] 
+**service_id** | **str** |  | [optional] 
+
+## Example
+
+```python
+from aigentchat.models.ai_model_write_dto import AIModelWriteDto
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AIModelWriteDto from a JSON string
+ai_model_write_dto_instance = AIModelWriteDto.from_json(json)
+# print the JSON string representation of the object
+print(AIModelWriteDto.to_json())
+
+# convert the object into a dict
+ai_model_write_dto_dict = ai_model_write_dto_instance.to_dict()
+# create an instance of AIModelWriteDto from a dict
+ai_model_write_dto_from_dict = AIModelWriteDto.from_dict(ai_model_write_dto_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

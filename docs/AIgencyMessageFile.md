@@ -1,0 +1,35 @@
+# AIgencyMessageFile
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**file_name** | **str** |  | [optional] 
+**file_size** | **int** |  | [optional] 
+**id** | **str** |  | [optional] 
+**local_file_path** | **str** | TODO: filter out when returning to client | [optional] 
+**meta_data** | **Dict[str, object]** |  | [optional] 
+**mimetype** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
+
+## Example
+
+```python
+from aigentchat.models.a_igency_message_file import AIgencyMessageFile
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AIgencyMessageFile from a JSON string
+a_igency_message_file_instance = AIgencyMessageFile.from_json(json)
+# print the JSON string representation of the object
+print(AIgencyMessageFile.to_json())
+
+# convert the object into a dict
+a_igency_message_file_dict = a_igency_message_file_instance.to_dict()
+# create an instance of AIgencyMessageFile from a dict
+a_igency_message_file_from_dict = AIgencyMessageFile.from_dict(a_igency_message_file_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
