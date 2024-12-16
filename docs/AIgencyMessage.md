@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ai_model_id** | **str** |  | 
 **ai_service_id** | **str** |  | 
-**aigent_thread_id** | **str** |  | 
+**aigent_thread_id** | **str** |  | [optional] 
 **attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | [optional] 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **error** | [**AiServiceError**](AiServiceError.md) |  | [optional] 
 **id** | **str** |  | 
 **meta_data** | **object** |  | [optional] 
-**mission_id** | **str** |  | 
+**mission_id** | **str** |  | [optional] 
 **owner_organization_id** | **str** |  | 
 **parameters** | **object** |  | [optional] 
 **reference_id** | **str** |  | [optional] 
