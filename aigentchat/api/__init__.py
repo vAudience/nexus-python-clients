@@ -10,6 +10,7 @@ from aigentchat.api.audio_api import AudioApi
 from aigentchat.api.channel_api import ChannelApi
 from aigentchat.api.chat_completions_api import ChatCompletionsApi
 from aigentchat.api.connection_tokens_api import ConnectionTokensApi
+from aigentchat.api.embeddings_api import EmbeddingsApi
 from aigentchat.api.execution_logs_api import ExecutionLogsApi
 from aigentchat.api.files_api import FilesApi
 from aigentchat.api.function_calls_api import FunctionCallsApi

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **str** |  | 
+**description** | **str** |  | [optional] 
 **instructions** | [**MissionInstructions**](MissionInstructions.md) |  | 
 
 ## Example

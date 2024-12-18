@@ -14,6 +14,7 @@ aigentchat/api/audio_api.py
 aigentchat/api/channel_api.py
 aigentchat/api/chat_completions_api.py
 aigentchat/api/connection_tokens_api.py
+aigentchat/api/embeddings_api.py
 aigentchat/api/execution_logs_api.py
 aigentchat/api/files_api.py
 aigentchat/api/function_calls_api.py
@@ -70,6 +71,7 @@ aigentchat/models/channel_write_dto.py
 aigentchat/models/chat_completion_request_dto.py
 aigentchat/models/connection_token_response.py
 aigentchat/models/conversation_role.py
+aigentchat/models/embedding_item.py
 aigentchat/models/execution_cost_template.py
 aigentchat/models/execution_log.py
 aigentchat/models/execution_log_costs.py
@@ -95,6 +97,8 @@ aigentchat/models/org_cost_budget_check.py
 aigentchat/models/org_cost_budget_write_dto.py
 aigentchat/models/prompt_injection_mode.py
 aigentchat/models/prompt_version.py
+aigentchat/models/text_embedding.py
+aigentchat/models/text_embedding_request_dto.py
 aigentchat/models/token_direction.py
 aigentchat/models/version_response.py
 aigentchat/py.typed
@@ -149,6 +153,8 @@ docs/ChatCompletionsApi.md
 docs/ConnectionTokenResponse.md
 docs/ConnectionTokensApi.md
 docs/ConversationRole.md
+docs/EmbeddingItem.md
+docs/EmbeddingsApi.md
 docs/ExecutionCostTemplate.md
 docs/ExecutionLog.md
 docs/ExecutionLogCosts.md
@@ -183,6 +189,8 @@ docs/OrgCostBudgetCheck.md
 docs/OrgCostBudgetWriteDto.md
 docs/PromptInjectionMode.md
 docs/PromptVersion.md
+docs/TextEmbedding.md
+docs/TextEmbeddingRequestDto.md
 docs/TokenDirection.md
 docs/VersionApi.md
 docs/VersionResponse.md
@@ -193,4 +201,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_embedding_item.py
+test/test_embeddings_api.py
+test/test_text_embedding.py
+test/test_text_embedding_request_dto.py
 tox.ini

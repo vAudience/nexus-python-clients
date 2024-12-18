@@ -11,6 +11,8 @@
 
 * `ACCEPTS_MINUS_DOCUMENT_MINUS_FILES` (value: `'accepts-document-files'`)
 
+* `TEXT_MINUS_TO_MINUS_EMBEDDING` (value: `'text-to-embedding'`)
+
 * `TEXT_MINUS_TO_MINUS_TEXT` (value: `'text-to-text'`)
 
 * `TEXT_MINUS_TO_MINUS_TEXT_STREAMING` (value: `'text-to-text_streaming'`)
@@ -29,11 +31,17 @@
 
 * `TEXT_MINUS_TO_MINUS_VIDEO_STREAMING` (value: `'text-to-video_streaming'`)
 
+* `SPEECH_MINUS_TO_MINUS_EMBEDDING` (value: `'speech-to-embedding'`)
+
 * `SPEECH_MINUS_TO_MINUS_TEXT` (value: `'speech-to-text'`)
 
 * `SPEECH_MINUS_TO_MINUS_TEXT_STREAMING` (value: `'speech-to-text_streaming'`)
 
+* `IMAGE_MINUS_TO_MINUS_EMBEDDING` (value: `'image-to-embedding'`)
+
 * `IMAGE_MINUS_TO_MINUS_TEXT` (value: `'image-to-text'`)
+
+* `VIDEO_MINUS_TO_MINUS_EMBEDDING` (value: `'video-to-embedding'`)
 
 * `VIDEO_MINUS_TO_MINUS_TEXT` (value: `'video-to-text'`)
 

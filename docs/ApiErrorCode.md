@@ -143,6 +143,8 @@
 
 * `FAILED_TO_CREATE_CONNECTION_TOKEN` (value: `'failed_to_create_connection_token'`)
 
+* `FAILED_TO_EMBED_TEXT` (value: `'failed_to_embed_text'`)
+
 * `FAILED_TO_SEARCH_EXECUTION_LOGS` (value: `'failed_to_search_execution_logs'`)
 
 * `START_DATE_MUST_BE_BEFORE_END_DATE` (value: `'start_date_must_be_before_end_date'`)
