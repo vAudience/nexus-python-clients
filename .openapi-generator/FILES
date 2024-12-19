@@ -203,5 +203,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_text_embedding_item_dto.py
 tox.ini

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**embedding** | **List[float]** |  | [optional] 
-**index** | **int** |  | [optional] 
+**embedding** | **List[float]** |  | 
+**index** | **int** |  | 
 **meta_data** | **object** |  | [optional] 
 
 ## Example
