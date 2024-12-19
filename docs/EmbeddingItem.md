@@ -6,6 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **embedding** | **List[float]** |  | [optional] 
+**index** | **int** |  | [optional] 
+**meta_data** | **object** |  | [optional] 
 
 ## Example
 

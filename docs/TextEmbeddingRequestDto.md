@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | 
+**items** | [**List[TextEmbeddingItemDto]**](TextEmbeddingItemDto.md) |  | 
 **parameters** | **object** |  | [optional] 
-**texts** | **List[str]** |  | 
 
 ## Example
 

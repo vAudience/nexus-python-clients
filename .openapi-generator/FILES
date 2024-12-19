@@ -98,6 +98,7 @@ aigentchat/models/org_cost_budget_write_dto.py
 aigentchat/models/prompt_injection_mode.py
 aigentchat/models/prompt_version.py
 aigentchat/models/text_embedding.py
+aigentchat/models/text_embedding_item_dto.py
 aigentchat/models/text_embedding_request_dto.py
 aigentchat/models/token_direction.py
 aigentchat/models/version_response.py
@@ -190,6 +191,7 @@ docs/OrgCostBudgetWriteDto.md
 docs/PromptInjectionMode.md
 docs/PromptVersion.md
 docs/TextEmbedding.md
+docs/TextEmbeddingItemDto.md
 docs/TextEmbeddingRequestDto.md
 docs/TokenDirection.md
 docs/VersionApi.md
@@ -201,8 +203,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_embedding_item.py
-test/test_embeddings_api.py
-test/test_text_embedding.py
-test/test_text_embedding_request_dto.py
+test/test_text_embedding_item_dto.py
 tox.ini
