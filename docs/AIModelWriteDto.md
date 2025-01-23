@@ -12,8 +12,6 @@ Name | Type | Description | Notes
 **features** | [**List[AIModelFeature]**](AIModelFeature.md) |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
-**max_input_tokens** | **int** |  | [optional] 
-**max_output_tokens** | **int** |  | [optional] 
 **model_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **parameter_definitions** | **object** |  | [optional] 

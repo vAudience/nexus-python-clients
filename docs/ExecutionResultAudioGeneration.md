@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **error** | **object** |  | [optional] 
 **execution_id** | **str** | maps to CompletionID for Text2Text | [optional] 
 **features_used** | [**List[AIModelFeature]**](AIModelFeature.md) |  | [optional] 
-**finish_reason** | **str** |  | [optional] 
+**finish_reason** | [**FinishReason**](FinishReason.md) |  | [optional] 
 **input_tokens** | **int** |  | [optional] 
 **model_id** | **str** |  | [optional] 
 **resulting_files** | [**List[FilemanagerManagedFile]**](FilemanagerManagedFile.md) |  | [optional] 

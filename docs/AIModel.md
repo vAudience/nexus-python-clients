@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
-**max_input_tokens** | **int** |  | [optional] 
-**max_output_tokens** | **int** |  | [optional] 
 **model_id** | **str** |  | 
 **name** | **str** |  | 
 **owner_id** | **str** |  | 

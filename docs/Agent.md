@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
+**capabilities** | [**List[AgentCapability]**](AgentCapability.md) |  | 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **system_messages** | **List[str]** |  | [optional] 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 
+**use_tools** | **bool** |  | [optional] 
 
 ## Example
 

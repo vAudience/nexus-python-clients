@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **agent_id** | **str** |  | 
 **attached_temporary_files** | **List[str]** |  | [optional] 
 **channel_id** | **str** |  | [optional] 
+**continue_instruction_on_max_tokens** | **str** |  | [optional] 
+**continue_on_max_tokens** | **bool** |  | [optional] 
 **expire_messages** | **bool** |  | [optional] 
 **message** | **str** |  | 
 **message_reference_id** | **str** |  | [optional] 

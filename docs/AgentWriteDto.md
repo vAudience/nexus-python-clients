@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **parameters** | **object** |  | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
+**use_tools** | **bool** |  | [optional] 
 
 ## Example
 
