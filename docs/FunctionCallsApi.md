@@ -1,16 +1,16 @@
 # aigentchat.FunctionCallsApi
 
-All URIs are relative to *https://aigentchat.dev.ai.vaud.one/api/v1*
+All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**execute_function_call**](FunctionCallsApi.md#execute_function_call) | **POST** /organizations/{org_id}/functioncalls/{name} | Execute a function call
-[**get_function_call**](FunctionCallsApi.md#get_function_call) | **GET** /organizations/{org_id}/functioncalls/{name} | Get function call definition
-[**get_function_calls**](FunctionCallsApi.md#get_function_calls) | **GET** /organizations/{org_id}/functioncalls | List accessible function calls
+[**execute_function_call**](FunctionCallsApi.md#execute_function_call) | **POST** /v1/organizations/{org_id}/function-calls/{name} | Execute a function call
+[**get_function_call**](FunctionCallsApi.md#get_function_call) | **GET** /v1/organizations/{org_id}/function-calls/{name} | Get function call definition
+[**get_function_calls**](FunctionCallsApi.md#get_function_calls) | **GET** /v1/organizations/{org_id}/function-calls | List accessible function calls
 
 
 # **execute_function_call**
-> AdapterExecutionResults execute_function_call(org_id, name, arguments)
+> FunctionCallResults execute_function_call(org_id, name, arguments)
 
 Execute a function call
 
@@ -22,14 +22,14 @@ Executes a specified function call with provided arguments
 
 ```python
 import aigentchat
-from aigentchat.models.adapter_execution_results import AdapterExecutionResults
+from aigentchat.models.function_call_results import FunctionCallResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdapterExecutionResults**](AdapterExecutionResults.md)
+[**FunctionCallResults**](FunctionCallResults.md)
 
 ### Authorization
 
@@ -114,10 +114,10 @@ from aigentchat.models.function_call import FunctionCall
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -198,10 +198,10 @@ from aigentchat.models.function_call import FunctionCall
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **int** | in milliseconds since epoch format | [optional] 
+**created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 
 **is_org_public** | **bool** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
-**last_message_at** | **int** | in milliseconds since epoch format | [optional] 
+**last_message_at** | **int** |  | [optional] 
 **metadata** | **object** |  | [optional] 
 **mission_id** | **str** |  | [optional] 
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 
 **summary** | **str** |  | [optional] 
-**updated_at** | **int** | in milliseconds since epoch format | [optional] 
+**updated_at** | **int** |  | [optional] 
 
 ## Example
 

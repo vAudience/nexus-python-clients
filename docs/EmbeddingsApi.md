@@ -1,10 +1,10 @@
 # aigentchat.EmbeddingsApi
 
-All URIs are relative to *https://aigentchat.dev.ai.vaud.one/api/v1*
+All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**embed_text**](EmbeddingsApi.md#embed_text) | **POST** /organizations/{org_id}/embeddings/text | Get the embeddings for the texts
+[**embed_text**](EmbeddingsApi.md#embed_text) | **POST** /v1/organizations/{org_id}/embeddings/text | Get the embeddings for the texts
 
 
 # **embed_text**
@@ -25,10 +25,10 @@ from aigentchat.models.text_embedding_request_dto import TextEmbeddingRequestDto
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters

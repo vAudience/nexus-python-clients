@@ -1,15 +1,15 @@
 # aigentchat.MissionsApi
 
-All URIs are relative to *https://aigentchat.dev.ai.vaud.one/api/v1*
+All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_mission**](MissionsApi.md#cancel_mission) | **POST** /organizations/{org_id}/missions/{mission_id}/cancel | Cancel a mission
-[**create_mission**](MissionsApi.md#create_mission) | **POST** /organizations/{org_id}/missions/{mission_executor_id} | Create a new mission
-[**delete_mission**](MissionsApi.md#delete_mission) | **DELETE** /organizations/{org_id}/missions/{mission_id} | Delete a mission
-[**get_mission**](MissionsApi.md#get_mission) | **GET** /organizations/{org_id}/missions/{mission_id} | Get a mission
-[**list_missions_by_executor_id**](MissionsApi.md#list_missions_by_executor_id) | **GET** /organizations/{org_id}/missions/byexecutor/{mission_executor_id} | List all missions by a executorID (Agent Team or Agent)
-[**list_missions_by_org**](MissionsApi.md#list_missions_by_org) | **GET** /organizations/{org_id}/missions | List all missions of an organization and owned by the current user
+[**cancel_mission**](MissionsApi.md#cancel_mission) | **POST** /v1/organizations/{org_id}/missions/{mission_id}/cancel | Cancel a mission
+[**create_mission**](MissionsApi.md#create_mission) | **POST** /v1/organizations/{org_id}/missions/{mission_executor_id} | Create a new mission
+[**delete_mission**](MissionsApi.md#delete_mission) | **DELETE** /v1/organizations/{org_id}/missions/{mission_id} | Delete a mission
+[**get_mission**](MissionsApi.md#get_mission) | **GET** /v1/organizations/{org_id}/missions/{mission_id} | Get a mission
+[**list_missions_by_executor_id**](MissionsApi.md#list_missions_by_executor_id) | **GET** /v1/organizations/{org_id}/missions/executor/{mission_executor_id} | List all missions by a executorID (Agent Team or Agent)
+[**list_missions_by_org**](MissionsApi.md#list_missions_by_org) | **GET** /v1/organizations/{org_id}/missions | List all missions of an organization and owned by the current user
 
 
 # **cancel_mission**
@@ -28,10 +28,10 @@ import aigentchat
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -113,10 +113,10 @@ from aigentchat.models.mission_write_dto import MissionWriteDto
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -200,10 +200,10 @@ import aigentchat
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -284,10 +284,10 @@ from aigentchat.models.mission import Mission
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -370,10 +370,10 @@ from aigentchat.models.mission import Mission
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -459,10 +459,10 @@ from aigentchat.models.mission import Mission
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters

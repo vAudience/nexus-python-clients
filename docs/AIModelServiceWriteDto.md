@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cost_multiplier** | **float** | 1.0 is default, we use this to adjust our margin | [optional] 
+**cost_multiplier** | **float** |  | [optional] 
 **description** | **str** |  | [optional] 
 **hosting_locations** | [**Dict[str, HostingLocation]**](HostingLocation.md) |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **name** | **str** |  | 
-**service_impl** | **str** | this is used for internal identification! | 
+**service_impl** | **str** |  | 
 
 ## Example
 

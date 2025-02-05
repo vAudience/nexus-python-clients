@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**capabilities** | [**List[AgentCapability]**](AgentCapability.md) |  | 
+**capabilities** | [**List[AgentCapability]**](AgentCapability.md) |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 

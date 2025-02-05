@@ -1,12 +1,12 @@
 # aigentchat.ChatCompletionsApi
 
-All URIs are relative to *https://aigentchat.dev.ai.vaud.one/api/v1*
+All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_chat_completion**](ChatCompletionsApi.md#cancel_chat_completion) | **POST** /organizations/{org_id}/completions/cancel/{channel_id} | Cancel a chat-completion
-[**create_chat_completion**](ChatCompletionsApi.md#create_chat_completion) | **POST** /organizations/{org_id}/completions | Create a chat-completion
-[**create_chat_completion_streaming**](ChatCompletionsApi.md#create_chat_completion_streaming) | **POST** /organizations/{org_id}/completions/stream | Create a streaming chat-completion
+[**cancel_chat_completion**](ChatCompletionsApi.md#cancel_chat_completion) | **POST** /v1/organizations/{org_id}/completions/cancel/{channel_id} | Cancel a chat-completion
+[**create_chat_completion**](ChatCompletionsApi.md#create_chat_completion) | **POST** /v1/organizations/{org_id}/completions | Create a chat-completion
+[**create_chat_completion_streaming**](ChatCompletionsApi.md#create_chat_completion_streaming) | **POST** /v1/organizations/{org_id}/completions/stream | Create a streaming chat-completion
 
 
 # **cancel_chat_completion**
@@ -25,10 +25,10 @@ import aigentchat
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -108,10 +108,10 @@ from aigentchat.models.chat_completion_request_dto import ChatCompletionRequestD
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -196,10 +196,10 @@ from aigentchat.models.chat_completion_request_dto import ChatCompletionRequestD
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters

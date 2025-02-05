@@ -11,12 +11,11 @@ Name | Type | Description | Notes
 **attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | [optional] 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
-**chat_completion_config** | **object** |  | [optional] 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | [optional] 
 **created_at** | **int** |  | 
 **created_for_feature** | [**AIModelFeature**](AIModelFeature.md) |  | [optional] 
 **error** | [**AiServiceError**](AiServiceError.md) |  | [optional] 
-**finish_reason** | [**FinishReason**](FinishReason.md) |  | 
+**finish_reason** | [**FinishReason**](FinishReason.md) |  | [optional] 
 **id** | **str** |  | 
 **meta_data** | **object** |  | [optional] 
 **mission_id** | **str** |  | [optional] 

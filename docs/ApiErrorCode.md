@@ -121,6 +121,8 @@
 
 * `FAILED_TO_FETCH_SUBSCRIBED_CHANNELS` (value: `'failed_to_fetch_subscribed_channels'`)
 
+* `FAILED_TO_UPLOAD_CHANNEL_FILE` (value: `'failed_to_upload_channel_file'`)
+
 * `FAILED_TO_RETRIEVE_DEPENDENCIES` (value: `'failed_to_retrieve_dependencies'`)
 
 * `FAILED_TO_STORE_CHAT_COMPLETION_USER` (value: `'failed_to_store_chat_completion_user'`)
@@ -141,6 +143,12 @@
 
 * `FAILED_TO_VALIDATE_REQUEST_PARAMETERS` (value: `'failed_to_validate_request_parameters'`)
 
+* `CHAT_COMPLETION_TOO_MANY_TEMPORARY_FILES` (value: `'chat_completion_too_many_temporary_files'`)
+
+* `CHAT_COMPLETION_EXCEEDS_TOTAL_TEMPORARY_FILE_SIZE` (value: `'chat_completion_exceeds_total_temporary_file_size'`)
+
+* `CHAT_COMPLETION_EXCEEDS_MAX_INPUT_TOKENS` (value: `'chat_completion_exceeds_max_input_tokens'`)
+
 * `FAILED_TO_CREATE_CONNECTION_TOKEN` (value: `'failed_to_create_connection_token'`)
 
 * `FAILED_TO_EMBED_TEXT` (value: `'failed_to_embed_text'`)
@@ -150,6 +158,16 @@
 * `START_DATE_MUST_BE_BEFORE_END_DATE` (value: `'start_date_must_be_before_end_date'`)
 
 * `INVALID_FILE_ID` (value: `'invalid_file_id'`)
+
+* `INVALID_STORAGE_URL` (value: `'invalid_storage_url'`)
+
+* `FILE_UPLOAD_INFO_NOT_FOUND` (value: `'file_upload_info_not_found'`)
+
+* `INVALID_FILE_UPLOAD_SIZE` (value: `'invalid_file_upload_size'`)
+
+* `INVALID_FILE_UPLOAD_MIME_TYPE` (value: `'invalid_file_upload_mime_type'`)
+
+* `PROCESSING_CHECKS_FAILED` (value: `'processing_checks_failed'`)
 
 * `FUNCTIONCALL_NOT_FOUND` (value: `'functioncall_not_found'`)
 

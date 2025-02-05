@@ -1,15 +1,15 @@
 # aigentchat.AgentPromptsApi
 
-All URIs are relative to *https://aigentchat.dev.ai.vaud.one/api/v1*
+All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_agent_prompt**](AgentPromptsApi.md#create_agent_prompt) | **POST** /organizations/{org_id}/agentprompts | Create a new agent prompt
-[**delete_agent_prompt**](AgentPromptsApi.md#delete_agent_prompt) | **DELETE** /organizations/{org_id}/agentprompts/{prompt_id} | Delete an agent prompt
-[**get_agent_prompt**](AgentPromptsApi.md#get_agent_prompt) | **GET** /organizations/{org_id}/agentprompts/{prompt_id} | Get a specific agent prompt
-[**list_agent_prompts**](AgentPromptsApi.md#list_agent_prompts) | **GET** /organizations/{org_id}/agentprompts | List agent prompts
-[**render_agent_prompt**](AgentPromptsApi.md#render_agent_prompt) | **POST** /organizations/{org_id}/agentprompts/render | Render Agent Prompt
-[**update_agent_prompt**](AgentPromptsApi.md#update_agent_prompt) | **PUT** /organizations/{org_id}/agentprompts/{prompt_id} | Update an agent prompt
+[**create_agent_prompt**](AgentPromptsApi.md#create_agent_prompt) | **POST** /v1/organizations/{org_id}/agent-prompts | Create a new agent prompt
+[**delete_agent_prompt**](AgentPromptsApi.md#delete_agent_prompt) | **DELETE** /v1/organizations/{org_id}/agent-prompts/{prompt_id} | Delete an agent prompt
+[**get_agent_prompt**](AgentPromptsApi.md#get_agent_prompt) | **GET** /v1/organizations/{org_id}/agent-prompts/{prompt_id} | Get a specific agent prompt
+[**list_agent_prompts**](AgentPromptsApi.md#list_agent_prompts) | **GET** /v1/organizations/{org_id}/agent-prompts | List agent prompts
+[**render_agent_prompt**](AgentPromptsApi.md#render_agent_prompt) | **POST** /v1/organizations/{org_id}/agent-prompts/render | Render Agent Prompt
+[**update_agent_prompt**](AgentPromptsApi.md#update_agent_prompt) | **PUT** /v1/organizations/{org_id}/agent-prompts/{prompt_id} | Update an agent prompt
 
 
 # **create_agent_prompt**
@@ -29,10 +29,10 @@ from aigentchat.models.agent_prompt import AgentPrompt
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -113,10 +113,10 @@ import aigentchat
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -197,10 +197,10 @@ from aigentchat.models.agent_prompt import AgentPrompt
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -283,10 +283,10 @@ from aigentchat.models.agent_prompt import AgentPrompt
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -370,10 +370,10 @@ from aigentchat.models.agent_prompt_rendered_dto import AgentPromptRenderedDto
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 
@@ -446,10 +446,10 @@ from aigentchat.models.agent_prompt import AgentPrompt
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters

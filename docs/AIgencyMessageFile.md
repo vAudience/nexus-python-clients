@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded_content** | **str** |  | [optional] 
 **file_name** | **str** |  | [optional] 
 **file_size** | **int** |  | [optional] 
 **id** | **str** |  | [optional] 
-**local_file_path** | **str** | TODO: filter out when returning to client | [optional] 
 **meta_data** | **Dict[str, object]** |  | [optional] 
-**mimetype** | **str** |  | [optional] 
+**mime_type** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

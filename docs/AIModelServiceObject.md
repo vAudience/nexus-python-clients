@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cost_multiplier** | **float** | 1.0 is default, we use this to adjust our margin | [optional] 
+**cost_multiplier** | **float** |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **hosting_locations** | [**Dict[str, HostingLocation]**](HostingLocation.md) |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 
-**service_impl** | **str** | this is used for internal identification! | 
+**service_impl** | **str** |  | 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 
 

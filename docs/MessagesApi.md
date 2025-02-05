@@ -1,15 +1,15 @@
 # aigentchat.MessagesApi
 
-All URIs are relative to *https://aigentchat.dev.ai.vaud.one/api/v1*
+All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_message**](MessagesApi.md#create_message) | **POST** /organizations/{org_id}/messages | Create a new message
-[**delete_message**](MessagesApi.md#delete_message) | **DELETE** /organizations/{org_id}/messages/{id} | Delete a message
-[**get_channel_messages**](MessagesApi.md#get_channel_messages) | **GET** /organizations/{org_id}/messages/channel/{channel_id} | Get messages for a channel
-[**get_message**](MessagesApi.md#get_message) | **GET** /organizations/{org_id}/messages/{id} | Get a message by ID
-[**search_messages**](MessagesApi.md#search_messages) | **GET** /organizations/{org_id}/messages/search | Search messages
-[**update_message**](MessagesApi.md#update_message) | **PUT** /organizations/{org_id}/messages/{id} | Update a message
+[**create_message**](MessagesApi.md#create_message) | **POST** /v1/organizations/{org_id}/messages | Create a new message
+[**delete_message**](MessagesApi.md#delete_message) | **DELETE** /v1/organizations/{org_id}/messages/{id} | Delete a message
+[**get_channel_messages**](MessagesApi.md#get_channel_messages) | **GET** /v1/organizations/{org_id}/messages/channel/{channel_id} | Get messages for a channel
+[**get_message**](MessagesApi.md#get_message) | **GET** /v1/organizations/{org_id}/messages/{id} | Get a message by ID
+[**search_messages**](MessagesApi.md#search_messages) | **GET** /v1/organizations/{org_id}/messages/search | Search messages
+[**update_message**](MessagesApi.md#update_message) | **PUT** /v1/organizations/{org_id}/messages/{id} | Update a message
 
 
 # **create_message**
@@ -30,10 +30,10 @@ from aigentchat.models.a_igency_message_write_dto import AIgencyMessageWriteDto
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -115,10 +115,10 @@ from aigentchat.models.a_igency_message import AIgencyMessage
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -201,10 +201,10 @@ from aigentchat.models.a_igency_message import AIgencyMessage
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -285,10 +285,10 @@ from aigentchat.models.a_igency_message import AIgencyMessage
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -371,10 +371,10 @@ from aigentchat.models.a_igency_message import AIgencyMessage
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -464,10 +464,10 @@ from aigentchat.models.a_igency_message_write_dto import AIgencyMessageWriteDto
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters

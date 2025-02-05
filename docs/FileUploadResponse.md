@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**incoming_file_name** | **str** |  | [optional] 
-**processing_error** | **str** |  | [optional] 
-**resulting_files** | [**List[FilemanagerProcessingResultFile]**](FilemanagerProcessingResultFile.md) |  | [optional] 
+**id** | **str** |  | 
+**resulting_files** | [**List[ResultFile]**](ResultFile.md) |  | 
 
 ## Example
 

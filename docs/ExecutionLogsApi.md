@@ -1,11 +1,11 @@
 # aigentchat.ExecutionLogsApi
 
-All URIs are relative to *https://aigentchat.dev.ai.vaud.one/api/v1*
+All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_execution_logs_costs**](ExecutionLogsApi.md#get_execution_logs_costs) | **GET** /organizations/{org_id}/executionlogs/costs | Get execution logs costs
-[**search_execution_logs**](ExecutionLogsApi.md#search_execution_logs) | **GET** /organizations/{org_id}/executionlogs/search | Search execution logs
+[**get_execution_logs_costs**](ExecutionLogsApi.md#get_execution_logs_costs) | **GET** /v1/organizations/{org_id}/execution-logs/costs | Get execution logs costs
+[**search_execution_logs**](ExecutionLogsApi.md#search_execution_logs) | **GET** /v1/organizations/{org_id}/execution-logs/search | Search execution logs
 
 
 # **get_execution_logs_costs**
@@ -25,10 +25,10 @@ from aigentchat.models.execution_log_costs import ExecutionLogCosts
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -113,10 +113,10 @@ from aigentchat.models.execution_log_results import ExecutionLogResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one/api/v1
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
 # See configuration.py for a list of all supported configuration parameters.
 configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one/api/v1"
+    host = "https://aigentchat.dev.ai.vaud.one"
 )
 
 # The client must configure the authentication and authorization parameters

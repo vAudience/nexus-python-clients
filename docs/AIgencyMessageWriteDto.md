@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | [optional] 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
-**chat_completion_config** | **object** |  | [optional] 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | [optional] 
 **meta_data** | **object** |  | [optional] 
 **mission_id** | **str** |  | 
