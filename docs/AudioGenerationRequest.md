@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **parameters** | **object** |  | [optional] 
 **speed** | **float** |  | [optional] 
 **stream_audio** | **bool** |  | [optional] 
+**team_ids** | **List[str]** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 **voice_id** | **str** |  | [optional] 

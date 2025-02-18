@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **parameters** | **object** |  | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
+**team_ids** | **List[str]** |  | [optional] 
+**type** | [**AgentType**](AgentType.md) |  | [optional] 
 **use_tools** | **bool** |  | [optional] 
 
 ## Example

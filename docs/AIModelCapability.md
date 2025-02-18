@@ -9,8 +9,6 @@
 
 * `FUNCTION_MINUS_CALLING_STREAMING` (value: `'function-calling_streaming'`)
 
-* `ACCEPTS_MINUS_DOCUMENT_MINUS_FILES` (value: `'accepts-document-files'`)
-
 * `TEXT_MINUS_TO_MINUS_EMBEDDING` (value: `'text-to-embedding'`)
 
 * `TEXT_MINUS_TO_MINUS_TEXT` (value: `'text-to-text'`)

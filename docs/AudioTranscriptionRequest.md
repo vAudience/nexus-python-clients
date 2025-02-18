@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **org_id** | **str** |  | [optional] 
 **parameters** | **object** |  | [optional] 
 **skip_ai_agency_message_generation** | **bool** |  | [optional] 
+**team_ids** | **List[str]** |  | [optional] 
 **transcription_format** | **str** |  | 
 **trigger_chat_completion** | **bool** |  | [optional] 
 **user_id** | **str** |  | [optional] 

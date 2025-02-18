@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **org_id** | **str** |  | [optional] 
 **output_image_file_format** | **str** |  | [optional] 
 **parameters** | **object** |  | [optional] 
+**team_ids** | **List[str]** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 

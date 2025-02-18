@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ai_model_id** | **str** |  | 
 **ai_service_id** | **str** |  | 
-**aigent_thread_id** | **str** |  | 
 **attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | [optional] 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 

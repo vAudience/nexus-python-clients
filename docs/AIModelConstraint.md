@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **direction** | [**AIModelConstraintDirection**](AIModelConstraintDirection.md) |  | [optional] 
-**max** | **float** |  | [optional] 
-**min** | **float** |  | [optional] 
+**max** | **int** |  | [optional] 
+**min** | **int** |  | [optional] 
 **unit** | [**AIModelMinMaxUnit**](AIModelMinMaxUnit.md) |  | [optional] 
 
 ## Example

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**abilities** | [**List[Ability]**](Ability.md) |  | [optional] 
 **accepted_file_mimetypes** | **List[str]** |  | [optional] 
-**constraints** | [**List[AIModelConstraint]**](AIModelConstraint.md) |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **documentation_url** | **str** |  | [optional] 

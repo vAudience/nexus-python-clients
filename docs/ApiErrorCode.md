@@ -53,6 +53,8 @@
 
 * `INVALID_AI_MODEL_ID` (value: `'invalid_ai_model_id'`)
 
+* `INVALID_AI_MODEL_DEFINITION` (value: `'invalid_ai_model_definition'`)
+
 * `FAILED_TO_CREATE_AI_MODEL` (value: `'failed_to_create_ai_model'`)
 
 * `FAILED_TO_UPDATE_AI_MODEL` (value: `'failed_to_update_ai_model'`)
@@ -123,8 +125,6 @@
 
 * `FAILED_TO_UPLOAD_CHANNEL_FILE` (value: `'failed_to_upload_channel_file'`)
 
-* `FAILED_TO_RETRIEVE_DEPENDENCIES` (value: `'failed_to_retrieve_dependencies'`)
-
 * `FAILED_TO_STORE_CHAT_COMPLETION_USER` (value: `'failed_to_store_chat_completion_user'`)
 
 * `FAILED_TO_CREATE_CHAT_CONTEXT` (value: `'failed_to_create_chat_context'`)
@@ -141,7 +141,7 @@
 
 * `NO_MESSAGES_FOUND` (value: `'no_messages_found'`)
 
-* `FAILED_TO_VALIDATE_REQUEST_PARAMETERS` (value: `'failed_to_validate_request_parameters'`)
+* `INVALID_REQUEST_PARAMETERS` (value: `'invalid_request_parameters'`)
 
 * `CHAT_COMPLETION_TOO_MANY_TEMPORARY_FILES` (value: `'chat_completion_too_many_temporary_files'`)
 
@@ -224,6 +224,8 @@
 * `INVALID_TOOL_ID` (value: `'invalid_tool_id'`)
 
 * `UNKNOWN_TOOL_ID` (value: `'unknown_tool_id'`)
+
+* `FAILED_TO_CREATE_TEMP_API_KEY` (value: `'failed_to_create_temp_api_key'`)
 
 * `INVALID_PROMPT_ID` (value: `'invalid_prompt_id'`)
 

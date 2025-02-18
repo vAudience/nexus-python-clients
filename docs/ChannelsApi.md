@@ -5,11 +5,11 @@ All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_channel**](ChannelsApi.md#create_channel) | **POST** /v1/organizations/{org_id}/channels | Create a new channel
-[**create_channel_file**](ChannelsApi.md#create_channel_file) | **POST** /v1/organizations/{org_id}/channels/{id}/files | Create a file for a channel
+[**create_channel_file**](ChannelsApi.md#create_channel_file) | **POST** /v1/organizations/{org_id}/channels/files | Create a file for a channel
 [**delete_channel**](ChannelsApi.md#delete_channel) | **DELETE** /v1/organizations/{org_id}/channels/{id} | Delete a channel
 [**get_active_channels**](ChannelsApi.md#get_active_channels) | **GET** /v1/organizations/{org_id}/channels/active | Get active channels
 [**get_channel**](ChannelsApi.md#get_channel) | **GET** /v1/organizations/{org_id}/channels/{id} | Get a channel by ID
-[**get_channel_file_settings**](ChannelsApi.md#get_channel_file_settings) | **GET** /v1/organizations/{org_id}/channels/file-settings | Get channel file settings
+[**get_channel_file_settings**](ChannelsApi.md#get_channel_file_settings) | **GET** /v1/organizations/{org_id}/channels/files/settings | Get channel file settings
 [**get_channel_presence**](ChannelsApi.md#get_channel_presence) | **GET** /v1/organizations/{org_id}/channels/{channel_id}/presence | Get channel presence
 [**get_user_subscribed_channels**](ChannelsApi.md#get_user_subscribed_channels) | **GET** /v1/organizations/{org_id}/channels/subscribed/{user_id} | Get user&#39;s subscribed channels
 [**list_channels_by_org_id**](ChannelsApi.md#list_channels_by_org_id) | **GET** /v1/organizations/{org_id}/channels | List channels by organization ID
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_channel_file**
-> FileUploadResponse create_channel_file(org_id, id, file)
+> FileUploadResponse create_channel_file(org_id, file, channel_id=channel_id)
 
 Create a file for a channel
 
@@ -142,12 +142,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.ChannelsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Channel ID
     file = None # bytearray | File to upload
+    channel_id = 'channel_id_example' # str | Channel id (optional)
 
     try:
         # Create a file for a channel
-        api_response = api_instance.create_channel_file(org_id, id, file)
+        api_response = api_instance.create_channel_file(org_id, file, channel_id=channel_id)
         print("The response of ChannelsApi->create_channel_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -162,8 +162,8 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Channel ID | 
  **file** | **bytearray**| File to upload | 
+ **channel_id** | **str**| Channel id | [optional] 
 
 ### Return type
 

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**abilities** | [**List[Ability]**](Ability.md) |  | [optional] 
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**capabilities** | [**List[AgentCapability]**](AgentCapability.md) |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 
@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **owner_organization_id** | **str** |  | 
 **parameters** | **object** |  | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
+**team_ids** | **List[str]** |  | [optional] 
+**type** | [**AgentType**](AgentType.md) |  | [optional] 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 
 **use_tools** | **bool** |  | [optional] 

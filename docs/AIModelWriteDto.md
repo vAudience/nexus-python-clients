@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accepted_file_mimetypes** | **List[str]** |  | [optional] 
-**constraints** | [**List[AIModelConstraint]**](AIModelConstraint.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **documentation_url** | **str** |  | [optional] 
 **features** | [**List[AIModelFeature]**](AIModelFeature.md) |  | [optional] 

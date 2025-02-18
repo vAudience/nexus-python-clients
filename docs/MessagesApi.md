@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_message**
-> AIgencyMessage delete_message(org_id, id)
+> List[AIgencyMessage] delete_message(org_id, id, cascade=cascade)
 
 Delete a message
 
@@ -138,10 +138,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     api_instance = aigentchat.MessagesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     id = 'id_example' # str | Message ID
+    cascade = True # bool | Delete related message (optional)
 
     try:
         # Delete a message
-        api_response = api_instance.delete_message(org_id, id)
+        api_response = api_instance.delete_message(org_id, id, cascade=cascade)
         print("The response of MessagesApi->delete_message:\n")
         pprint(api_response)
     except Exception as e:
@@ -157,10 +158,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **id** | **str**| Message ID | 
+ **cascade** | **bool**| Delete related message | [optional] 
 
 ### Return type
 
-[**AIgencyMessage**](AIgencyMessage.md)
+[**List[AIgencyMessage]**](AIgencyMessage.md)
 
 ### Authorization
 
