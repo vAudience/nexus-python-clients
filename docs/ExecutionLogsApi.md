@@ -47,7 +47,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.ExecutionLogsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    user_id = 'user_id_example' # str | User ID (optional)
+    user_id = 'user_id_example' # str | User ID or me (optional)
     start_date = 'start_date_example' # str | Start date in Unix milliseconds (optional)
     end_date = 'end_date_example' # str | End date in Unix milliseconds (optional)
 
@@ -68,7 +68,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **user_id** | **str**| User ID | [optional] 
+ **user_id** | **str**| User ID or me | [optional] 
  **start_date** | **str**| Start date in Unix milliseconds | [optional] 
  **end_date** | **str**| End date in Unix milliseconds | [optional] 
 
@@ -90,6 +90,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **500** | Internal Server Error |  -  |
@@ -135,7 +136,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.ExecutionLogsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    user_id = 'user_id_example' # str | User ID (optional)
+    user_id = 'user_id_example' # str | User ID or me (optional)
     start_date = 'start_date_example' # str | Start date in Unix milliseconds (optional)
     end_date = 'end_date_example' # str | End date in Unix milliseconds (optional)
     offset = 56 # int | Offset (optional)
@@ -158,7 +159,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **user_id** | **str**| User ID | [optional] 
+ **user_id** | **str**| User ID or me | [optional] 
  **start_date** | **str**| Start date in Unix milliseconds | [optional] 
  **end_date** | **str**| End date in Unix milliseconds | [optional] 
  **offset** | **int**| Offset | [optional] 
@@ -182,6 +183,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **500** | Internal Server Error |  -  |

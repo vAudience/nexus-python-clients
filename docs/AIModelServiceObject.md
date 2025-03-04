@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 
-**service_impl** | **str** |  | 
+**service_impl** | [**AiServiceId**](AiServiceId.md) |  | 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 
 

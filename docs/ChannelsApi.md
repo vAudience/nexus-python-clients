@@ -7,11 +7,9 @@ Method | HTTP request | Description
 [**create_channel**](ChannelsApi.md#create_channel) | **POST** /v1/organizations/{org_id}/channels | Create a new channel
 [**create_channel_file**](ChannelsApi.md#create_channel_file) | **POST** /v1/organizations/{org_id}/channels/files | Create a file for a channel
 [**delete_channel**](ChannelsApi.md#delete_channel) | **DELETE** /v1/organizations/{org_id}/channels/{id} | Delete a channel
-[**get_active_channels**](ChannelsApi.md#get_active_channels) | **GET** /v1/organizations/{org_id}/channels/active | Get active channels
+[**delete_channels_by_owner_id**](ChannelsApi.md#delete_channels_by_owner_id) | **DELETE** /v1/organizations/{org_id}/channels | Delete channels by their owner ID
 [**get_channel**](ChannelsApi.md#get_channel) | **GET** /v1/organizations/{org_id}/channels/{id} | Get a channel by ID
 [**get_channel_file_settings**](ChannelsApi.md#get_channel_file_settings) | **GET** /v1/organizations/{org_id}/channels/files/settings | Get channel file settings
-[**get_channel_presence**](ChannelsApi.md#get_channel_presence) | **GET** /v1/organizations/{org_id}/channels/{channel_id}/presence | Get channel presence
-[**get_user_subscribed_channels**](ChannelsApi.md#get_user_subscribed_channels) | **GET** /v1/organizations/{org_id}/channels/subscribed/{user_id} | Get user&#39;s subscribed channels
 [**list_channels_by_org_id**](ChannelsApi.md#list_channels_by_org_id) | **GET** /v1/organizations/{org_id}/channels | List channels by organization ID
 [**list_channels_by_owner_id**](ChannelsApi.md#list_channels_by_owner_id) | **GET** /v1/organizations/{org_id}/channels/me | List channels owned by the current user
 [**update_channel**](ChannelsApi.md#update_channel) | **PUT** /v1/organizations/{org_id}/channels/{id} | Update a channel
@@ -187,6 +185,7 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**413** | Request Entity Too Large |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -277,12 +276,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_active_channels**
-> List[Channel] get_active_channels(org_id)
+# **delete_channels_by_owner_id**
+> List[Channel] delete_channels_by_owner_id(org_id)
 
-Get active channels
+Delete channels by their owner ID
 
-Retrieve a list of active channels based on subscribed clients across all instances
+Delete all channels with a given owner ID
 
 ### Example
 
@@ -318,12 +317,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     org_id = 'org_id_example' # str | organization ID
 
     try:
-        # Get active channels
-        api_response = api_instance.get_active_channels(org_id)
-        print("The response of ChannelsApi->get_active_channels:\n")
+        # Delete channels by their owner ID
+        api_response = api_instance.delete_channels_by_owner_id(org_id)
+        print("The response of ChannelsApi->delete_channels_by_owner_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ChannelsApi->get_active_channels: %s\n" % e)
+        print("Exception when calling ChannelsApi->delete_channels_by_owner_id: %s\n" % e)
 ```
 
 
@@ -353,6 +352,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -522,173 +523,6 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_channel_presence**
-> List[str] get_channel_presence(org_id, channel_id)
-
-Get channel presence
-
-Retrieve a list of connected subscribers for a channel across all instances
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.ChannelsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    channel_id = 'channel_id_example' # str | Channel ID
-
-    try:
-        # Get channel presence
-        api_response = api_instance.get_channel_presence(org_id, channel_id)
-        print("The response of ChannelsApi->get_channel_presence:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ChannelsApi->get_channel_presence: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **channel_id** | **str**| Channel ID | 
-
-### Return type
-
-**List[str]**
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_user_subscribed_channels**
-> List[Channel] get_user_subscribed_channels(org_id, user_id)
-
-Get user's subscribed channels
-
-Retrieve a list of channels a user was subscribed to, sorted by last activity
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.channel import Channel
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.ChannelsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    user_id = 'user_id_example' # str | User ID
-
-    try:
-        # Get user's subscribed channels
-        api_response = api_instance.get_user_subscribed_channels(org_id, user_id)
-        print("The response of ChannelsApi->get_user_subscribed_channels:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ChannelsApi->get_user_subscribed_channels: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **user_id** | **str**| User ID | 
-
-### Return type
-
-[**List[Channel]**](Channel.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

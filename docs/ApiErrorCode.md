@@ -13,7 +13,13 @@
 
 * `INVALID_PAYLOAD` (value: `'invalid_payload'`)
 
+* `INVALID_ENTITY` (value: `'invalid_entity'`)
+
 * `INVALID_PARAMS` (value: `'invalid_params'`)
+
+* `INVALID_DATE` (value: `'invalid_date'`)
+
+* `START_DATE_MUST_BE_BEFORE_END_DATE` (value: `'start_date_must_be_before_end_date'`)
 
 * `AGENT_NOT_FOUND` (value: `'agent_not_found'`)
 
@@ -28,26 +34,6 @@
 * `FAILED_TO_GET_AGENT` (value: `'failed_to_get_agent'`)
 
 * `FAILED_TO_UPDATE_AGENT` (value: `'failed_to_update_agent'`)
-
-* `INVALID_EXECUTOR_ID` (value: `'invalid_executor_id'`)
-
-* `INVALID_AGENT_TEAM_ID` (value: `'invalid_agent_team_id'`)
-
-* `AGENT_TEAM_NOT_FOUND` (value: `'agent_team_not_found'`)
-
-* `FAILED_TO_CREATE_AGENT_TEAM` (value: `'failed_to_create_agent_team'`)
-
-* `FAILED_TO_UPDATE_AGENT_TEAM` (value: `'failed_to_update_agent_team'`)
-
-* `FAILED_TO_DELETE_AGENT_TEAM` (value: `'failed_to_delete_agent_team'`)
-
-* `FAILED_TO_FETCH_AGENT_TEAM` (value: `'failed_to_fetch_agent_team'`)
-
-* `FAILED_TO_ADD_AGENT` (value: `'failed_to_add_agent'`)
-
-* `FAILED_TO_REMOVE_AGENT` (value: `'failed_to_remove_agent'`)
-
-* `FAILED_TO_UPDATE_MESSAGES` (value: `'failed_to_update_messages'`)
 
 * `AI_MODEL_NOT_FOUND` (value: `'ai_model_not_found'`)
 
@@ -115,12 +101,6 @@
 
 * `FAILED_TO_FETCH_CHANNELS` (value: `'failed_to_fetch_channels'`)
 
-* `FAILED_TO_ADD_PRESENCE` (value: `'failed_to_add_presence'`)
-
-* `FAILED_TO_REMOVE_PRESENCE` (value: `'failed_to_remove_presence'`)
-
-* `FAILED_TO_FETCH_PRESENCE` (value: `'failed_to_fetch_presence'`)
-
 * `FAILED_TO_FETCH_SUBSCRIBED_CHANNELS` (value: `'failed_to_fetch_subscribed_channels'`)
 
 * `FAILED_TO_UPLOAD_CHANNEL_FILE` (value: `'failed_to_upload_channel_file'`)
@@ -154,8 +134,6 @@
 * `FAILED_TO_EMBED_TEXT` (value: `'failed_to_embed_text'`)
 
 * `FAILED_TO_SEARCH_EXECUTION_LOGS` (value: `'failed_to_search_execution_logs'`)
-
-* `START_DATE_MUST_BE_BEFORE_END_DATE` (value: `'start_date_must_be_before_end_date'`)
 
 * `INVALID_FILE_ID` (value: `'invalid_file_id'`)
 
@@ -206,6 +184,8 @@
 * `INVALID_MISSION_EXECUTOR_ID` (value: `'invalid mission executor ID'`)
 
 * `MISSION_NOT_DONE` (value: `'mission_not_done'`)
+
+* `INVALID_EXECUTOR_ID` (value: `'invalid_executor_id'`)
 
 * `INVALID_ORGANIZATION_ID` (value: `'invalid_organization_id'`)
 

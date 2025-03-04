@@ -266,6 +266,8 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -357,7 +359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_messages**
-> List[AIgencyMessage] search_messages(org_id, content=content, sender_id=sender_id, start_date=start_date, end_date=end_date, limit=limit)
+> AIgencyMessageResults search_messages(org_id, content=content, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
 
 Search messages
 
@@ -369,7 +371,7 @@ Search for messages based on content, sender ID, and date range
 
 ```python
 import aigentchat
-from aigentchat.models.a_igency_message import AIgencyMessage
+from aigentchat.models.a_igency_message_results import AIgencyMessageResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -396,14 +398,14 @@ with aigentchat.ApiClient(configuration) as api_client:
     api_instance = aigentchat.MessagesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     content = 'content_example' # str | Search by content (optional)
-    sender_id = 'sender_id_example' # str | Search by sender ID (optional)
     start_date = 'start_date_example' # str | Start date in Unix milliseconds (optional)
     end_date = 'end_date_example' # str | End date in Unix milliseconds (optional)
+    offset = 56 # int | Offset (optional)
     limit = 56 # int | Limit results (optional)
 
     try:
         # Search messages
-        api_response = api_instance.search_messages(org_id, content=content, sender_id=sender_id, start_date=start_date, end_date=end_date, limit=limit)
+        api_response = api_instance.search_messages(org_id, content=content, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
         print("The response of MessagesApi->search_messages:\n")
         pprint(api_response)
     except Exception as e:
@@ -419,14 +421,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **content** | **str**| Search by content | [optional] 
- **sender_id** | **str**| Search by sender ID | [optional] 
  **start_date** | **str**| Start date in Unix milliseconds | [optional] 
  **end_date** | **str**| End date in Unix milliseconds | [optional] 
+ **offset** | **int**| Offset | [optional] 
  **limit** | **int**| Limit results | [optional] 
 
 ### Return type
 
-[**List[AIgencyMessage]**](AIgencyMessage.md)
+[**AIgencyMessageResults**](AIgencyMessageResults.md)
 
 ### Authorization
 
@@ -444,6 +446,7 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

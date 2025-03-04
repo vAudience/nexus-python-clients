@@ -4,7 +4,6 @@
 from aigentchat.api.ai_model_services_api import AIModelServicesApi
 from aigentchat.api.ai_models_api import AIModelsApi
 from aigentchat.api.agent_prompts_api import AgentPromptsApi
-from aigentchat.api.agent_teams_api import AgentTeamsApi
 from aigentchat.api.agents_api import AgentsApi
 from aigentchat.api.audio_api import AudioApi
 from aigentchat.api.channels_api import ChannelsApi

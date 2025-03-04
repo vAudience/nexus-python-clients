@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **name** | **str** |  | 
-**service_impl** | **str** |  | 
+**service_impl** | [**AiServiceId**](AiServiceId.md) |  | 
 
 ## Example
 

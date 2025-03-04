@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**create_mission**](MissionsApi.md#create_mission) | **POST** /v1/organizations/{org_id}/missions/{mission_executor_id} | Create a new mission
 [**delete_mission**](MissionsApi.md#delete_mission) | **DELETE** /v1/organizations/{org_id}/missions/{mission_id} | Delete a mission
 [**get_mission**](MissionsApi.md#get_mission) | **GET** /v1/organizations/{org_id}/missions/{mission_id} | Get a mission
-[**list_missions_by_executor_id**](MissionsApi.md#list_missions_by_executor_id) | **GET** /v1/organizations/{org_id}/missions/executor/{mission_executor_id} | List all missions by a executorID (Agent Team or Agent)
+[**list_missions_by_executor_id**](MissionsApi.md#list_missions_by_executor_id) | **GET** /v1/organizations/{org_id}/missions/executor/{mission_executor_id} | List all missions by a executorID (Executing Agent)
 [**list_missions_by_org**](MissionsApi.md#list_missions_by_org) | **GET** /v1/organizations/{org_id}/missions | List all missions of an organization and owned by the current user
 
 
@@ -135,7 +135,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.MissionsApi(api_client)
     org_id = 'org_id_example' # str | Organization ID
-    mission_executor_id = 'mission_executor_id_example' # str | Agent Team ID OR Agent ID to run the mission with
+    mission_executor_id = 'mission_executor_id_example' # str | Agent ID to run the mission with
     mission = aigentchat.MissionWriteDto() # MissionWriteDto | Mission object that needs to be created
 
     try:
@@ -155,7 +155,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| Organization ID | 
- **mission_executor_id** | **str**| Agent Team ID OR Agent ID to run the mission with | 
+ **mission_executor_id** | **str**| Agent ID to run the mission with | 
  **mission** | [**MissionWriteDto**](MissionWriteDto.md)| Mission object that needs to be created | 
 
 ### Return type
@@ -354,11 +354,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_missions_by_executor_id**
-> List[Mission] list_missions_by_executor_id(org_id, mission_executor_id, offset=offset, limit=limit)
+> MissionResults list_missions_by_executor_id(org_id, mission_executor_id, offset=offset, limit=limit)
 
-List all missions by a executorID (Agent Team or Agent)
+List all missions by a executorID (Executing Agent)
 
-List all missions by a a executorID (Agent Team or Agent)
+List all missions by a a executorID (Executing Agent)
 
 ### Example
 
@@ -366,7 +366,7 @@ List all missions by a a executorID (Agent Team or Agent)
 
 ```python
 import aigentchat
-from aigentchat.models.mission import Mission
+from aigentchat.models.mission_results import MissionResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -392,12 +392,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.MissionsApi(api_client)
     org_id = 'org_id_example' # str | Organization ID
-    mission_executor_id = 'mission_executor_id_example' # str | Agent or Agent-Team ID
+    mission_executor_id = 'mission_executor_id_example' # str | Executor Agent ID
     offset = 56 # int | Offset the number of missions returned (optional)
     limit = 56 # int | Limit the number of missions returned (optional)
 
     try:
-        # List all missions by a executorID (Agent Team or Agent)
+        # List all missions by a executorID (Executing Agent)
         api_response = api_instance.list_missions_by_executor_id(org_id, mission_executor_id, offset=offset, limit=limit)
         print("The response of MissionsApi->list_missions_by_executor_id:\n")
         pprint(api_response)
@@ -413,13 +413,13 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| Organization ID | 
- **mission_executor_id** | **str**| Agent or Agent-Team ID | 
+ **mission_executor_id** | **str**| Executor Agent ID | 
  **offset** | **int**| Offset the number of missions returned | [optional] 
  **limit** | **int**| Limit the number of missions returned | [optional] 
 
 ### Return type
 
-[**List[Mission]**](Mission.md)
+[**MissionResults**](MissionResults.md)
 
 ### Authorization
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_missions_by_org**
-> List[Mission] list_missions_by_org(org_id, offset=offset, limit=limit)
+> MissionResults list_missions_by_org(org_id, offset=offset, limit=limit)
 
 List all missions of an organization and owned by the current user
 
@@ -455,7 +455,7 @@ List all missions of an organization and owned by the current user
 
 ```python
 import aigentchat
-from aigentchat.models.mission import Mission
+from aigentchat.models.mission_results import MissionResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Mission]**](Mission.md)
+[**MissionResults**](MissionResults.md)
 
 ### Authorization
 

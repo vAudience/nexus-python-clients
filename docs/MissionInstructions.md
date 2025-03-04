@@ -6,10 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **max_tokens** | **int** |  | [optional] 
-**system_prompt_injection_mode** | [**PromptInjectionMode**](PromptInjectionMode.md) |  | [optional] 
 **temperature** | **float** |  | [optional] 
 **text** | **str** |  | 
-**user_prompt_injection_mode** | [**PromptInjectionMode**](PromptInjectionMode.md) |  | [optional] 
 **var_replacements** | **Dict[str, str]** |  | [optional] 
 
 ## Example

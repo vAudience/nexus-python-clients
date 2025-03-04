@@ -7,7 +7,6 @@ README.md
 aigentchat/__init__.py
 aigentchat/api/__init__.py
 aigentchat/api/agent_prompts_api.py
-aigentchat/api/agent_teams_api.py
 aigentchat/api/agents_api.py
 aigentchat/api/ai_model_services_api.py
 aigentchat/api/ai_models_api.py
@@ -37,6 +36,7 @@ aigentchat/models/a_igency_message_content_list.py
 aigentchat/models/a_igency_message_content_type.py
 aigentchat/models/a_igency_message_file.py
 aigentchat/models/a_igency_message_file_list.py
+aigentchat/models/a_igency_message_results.py
 aigentchat/models/a_igency_message_type.py
 aigentchat/models/a_igency_message_write_dto.py
 aigentchat/models/ability.py
@@ -46,8 +46,6 @@ aigentchat/models/agent_prompt.py
 aigentchat/models/agent_prompt_render_dto.py
 aigentchat/models/agent_prompt_rendered_dto.py
 aigentchat/models/agent_prompt_visibility_states.py
-aigentchat/models/agent_team.py
-aigentchat/models/agent_team_write_dto.py
 aigentchat/models/agent_type.py
 aigentchat/models/agent_write_dto.py
 aigentchat/models/ai_model.py
@@ -62,6 +60,7 @@ aigentchat/models/ai_model_service_with_models.py
 aigentchat/models/ai_model_service_write_dto.py
 aigentchat/models/ai_model_write_dto.py
 aigentchat/models/ai_service_error.py
+aigentchat/models/ai_service_id.py
 aigentchat/models/api_error.py
 aigentchat/models/api_error_code.py
 aigentchat/models/audio_generation_request.py
@@ -90,6 +89,7 @@ aigentchat/models/image_generation_request.py
 aigentchat/models/mission.py
 aigentchat/models/mission_completion_reason.py
 aigentchat/models/mission_instructions.py
+aigentchat/models/mission_results.py
 aigentchat/models/mission_status.py
 aigentchat/models/mission_status_update.py
 aigentchat/models/mission_status_update_list.py
@@ -97,7 +97,6 @@ aigentchat/models/mission_write_dto.py
 aigentchat/models/org_cost_budget.py
 aigentchat/models/org_cost_budget_check.py
 aigentchat/models/org_cost_budget_write_dto.py
-aigentchat/models/prompt_injection_mode.py
 aigentchat/models/prompt_version.py
 aigentchat/models/result_file.py
 aigentchat/models/text_embedding.py
@@ -127,6 +126,7 @@ docs/AIgencyMessageContentList.md
 docs/AIgencyMessageContentType.md
 docs/AIgencyMessageFile.md
 docs/AIgencyMessageFileList.md
+docs/AIgencyMessageResults.md
 docs/AIgencyMessageType.md
 docs/AIgencyMessageWriteDto.md
 docs/Ability.md
@@ -137,13 +137,11 @@ docs/AgentPromptRenderDto.md
 docs/AgentPromptRenderedDto.md
 docs/AgentPromptVisibilityStates.md
 docs/AgentPromptsApi.md
-docs/AgentTeam.md
-docs/AgentTeamWriteDto.md
-docs/AgentTeamsApi.md
 docs/AgentType.md
 docs/AgentWriteDto.md
 docs/AgentsApi.md
 docs/AiServiceError.md
+docs/AiServiceId.md
 docs/ApiError.md
 docs/ApiErrorCode.md
 docs/AudioApi.md
@@ -183,6 +181,7 @@ docs/MetricsApi.md
 docs/Mission.md
 docs/MissionCompletionReason.md
 docs/MissionInstructions.md
+docs/MissionResults.md
 docs/MissionStatus.md
 docs/MissionStatusUpdate.md
 docs/MissionStatusUpdateList.md
@@ -192,7 +191,6 @@ docs/OrgCostBudget.md
 docs/OrgCostBudgetCheck.md
 docs/OrgCostBudgetWriteDto.md
 docs/OrgCostBudgetsApi.md
-docs/PromptInjectionMode.md
 docs/PromptVersion.md
 docs/ResultFile.md
 docs/TextEmbedding.md
@@ -215,6 +213,7 @@ test/test_a_igency_message_content_list.py
 test/test_a_igency_message_content_type.py
 test/test_a_igency_message_file.py
 test/test_a_igency_message_file_list.py
+test/test_a_igency_message_results.py
 test/test_a_igency_message_type.py
 test/test_a_igency_message_write_dto.py
 test/test_ability.py
@@ -225,9 +224,6 @@ test/test_agent_prompt_render_dto.py
 test/test_agent_prompt_rendered_dto.py
 test/test_agent_prompt_visibility_states.py
 test/test_agent_prompts_api.py
-test/test_agent_team.py
-test/test_agent_team_write_dto.py
-test/test_agent_teams_api.py
 test/test_agent_type.py
 test/test_agent_write_dto.py
 test/test_agents_api.py
@@ -245,6 +241,7 @@ test/test_ai_model_services_api.py
 test/test_ai_model_write_dto.py
 test/test_ai_models_api.py
 test/test_ai_service_error.py
+test/test_ai_service_id.py
 test/test_api_error.py
 test/test_api_error_code.py
 test/test_audio_api.py
@@ -284,6 +281,7 @@ test/test_metrics_api.py
 test/test_mission.py
 test/test_mission_completion_reason.py
 test/test_mission_instructions.py
+test/test_mission_results.py
 test/test_mission_status.py
 test/test_mission_status_update.py
 test/test_mission_status_update_list.py
@@ -293,7 +291,6 @@ test/test_org_cost_budget.py
 test/test_org_cost_budget_check.py
 test/test_org_cost_budget_write_dto.py
 test/test_org_cost_budgets_api.py
-test/test_prompt_injection_mode.py
 test/test_prompt_version.py
 test/test_result_file.py
 test/test_text_embedding.py
