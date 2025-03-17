@@ -149,6 +149,20 @@
 
 * `FUNCTIONCALL_NOT_FOUND` (value: `'functioncall_not_found'`)
 
+* `FAILED_TO_GENERATE_IMAGE` (value: `'failed_to_generate_image'`)
+
+* `INVALID_IMAGE_ID` (value: `'invalid_image_id'`)
+
+* `IMAGE_NOT_FOUND` (value: `'image_not_found'`)
+
+* `FAILED_TO_DELETE_IMAGE` (value: `'failed_to_delete_image'`)
+
+* `FAILED_TO_GET_IMAGE` (value: `'failed_to_get_image'`)
+
+* `FAILED_TO_SEARCH_IMAGES` (value: `'failed_to_search_images'`)
+
+* `FAILED_TO_STORE_IMAGES` (value: `'failed_to_store_images'`)
+
 * `INVALID_MESSAGE_ID` (value: `'invalid_message_id'`)
 
 * `MESSAGE_NOT_FOUND` (value: `'message_not_found'`)
@@ -210,6 +224,12 @@
 * `INVALID_PROMPT_ID` (value: `'invalid_prompt_id'`)
 
 * `PROMPT_NOT_FOUND` (value: `'prompt_not_found'`)
+
+* `FAILED_TO_GET_PROMPT` (value: `'failed_to_get_prompt'`)
+
+* `FAILED_TO_UPDATE_PROMPT` (value: `'failed_to_update_prompt'`)
+
+* `FAILED_TO_DELETE_PROMPT` (value: `'failed_to_delete_prompt'`)
 
 * `INVALID_PROMPT_DATA` (value: `'invalid_prompt_data'`)
 

@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**embedded_content** | **str** |  | [optional] 
-**file_name** | **str** |  | [optional] 
-**file_size** | **int** |  | [optional] 
-**id** | **str** |  | [optional] 
-**meta_data** | **Dict[str, object]** |  | [optional] 
-**mime_type** | **str** |  | [optional] 
-**url** | **str** |  | [optional] 
+**embedded_content** | **str** |  | 
+**file_name** | **str** |  | 
+**file_size** | **int** |  | 
+**id** | **str** |  | 
+**meta_data** | **object** |  | 
+**mime_type** | **str** |  | 
+**url** | **str** |  | 
 
 ## Example
 

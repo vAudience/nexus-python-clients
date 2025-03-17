@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List[AIgencyMessageContent]**](AIgencyMessageContent.md) |  | [optional] 
-**full_text** | **str** |  | [optional] 
+**data** | [**List[AIgencyMessageContent]**](AIgencyMessageContent.md) |  | 
+**full_text** | **str** |  | 
 
 ## Example
 

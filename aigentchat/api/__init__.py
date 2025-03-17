@@ -3,7 +3,6 @@
 # import apis into api package
 from aigentchat.api.ai_model_services_api import AIModelServicesApi
 from aigentchat.api.ai_models_api import AIModelsApi
-from aigentchat.api.agent_prompts_api import AgentPromptsApi
 from aigentchat.api.agents_api import AgentsApi
 from aigentchat.api.audio_api import AudioApi
 from aigentchat.api.channels_api import ChannelsApi
@@ -18,5 +17,6 @@ from aigentchat.api.messages_api import MessagesApi
 from aigentchat.api.metrics_api import MetricsApi
 from aigentchat.api.missions_api import MissionsApi
 from aigentchat.api.org_cost_budgets_api import OrgCostBudgetsApi
+from aigentchat.api.prompts_api import PromptsApi
 from aigentchat.api.version_api import VersionApi
 

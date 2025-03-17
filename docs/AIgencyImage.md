@@ -5,17 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**agent_id** | **str** |  | [optional] 
-**channel_id** | **str** |  | [optional] 
-**message_reference_id** | **str** |  | [optional] 
-**message_response_to_id** | **str** |  | [optional] 
-**mime_type** | **str** |  | [optional] 
-**mission_id** | **str** |  | [optional] 
-**org_owner_id** | **str** |  | [optional] 
-**parameters** | **Dict[str, object]** |  | [optional] 
-**url** | **str** |  | [optional] 
-**user_id** | **str** |  | [optional] 
-**username** | **str** |  | [optional] 
+**ai_model_id** | **str** |  | 
+**ai_service_id** | **str** |  | 
+**created_at** | **int** |  | 
+**execution_id** | **str** |  | 
+**id** | **str** |  | 
+**message** | **str** |  | 
+**mime_type** | **str** |  | 
+**owner_id** | **str** |  | 
+**owner_organization_id** | **str** |  | 
+**parameters** | **object** |  | [optional] 
+**thumbnails** | [**List[AIgencyThumbnail]**](AIgencyThumbnail.md) |  | [optional] 
+**url** | **str** |  | 
 
 ## Example
 

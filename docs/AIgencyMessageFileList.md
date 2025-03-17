@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**files** | [**List[AIgencyMessageFile]**](AIgencyMessageFile.md) |  | [optional] 
+**files** | [**List[AIgencyMessageFile]**](AIgencyMessageFile.md) |  | 
 
 ## Example
 

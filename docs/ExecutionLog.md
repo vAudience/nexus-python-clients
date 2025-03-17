@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ai_model_service_id** | **str** |  | [optional] 
 **channel_id** | **str** |  | [optional] 
 **created_at** | **int** |  | [optional] 
+**execution_id** | **str** |  | [optional] 
 **final_cost_in_euro** | **float** |  | [optional] 
 **id** | **str** |  | [optional] 
 **message_id** | **str** |  | [optional] 

@@ -11,9 +11,13 @@
 
 * `AZUREAI` (value: `'azureai'`)
 
+* `BLACKFOREST` (value: `'blackforest'`)
+
 * `ELEVENLABS` (value: `'elevenlabs'`)
 
 * `GOOGLEVERTEXAI` (value: `'googlevertexai'`)
+
+* `LEONARDOAI` (value: `'leonardoai'`)
 
 * `OPENAI` (value: `'openai'`)
 

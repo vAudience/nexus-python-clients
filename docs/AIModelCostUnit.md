@@ -19,6 +19,8 @@
 
 * `IMAGE_MINUS_GENERATION_MINUS_PER_MINUS_PIXEL` (value: `'image-generation-per-pixel'`)
 
+* `IMAGE_MINUS_GENERATION_MINUS_PER_MINUS_CREDIT` (value: `'image-generation-per-credit'`)
+
 * `AUDIO_MINUS_GENERATION_MINUS_PER_MINUS_SECOND` (value: `'audio-generation-per-second'`)
 
 * `VIDEO_MINUS_GENERATION_MINUS_PER_MINUS_SECOND` (value: `'video-generation-per-second'`)

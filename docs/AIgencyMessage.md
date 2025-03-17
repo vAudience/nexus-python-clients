@@ -7,13 +7,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ai_model_id** | **str** |  | 
 **ai_service_id** | **str** |  | 
-**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | [optional] 
+**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
-**content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | [optional] 
+**content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | 
 **created_at** | **int** |  | 
 **created_for_feature** | [**AIModelFeature**](AIModelFeature.md) |  | [optional] 
 **error** | [**AiServiceError**](AiServiceError.md) |  | [optional] 
+**execution_id** | **str** |  | [optional] 
 **finish_reason** | [**FinishReason**](FinishReason.md) |  | [optional] 
 **id** | **str** |  | 
 **meta_data** | **object** |  | [optional] 

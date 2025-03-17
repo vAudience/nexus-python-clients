@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **file_name** | **str** |  | 
 **file_size** | **int** |  | 
 **mime_type** | **str** |  | 
+**original_file_name** | **str** |  | 
 **url** | **str** |  | 
 
 ## Example

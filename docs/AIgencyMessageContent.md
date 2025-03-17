@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **file** | [**AIgencyMessageFile**](AIgencyMessageFile.md) |  | [optional] 
-**text** | **str** |  | [optional] 
-**type** | [**AIgencyMessageContentType**](AIgencyMessageContentType.md) |  | [optional] 
+**text** | **str** |  | 
+**type** | [**AIgencyMessageContentType**](AIgencyMessageContentType.md) |  | 
 
 ## Example
 

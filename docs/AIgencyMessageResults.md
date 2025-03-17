@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**List[AIgencyMessage]**](AIgencyMessage.md) |  | [optional] 
-**total_results** | **int** |  | [optional] 
+**results** | [**List[AIgencyMessage]**](AIgencyMessage.md) |  | 
+**total_results** | **int** |  | 
 
 ## Example
 
