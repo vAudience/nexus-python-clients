@@ -27,6 +27,10 @@
 
 * `PER_MINUS_FUNCTION_MINUS_CALL` (value: `'per-function-call'`)
 
+* `PER_MINUS_FILE_MINUS_UPLOAD` (value: `'per-file-upload'`)
+
+* `CONVERSION_MINUS_PER_MINUS_PAGE` (value: `'conversion-per-page'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

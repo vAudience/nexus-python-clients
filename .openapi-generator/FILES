@@ -211,13 +211,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_a_igency_image_results.py
-test/test_a_igency_thumbnail.py
-test/test_image_generation_request_dto.py
-test/test_prompt.py
-test/test_prompt_render_dto.py
-test/test_prompt_visibility_states.py
-test/test_prompt_write_dto.py
-test/test_prompts_api.py
-test/test_rendered_prompt.py
 tox.ini

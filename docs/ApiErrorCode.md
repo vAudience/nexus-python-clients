@@ -77,6 +77,8 @@
 
 * `AI_SERVICE_OVERLOAD` (value: `'ai_service_overload'`)
 
+* `AI_SERVICE_UNPROCESSABLE_ENTITY` (value: `'ai_service_unprocessable_entity'`)
+
 * `NO_AUDIO_FILE_SAVED` (value: `'no_audio_file_saved'`)
 
 * `FAILED_TO_CREATE_AUDIO_TRANSCRIPTION_CONTEXT` (value: `'failed_to_create_audio_transcription_context'`)
