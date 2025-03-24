@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agent_id** | **str** |  | 
 **embeddings** | [**List[EmbeddingItem]**](EmbeddingItem.md) |  | 
 **execution_id** | **str** |  | 
 **model_id** | **str** |  | 

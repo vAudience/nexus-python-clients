@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agent_id** | **str** |  | 
 **ai_model_id** | **str** |  | 
 **ai_service_id** | **str** |  | 
 **created_at** | **int** |  | 
