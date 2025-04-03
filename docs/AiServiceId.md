@@ -19,9 +19,13 @@
 
 * `LEONARDOAI` (value: `'leonardoai'`)
 
+* `MISTRALAI` (value: `'mistralai'`)
+
 * `OPENAI` (value: `'openai'`)
 
 * `REPLICATE` (value: `'replicate'`)
+
+* `SCALEWAY` (value: `'scaleway'`)
 
 * `VAIEMBED` (value: `'vaiembed'`)
 

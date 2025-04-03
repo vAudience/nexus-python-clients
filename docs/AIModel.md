@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **documentation_url** | **str** |  | [optional] 
 **features** | [**List[AIModelFeature]**](AIModelFeature.md) |  | [optional] 
+**i18n** | [**Dict[str, AIModelI18n]**](AIModelI18n.md) |  | [optional] 
 **id** | **str** |  | 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 

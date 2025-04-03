@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **avatar_url** | **str** |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
+**i18n** | [**Dict[str, AgentI18n]**](AgentI18n.md) |  | [optional] 
 **id** | **str** |  | 
 **initial_user_messages** | **List[str]** |  | [optional] 
 **internal_id** | **str** |  | [optional] 

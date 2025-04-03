@@ -1,0 +1,31 @@
+# AIgencyFunctionResponse
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**function_name** | **str** |  | 
+**id** | **str** |  | 
+**result** | **str** |  | 
+
+## Example
+
+```python
+from aigentchat.models.a_igency_function_response import AIgencyFunctionResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of AIgencyFunctionResponse from a JSON string
+a_igency_function_response_instance = AIgencyFunctionResponse.from_json(json)
+# print the JSON string representation of the object
+print(AIgencyFunctionResponse.to_json())
+
+# convert the object into a dict
+a_igency_function_response_dict = a_igency_function_response_instance.to_dict()
+# create an instance of AIgencyFunctionResponse from a dict
+a_igency_function_response_from_dict = AIgencyFunctionResponse.from_dict(a_igency_function_response_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

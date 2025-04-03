@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**i18n** | [**Dict[str, AgentI18n]**](AgentI18n.md) |  | [optional] 
 **initial_user_messages** | **List[str]** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 

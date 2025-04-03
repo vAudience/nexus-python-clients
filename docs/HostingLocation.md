@@ -11,9 +11,9 @@
 
 * `GERMANY` (value: `'germany'`)
 
-* `UK` (value: `'uk'`)
-
 * `SWISS` (value: `'swiss'`)
+
+* `UK` (value: `'uk'`)
 
 * `ANY` (value: `'any'`)
 

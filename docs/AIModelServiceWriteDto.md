@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **cost_multiplier** | **float** |  | [optional] 
 **description** | **str** |  | [optional] 
 **hosting_locations** | [**Dict[str, HostingLocation]**](HostingLocation.md) |  | [optional] 
+**i18n** | [**Dict[str, AIModelServiceI18n]**](AIModelServiceI18n.md) |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **name** | **str** |  | 

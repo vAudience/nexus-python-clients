@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **hosting_locations** | [**Dict[str, HostingLocation]**](HostingLocation.md) |  | [optional] 
+**i18n** | [**Dict[str, AIModelServiceI18n]**](AIModelServiceI18n.md) |  | [optional] 
 **id** | **str** |  | 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
