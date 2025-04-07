@@ -131,6 +131,8 @@
 
 * `CHAT_COMPLETION_EXCEEDS_MAX_INPUT_TOKENS` (value: `'chat_completion_exceeds_max_input_tokens'`)
 
+* `CHAT_COMPLETION_EXCEEDS_MAX_TOOL_CALLS` (value: `'chat_completion_exceeds_max_tool_calls'`)
+
 * `FAILED_TO_CREATE_CONNECTION_TOKEN` (value: `'failed_to_create_connection_token'`)
 
 * `FAILED_TO_EMBED_TEXT` (value: `'failed_to_embed_text'`)

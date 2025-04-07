@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **file** | [**AIgencyMessageFile**](AIgencyMessageFile.md) |  | [optional] 
 **function_call** | [**AIgencyFunctionCall**](AIgencyFunctionCall.md) |  | [optional] 
 **function_responses** | [**AIgencyFunctionResponse**](AIgencyFunctionResponse.md) |  | [optional] 
-**text** | **str** |  | 
+**text** | **str** |  | [optional] 
 **thinking** | [**AIgencyThinking**](AIgencyThinking.md) |  | [optional] 
 **type** | [**AIgencyMessageContentType**](AIgencyMessageContentType.md) |  | 
 
