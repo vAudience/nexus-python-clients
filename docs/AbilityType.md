@@ -3,15 +3,15 @@
 
 ## Enum
 
-* `TEXT` (value: `'text'`)
+* `AbilityTypeText` (value: `'text'`)
 
-* `CHAT` (value: `'chat'`)
+* `AbilityTypeChat` (value: `'chat'`)
 
-* `EMBEDDING` (value: `'embedding'`)
+* `AbilityTypeEmbedding` (value: `'embedding'`)
 
-* `IMAGE` (value: `'image'`)
+* `AbilityTypeImage` (value: `'image'`)
 
-* `TOOL_MINUS_FUNCTION` (value: `'tool-function'`)
+* `AbilityTypeToolFunction` (value: `'tool-function'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

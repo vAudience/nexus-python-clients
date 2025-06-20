@@ -3,47 +3,47 @@
 
 ## Enum
 
-* `EMPTY` (value: `''`)
+* `AIModelCapabilityNil` (value: `''`)
 
-* `FUNCTION_MINUS_CALLING` (value: `'function-calling'`)
+* `AIModelCapabilityFunctionCalling` (value: `'function-calling'`)
 
-* `FUNCTION_MINUS_CALLING_STREAMING` (value: `'function-calling_streaming'`)
+* `AIModelCapabilityFunctionCallingStreaming` (value: `'function-calling_streaming'`)
 
-* `TEXT_MINUS_TO_MINUS_EMBEDDING` (value: `'text-to-embedding'`)
+* `AIModelCapabilityTextToEmbedding` (value: `'text-to-embedding'`)
 
-* `TEXT_MINUS_TO_MINUS_TEXT` (value: `'text-to-text'`)
+* `AIModelCapabilityTextToText` (value: `'text-to-text'`)
 
-* `TEXT_MINUS_TO_MINUS_TEXT_STREAMING` (value: `'text-to-text_streaming'`)
+* `AIModelCapabilityTextToTextStreaming` (value: `'text-to-text_streaming'`)
 
-* `TEXT_MINUS_TO_MINUS_IMAGE` (value: `'text-to-image'`)
+* `AIModelCapabilityTextToImage` (value: `'text-to-image'`)
 
-* `TEXT_MINUS_TO_MINUS_SPEECH` (value: `'text-to-speech'`)
+* `AIModelCapabilityTextToSpeech` (value: `'text-to-speech'`)
 
-* `TEXT_MINUS_TO_MINUS_SPEECH_STREAMING` (value: `'text-to-speech_streaming'`)
+* `AIModelCapabilityTextToSpeechStreaming` (value: `'text-to-speech_streaming'`)
 
-* `TEXT_MINUS_TO_MINUS_MUSIC` (value: `'text-to-music'`)
+* `AIModelCapabilityTextToMusic` (value: `'text-to-music'`)
 
-* `TEXT_MINUS_TO_MINUS_MUSIC_STREAMING` (value: `'text-to-music_streaming'`)
+* `AIModelCapabilityTextToMusicStreaming` (value: `'text-to-music_streaming'`)
 
-* `TEXT_MINUS_TO_MINUS_VIDEO` (value: `'text-to-video'`)
+* `AIModelCapabilityTextToVideo` (value: `'text-to-video'`)
 
-* `TEXT_MINUS_TO_MINUS_VIDEO_STREAMING` (value: `'text-to-video_streaming'`)
+* `AIModelCapabilityTextToVideoStreaming` (value: `'text-to-video_streaming'`)
 
-* `SPEECH_MINUS_TO_MINUS_EMBEDDING` (value: `'speech-to-embedding'`)
+* `AIModelCapabilitySpeechToEmbedding` (value: `'speech-to-embedding'`)
 
-* `SPEECH_MINUS_TO_MINUS_TEXT` (value: `'speech-to-text'`)
+* `AIModelCapabilitySpeechToText` (value: `'speech-to-text'`)
 
-* `SPEECH_MINUS_TO_MINUS_TEXT_STREAMING` (value: `'speech-to-text_streaming'`)
+* `AIModelCapabilitySpeechToTextStreaming` (value: `'speech-to-text_streaming'`)
 
-* `IMAGE_MINUS_TO_MINUS_EMBEDDING` (value: `'image-to-embedding'`)
+* `AIModelCapabilityImageToEmbedding` (value: `'image-to-embedding'`)
 
-* `IMAGE_MINUS_TO_MINUS_TEXT` (value: `'image-to-text'`)
+* `AIModelCapabilityImageToText` (value: `'image-to-text'`)
 
-* `VIDEO_MINUS_TO_MINUS_EMBEDDING` (value: `'video-to-embedding'`)
+* `AIModelCapabilityVideoToEmbedding` (value: `'video-to-embedding'`)
 
-* `VIDEO_MINUS_TO_MINUS_TEXT` (value: `'video-to-text'`)
+* `AIModelCapabilityVideoToText` (value: `'video-to-text'`)
 
-* `VIDEO_MINUS_TO_MINUS_TEXT_STREAMING` (value: `'video-to-text_streaming'`)
+* `AIModelCapabilityVideoToTextStreaming` (value: `'video-to-text_streaming'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,15 +3,15 @@
 
 ## Enum
 
-* `UNKNOWN` (value: `'unknown'`)
+* `ConversationRoleUnknown` (value: `'unknown'`)
 
-* `USER` (value: `'user'`)
+* `ConversationRoleUser` (value: `'user'`)
 
-* `SYSTEM` (value: `'system'`)
+* `ConversationRoleSystem` (value: `'system'`)
 
-* `ASSISTANT` (value: `'assistant'`)
+* `ConversationRoleAssistant` (value: `'assistant'`)
 
-* `AIGENT` (value: `'aigent'`)
+* `ConversationRoleAIgent` (value: `'aigent'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

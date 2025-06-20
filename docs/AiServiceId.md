@@ -3,31 +3,31 @@
 
 ## Enum
 
-* `ANTHROPIC` (value: `'anthropic'`)
+* `AiServiceIdAnthropic` (value: `'anthropic'`)
 
-* `ANTHROPICGOOGLECLOUD` (value: `'anthropicgooglecloud'`)
+* `AiServiceIdAnthropicGcp` (value: `'anthropicgooglecloud'`)
 
-* `ASSEMBLYAI` (value: `'assemblyai'`)
+* `AiServiceIdAssemblyAI` (value: `'assemblyai'`)
 
-* `AZUREAI` (value: `'azureai'`)
+* `AiServiceIdAzureAI` (value: `'azureai'`)
 
-* `BLACKFOREST` (value: `'blackforest'`)
+* `AiServiceIdBlackForest` (value: `'blackforest'`)
 
-* `ELEVENLABS` (value: `'elevenlabs'`)
+* `AiServiceIdElevenLabs` (value: `'elevenlabs'`)
 
-* `GOOGLEVERTEXAI` (value: `'googlevertexai'`)
+* `AiServiceIdGoogleVertexAi` (value: `'googlevertexai'`)
 
-* `LEONARDOAI` (value: `'leonardoai'`)
+* `AiServiceIdLeonardoAI` (value: `'leonardoai'`)
 
-* `MISTRALAI` (value: `'mistralai'`)
+* `AiServiceIdMistralAI` (value: `'mistralai'`)
 
-* `OPENAI` (value: `'openai'`)
+* `AiServiceIdOpenAI` (value: `'openai'`)
 
-* `REPLICATE` (value: `'replicate'`)
+* `AiServiceIdReplicate` (value: `'replicate'`)
 
-* `SCALEWAY` (value: `'scaleway'`)
+* `AiServiceIdScaleway` (value: `'scaleway'`)
 
-* `VAIEMBED` (value: `'vaiembed'`)
+* `AiServiceIdVaiEmbed` (value: `'vaiembed'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

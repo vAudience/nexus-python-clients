@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `EMPTY` (value: `''`)
+* `MissionCompletionReasonNil` (value: `''`)
 
-* `CANCELED` (value: `'canceled'`)
+* `MissionCompletionReasonCanceled` (value: `'canceled'`)
 
-* `COMPLETED` (value: `'completed'`)
+* `MissionCompletionReasonCompleted` (value: `'completed'`)
 
-* `ERROR` (value: `'error'`)
+* `MissionCompletionReasonError` (value: `'error'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

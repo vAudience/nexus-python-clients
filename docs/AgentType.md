@@ -3,11 +3,11 @@
 
 ## Enum
 
-* `EMPTY` (value: `''`)
+* `AgentTypeNil` (value: `''`)
 
-* `BASIC` (value: `'basic'`)
+* `AgentTypeBasic` (value: `'basic'`)
 
-* `SERVICE` (value: `'service'`)
+* `AgentTypeService` (value: `'service'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

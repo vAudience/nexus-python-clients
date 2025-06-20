@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `MESSAGE` (value: `'message'`)
+* `AIgencyMessageTypeMessage` (value: `'message'`)
 
-* `STATEUPDATE` (value: `'stateUpdate'`)
+* `AIgencyMessageTypeStateUpdate` (value: `'stateUpdate'`)
 
-* `DELTA` (value: `'delta'`)
+* `AIgencyMessageTypeDelta` (value: `'delta'`)
 
-* `ERROR` (value: `'error'`)
+* `AIgencyMessageTypeError` (value: `'error'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

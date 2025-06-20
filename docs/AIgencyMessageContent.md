@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file** | [**AIgencyMessageFile**](AIgencyMessageFile.md) |  | [optional] 
+**file** | [**AIgencyMessageFile**](AIgencyMessageFile.md) | Currently unused in favor of attachment list | [optional] 
 **function_call** | [**AIgencyFunctionCall**](AIgencyFunctionCall.md) |  | [optional] 
 **function_responses** | [**AIgencyFunctionResponse**](AIgencyFunctionResponse.md) |  | [optional] 
 **text** | **str** |  | [optional] 

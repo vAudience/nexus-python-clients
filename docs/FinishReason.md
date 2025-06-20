@@ -3,21 +3,21 @@
 
 ## Enum
 
-* `EMPTY` (value: `''`)
+* `FinishReasonNil` (value: `''`)
 
-* `ERROR` (value: `'error'`)
+* `FinishReasonError` (value: `'error'`)
 
-* `CONTENT_FILTER` (value: `'content_filter'`)
+* `FinishReasonContentFilter` (value: `'content_filter'`)
 
-* `MAX_TOKENS` (value: `'max_tokens'`)
+* `FinishReasonMaxTokens` (value: `'max_tokens'`)
 
-* `STOP` (value: `'stop'`)
+* `FinishReasonStop` (value: `'stop'`)
 
-* `TOOL_CALLS` (value: `'tool_calls'`)
+* `FinishReasonToolCalls` (value: `'tool_calls'`)
 
-* `DELTA` (value: `'delta'`)
+* `FinishReasonDelta` (value: `'delta'`)
 
-* `UNKNOWN` (value: `'unknown'`)
+* `FinishReasonUnknown` (value: `'unknown'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

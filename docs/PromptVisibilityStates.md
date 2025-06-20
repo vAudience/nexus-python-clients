@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `PRIVATE` (value: `'private'`)
+* `PromptVisibilityPrivate` (value: `'private'`)
 
-* `ORG` (value: `'org'`)
+* `PromptVisibilityOrganization` (value: `'org'`)
 
-* `PUBLIC` (value: `'public'`)
+* `PromptVisibilityPublic` (value: `'public'`)
 
-* `CURATED` (value: `'curated'`)
+* `PromptVisibilityCurated` (value: `'curated'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

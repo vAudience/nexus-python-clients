@@ -3,19 +3,19 @@
 
 ## Enum
 
-* `TOKENS` (value: `'tokens'`)
+* `AIModelMinMaxUnitTokens` (value: `'tokens'`)
 
-* `CHARACTERS` (value: `'characters'`)
+* `AIModelMinMaxUnitCharacters` (value: `'characters'`)
 
-* `FILES` (value: `'files'`)
+* `AIModelMinMaxUnitFiles` (value: `'files'`)
 
-* `SECONDS` (value: `'seconds'`)
+* `AIModelMinMaxUnitSeconds` (value: `'seconds'`)
 
-* `IMAGES` (value: `'images'`)
+* `AIModelMinMaxUnitImages` (value: `'images'`)
 
-* `PIXELS` (value: `'pixels'`)
+* `AIModelMinMaxUnitPixels` (value: `'pixels'`)
 
-* `MEGABYTES` (value: `'megabytes'`)
+* `AIModelMinMaxUnitFilesizeMegabytes` (value: `'megabytes'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

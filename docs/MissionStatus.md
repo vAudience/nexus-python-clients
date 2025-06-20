@@ -3,19 +3,19 @@
 
 ## Enum
 
-* `CREATED` (value: `'created'`)
+* `MissionStatusCreated` (value: `'created'`)
 
-* `STARTED` (value: `'started'`)
+* `MissionStatusStarted` (value: `'started'`)
 
-* `PAUSED` (value: `'paused'`)
+* `MissionStatusPaused` (value: `'paused'`)
 
-* `RESUMED` (value: `'resumed'`)
+* `MissionStatusResumed` (value: `'resumed'`)
 
-* `CANCELED` (value: `'canceled'`)
+* `MissionStatusCanceled` (value: `'canceled'`)
 
-* `FAILED` (value: `'failed'`)
+* `MissionStatusFailed` (value: `'failed'`)
 
-* `COMPLETED` (value: `'completed'`)
+* `MissionStatusCompleted` (value: `'completed'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

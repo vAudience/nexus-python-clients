@@ -17,8 +17,10 @@ Name | Type | Description | Notes
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **meta_data** | **object** |  | [optional] 
+**model_category** | **str** |  | [optional] 
 **model_host_location** | [**HostingLocation**](HostingLocation.md) |  | [optional] 
 **model_id** | **str** |  | 
+**model_release_date** | **int** |  | [optional] 
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 

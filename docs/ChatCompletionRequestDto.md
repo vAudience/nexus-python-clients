@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **parameters** | **object** |  | [optional] 
 **set_message_history_ids** | **List[str]** | If UseChannelMessagesAsHistory is false, this list of message IDs will be used as history, if empty, the history will be empty, ignored if UseChannelMessagesAsHistory is true | [optional] 
 **use_channel_messages_as_history** | **bool** | If true, the channel messages will be used as history and SetMessageHistoryIds will be ignored | [optional] 
+**use_summary_service** | **bool** |  | [optional] 
 **use_tools** | **bool** |  | [optional] 
 **var_replacements** | **Dict[str, str]** |  | [optional] 
 

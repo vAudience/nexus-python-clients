@@ -3,19 +3,19 @@
 
 ## Enum
 
-* `EMPTY` (value: `''`)
+* `HostingLocationNil` (value: `''`)
 
-* `USA` (value: `'usa'`)
+* `HostingLocationUSA` (value: `'usa'`)
 
-* `EUROPE` (value: `'europe'`)
+* `HostingLocationEU` (value: `'europe'`)
 
-* `GERMANY` (value: `'germany'`)
+* `HostingLocationGERMANY` (value: `'germany'`)
 
-* `SWISS` (value: `'swiss'`)
+* `HostingLocationSWISS` (value: `'swiss'`)
 
-* `UK` (value: `'uk'`)
+* `HostingLocationUK` (value: `'uk'`)
 
-* `ANY` (value: `'any'`)
+* `HostingLocationANY` (value: `'any'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
