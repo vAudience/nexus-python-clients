@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abilities** | [**List[Ability]**](Ability.md) |  | [optional] 
+**abilities_v2** | [**List[AbilityV2]**](AbilityV2.md) |  | [optional] 
 **accepted_file_mimetypes** | **List[str]** |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 

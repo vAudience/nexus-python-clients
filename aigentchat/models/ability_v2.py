@@ -18,25 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
-from aigentchat.models.embedding_item import EmbeddingItem
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from aigentchat.models.ai_model_constraint import AIModelConstraint
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TextEmbedding(BaseModel):
+class AbilityV2(BaseModel):
     """
-    TextEmbedding
+    AbilityV2
     """ # noqa: E501
-    agent_id: StrictStr
-    embeddings: List[EmbeddingItem]
-    execution_id: StrictStr
-    model_id: StrictStr
-    parameters: Dict[str, Any]
-    service_id: StrictStr
-    tokens: StrictInt
+    constraints: Optional[List[AIModelConstraint]] = None
+    type: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["agent_id", "embeddings", "execution_id", "model_id", "parameters", "service_id", "tokens"]
+    __properties: ClassVar[List[str]] = ["constraints", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +51,7 @@ class TextEmbedding(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TextEmbedding from a JSON string"""
+        """Create an instance of AbilityV2 from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -79,13 +74,13 @@ class TextEmbedding(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in embeddings (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in constraints (list)
         _items = []
-        if self.embeddings:
-            for _item_embeddings in self.embeddings:
-                if _item_embeddings:
-                    _items.append(_item_embeddings.to_dict())
-            _dict['embeddings'] = _items
+        if self.constraints:
+            for _item_constraints in self.constraints:
+                if _item_constraints:
+                    _items.append(_item_constraints.to_dict())
+            _dict['constraints'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -95,7 +90,7 @@ class TextEmbedding(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TextEmbedding from a dict"""
+        """Create an instance of AbilityV2 from a dict"""
         if obj is None:
             return None
 
@@ -103,13 +98,8 @@ class TextEmbedding(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "agent_id": obj.get("agent_id"),
-            "embeddings": [EmbeddingItem.from_dict(_item) for _item in obj["embeddings"]] if obj.get("embeddings") is not None else None,
-            "execution_id": obj.get("execution_id"),
-            "model_id": obj.get("model_id"),
-            "parameters": obj.get("parameters"),
-            "service_id": obj.get("service_id"),
-            "tokens": obj.get("tokens")
+            "constraints": [AIModelConstraint.from_dict(_item) for _item in obj["constraints"]] if obj.get("constraints") is not None else None,
+            "type": obj.get("type")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

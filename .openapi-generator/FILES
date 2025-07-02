@@ -46,6 +46,7 @@ aigentchat/models/a_igency_thinking.py
 aigentchat/models/a_igency_thumbnail.py
 aigentchat/models/ability.py
 aigentchat/models/ability_type.py
+aigentchat/models/ability_v2.py
 aigentchat/models/agent.py
 aigentchat/models/agent_i18n.py
 aigentchat/models/agent_type.py
@@ -149,6 +150,7 @@ docs/AIgencyThinking.md
 docs/AIgencyThumbnail.md
 docs/Ability.md
 docs/AbilityType.md
+docs/AbilityV2.md
 docs/Agent.md
 docs/AgentI18n.md
 docs/AgentType.md
@@ -245,6 +247,7 @@ test/test_a_igency_thinking.py
 test/test_a_igency_thumbnail.py
 test/test_ability.py
 test/test_ability_type.py
+test/test_ability_v2.py
 test/test_agent.py
 test/test_agent_i18n.py
 test/test_agent_type.py

@@ -15,10 +15,10 @@
 
 import unittest
 
-from aigentchat.models.agent_i18n import AgentI18n
+from aigentchat.models.ability_v2 import AbilityV2
 
-class TestAgentI18n(unittest.TestCase):
-    """AgentI18n unit test stubs"""
+class TestAbilityV2(unittest.TestCase):
+    """AbilityV2 unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,32 @@ class TestAgentI18n(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AgentI18n:
-        """Test AgentI18n
+    def make_instance(self, include_optional) -> AbilityV2:
+        """Test AbilityV2
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AgentI18n`
+        # uncomment below to create an instance of `AbilityV2`
         """
-        model = AgentI18n()
+        model = AbilityV2()
         if include_optional:
-            return AgentI18n(
-                description = '',
-                model_category = '',
-                name = '0'
+            return AbilityV2(
+                constraints = [
+                    aigentchat.models.ai_model_constraint.AIModelConstraint(
+                        direction = 'input', 
+                        max = 56, 
+                        min = 56, 
+                        unit = 'tokens', )
+                    ],
+                type = ''
             )
         else:
-            return AgentI18n(
-                name = '0',
+            return AbilityV2(
         )
         """
 
-    def testAgentI18n(self):
-        """Test AgentI18n"""
+    def testAbilityV2(self):
+        """Test AbilityV2"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
