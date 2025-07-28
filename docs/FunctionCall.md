@@ -6,8 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
+**hosting_location** | **str** |  | [optional] 
+**i18n** | [**Dict[str, FunctionCallI18n]**](FunctionCallI18n.md) |  | [optional] 
+**icon** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **parameters** | **str** |  | [optional] 
+**response_visible** | **bool** |  | [optional] 
+**tool_id** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 
 ## Example

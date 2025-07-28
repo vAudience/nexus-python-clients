@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_agents**
-> List[Agent] list_agents(org_id, add_default_agents=add_default_agents, ability=ability)
+> List[Agent] list_agents(org_id, add_default_agents=add_default_agents, skip_default_agents_filter=skip_default_agents_filter, ability=ability)
 
 List agents
 
@@ -670,11 +670,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     add_default_agents = True # bool | Include default agents to the list of org owned agents (optional)
+    skip_default_agents_filter = True # bool | Skip the default agent filtering of the organization settings (optional)
     ability = 'ability_example' # str | Filter agents by ability type (optional)
 
     try:
         # List agents
-        api_response = api_instance.list_agents(org_id, add_default_agents=add_default_agents, ability=ability)
+        api_response = api_instance.list_agents(org_id, add_default_agents=add_default_agents, skip_default_agents_filter=skip_default_agents_filter, ability=ability)
         print("The response of AgentsApi->list_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -690,6 +691,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **add_default_agents** | **bool**| Include default agents to the list of org owned agents | [optional] 
+ **skip_default_agents_filter** | **bool**| Skip the default agent filtering of the organization settings | [optional] 
  **ability** | **str**| Filter agents by ability type | [optional] 
 
 ### Return type

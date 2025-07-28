@@ -520,7 +520,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_ai_model_services_with_models**
-> List[AIModelServiceWithModels] list_ai_model_services_with_models(org_id, org_id2=org_id2)
+> List[AIModelServiceWithModels] list_ai_model_services_with_models(org_id)
 
 List AI services with models
 
@@ -558,11 +558,10 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AIModelServicesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    org_id2 = 'org_id_example' # str | return only available AI model services for this organization (optional)
 
     try:
         # List AI services with models
-        api_response = api_instance.list_ai_model_services_with_models(org_id, org_id2=org_id2)
+        api_response = api_instance.list_ai_model_services_with_models(org_id)
         print("The response of AIModelServicesApi->list_ai_model_services_with_models:\n")
         pprint(api_response)
     except Exception as e:
@@ -577,7 +576,6 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **org_id2** | **str**| return only available AI model services for this organization | [optional] 
 
 ### Return type
 

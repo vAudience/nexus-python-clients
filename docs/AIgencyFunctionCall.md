@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **arguments** | **object** |  | [optional] 
 **function_name** | **str** |  | 
 **id** | **str** |  | 
+**tool_function_id** | **str** |  | [optional] 
 
 ## Example
 

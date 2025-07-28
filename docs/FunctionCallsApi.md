@@ -4,13 +4,13 @@ All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**execute_function_call**](FunctionCallsApi.md#execute_function_call) | **POST** /v1/organizations/{org_id}/function-calls/{name} | Execute a function call
-[**get_function_call**](FunctionCallsApi.md#get_function_call) | **GET** /v1/organizations/{org_id}/function-calls/{name} | Get function call definition
+[**execute_function_call**](FunctionCallsApi.md#execute_function_call) | **POST** /v1/organizations/{org_id}/function-calls/{ref} | Execute a function call
+[**get_function_call**](FunctionCallsApi.md#get_function_call) | **GET** /v1/organizations/{org_id}/function-calls/{ref} | Get function call definition
 [**get_function_calls**](FunctionCallsApi.md#get_function_calls) | **GET** /v1/organizations/{org_id}/function-calls | List accessible function calls
 
 
 # **execute_function_call**
-> FunctionCallResults execute_function_call(org_id, name, arguments)
+> FunctionCallResults execute_function_call(org_id, ref, arguments)
 
 Execute a function call
 
@@ -48,12 +48,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.FunctionCallsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    name = 'name_example' # str | Function call name
+    ref = 'ref_example' # str | Function call name or ID
     arguments = None # object | Function call arguments
 
     try:
         # Execute a function call
-        api_response = api_instance.execute_function_call(org_id, name, arguments)
+        api_response = api_instance.execute_function_call(org_id, ref, arguments)
         print("The response of FunctionCallsApi->execute_function_call:\n")
         pprint(api_response)
     except Exception as e:
@@ -68,7 +68,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **name** | **str**| Function call name | 
+ **ref** | **str**| Function call name or ID | 
  **arguments** | **object**| Function call arguments | 
 
 ### Return type
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_function_call**
-> FunctionCall get_function_call(org_id, name)
+> FunctionCall get_function_call(org_id, ref)
 
 Get function call definition
 
@@ -136,11 +136,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.FunctionCallsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    name = 'name_example' # str | Function call name
+    ref = 'ref_example' # str | Function call name or ID
 
     try:
         # Get function call definition
-        api_response = api_instance.get_function_call(org_id, name)
+        api_response = api_instance.get_function_call(org_id, ref)
         print("The response of FunctionCallsApi->get_function_call:\n")
         pprint(api_response)
     except Exception as e:
@@ -155,7 +155,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **name** | **str**| Function call name | 
+ **ref** | **str**| Function call name or ID | 
 
 ### Return type
 

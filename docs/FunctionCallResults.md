@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **result_files** | [**List[ResultFile]**](ResultFile.md) |  | [optional] 
 **result_texts** | **List[str]** |  | [optional] 
+**tool_function_id** | **str** |  | [optional] 
+**tool_id** | **str** |  | [optional] 
 
 ## Example
 

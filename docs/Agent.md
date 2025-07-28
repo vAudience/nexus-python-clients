@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abilities** | [**List[Ability]**](Ability.md) |  | [optional] 
 **abilities_v2** | [**List[AbilityV2]**](AbilityV2.md) |  | [optional] 
+**add_tool_guidelines** | **bool** |  | [optional] 
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **i18n** | [**Dict[str, AgentI18n]**](AgentI18n.md) |  | [optional] 
 **id** | **str** |  | 
+**ignore_incoming_overwrite** | **bool** |  | [optional] 
 **initial_user_messages** | **List[str]** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 

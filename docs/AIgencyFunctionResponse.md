@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **function_name** | **str** |  | 
 **id** | **str** |  | 
+**is_error** | **bool** |  | [optional] 
 **result** | **str** |  | 
+**tool_function_id** | **str** |  | [optional] 
 
 ## Example
 

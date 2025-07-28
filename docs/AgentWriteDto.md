@@ -5,11 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**add_tool_guidelines** | **bool** |  | [optional] 
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **i18n** | [**Dict[str, AgentI18n]**](AgentI18n.md) |  | [optional] 
+**ignore_incoming_overwrite** | **bool** |  | [optional] 
 **initial_user_messages** | **List[str]** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 

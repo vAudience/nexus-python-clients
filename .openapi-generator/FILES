@@ -23,6 +23,7 @@ aigentchat/api/metrics_api.py
 aigentchat/api/missions_api.py
 aigentchat/api/org_cost_budgets_api.py
 aigentchat/api/prompts_api.py
+aigentchat/api/tools_api.py
 aigentchat/api/version_api.py
 aigentchat/api_client.py
 aigentchat/api_response.py
@@ -89,6 +90,7 @@ aigentchat/models/file_upload_response.py
 aigentchat/models/file_upload_settings.py
 aigentchat/models/finish_reason.py
 aigentchat/models/function_call.py
+aigentchat/models/function_call_i18n.py
 aigentchat/models/function_call_results.py
 aigentchat/models/health_response.py
 aigentchat/models/hosting_location.py
@@ -115,6 +117,9 @@ aigentchat/models/text_embedding.py
 aigentchat/models/text_embedding_item_dto.py
 aigentchat/models/text_embedding_request_dto.py
 aigentchat/models/token_direction.py
+aigentchat/models/tool.py
+aigentchat/models/tool_function.py
+aigentchat/models/tool_i18n.py
 aigentchat/models/version_response.py
 aigentchat/py.typed
 aigentchat/rest.py
@@ -187,6 +192,7 @@ docs/FileUploadResponse.md
 docs/FileUploadSettings.md
 docs/FinishReason.md
 docs/FunctionCall.md
+docs/FunctionCallI18n.md
 docs/FunctionCallResults.md
 docs/FunctionCallsApi.md
 docs/HealthApi.md
@@ -221,6 +227,10 @@ docs/TextEmbedding.md
 docs/TextEmbeddingItemDto.md
 docs/TextEmbeddingRequestDto.md
 docs/TokenDirection.md
+docs/Tool.md
+docs/ToolFunction.md
+docs/ToolI18n.md
+docs/ToolsApi.md
 docs/VersionApi.md
 docs/VersionResponse.md
 git_push.sh
@@ -299,6 +309,7 @@ test/test_file_upload_response.py
 test/test_file_upload_settings.py
 test/test_finish_reason.py
 test/test_function_call.py
+test/test_function_call_i18n.py
 test/test_function_call_results.py
 test/test_function_calls_api.py
 test/test_health_api.py
@@ -333,6 +344,10 @@ test/test_text_embedding.py
 test/test_text_embedding_item_dto.py
 test/test_text_embedding_request_dto.py
 test/test_token_direction.py
+test/test_tool.py
+test/test_tool_function.py
+test/test_tool_i18n.py
+test/test_tools_api.py
 test/test_version_api.py
 test/test_version_response.py
 tox.ini
