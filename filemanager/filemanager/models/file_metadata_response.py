@@ -30,6 +30,7 @@ class FileMetadataResponse(BaseModel):
     expires_at: Optional[StrictStr] = None
     file_name: StrictStr
     file_size: StrictInt
+    file_storage_type: StrictStr
     id: StrictStr
     metadata: Optional[Dict[str, Any]] = None
     mime_type: StrictStr
@@ -39,17 +40,16 @@ class FileMetadataResponse(BaseModel):
     original_mime_type: StrictStr
     original_url: Optional[StrictStr] = None
     storage_path: StrictStr
-    storage_type: StrictStr
     team_id: Optional[StrictStr] = None
     updated_at: StrictStr
     upload_category: StrictStr
     url: StrictStr
     user_id: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "expires_at", "file_name", "file_size", "id", "metadata", "mime_type", "organization_id", "original_file_name", "original_file_size", "original_mime_type", "original_url", "storage_path", "storage_type", "team_id", "updated_at", "upload_category", "url", "user_id"]
+    __properties: ClassVar[List[str]] = ["created_at", "expires_at", "file_name", "file_size", "file_storage_type", "id", "metadata", "mime_type", "organization_id", "original_file_name", "original_file_size", "original_mime_type", "original_url", "storage_path", "team_id", "updated_at", "upload_category", "url", "user_id"]
 
-    @field_validator('storage_type')
-    def storage_type_validate_enum(cls, value):
+    @field_validator('file_storage_type')
+    def file_storage_type_validate_enum(cls, value):
         """Validates the enum"""
         if value not in set(['temp', 'public', 'private-org', 'private-org-user', 'private-team']):
             raise ValueError("must be one of enum values ('temp', 'public', 'private-org', 'private-org-user', 'private-team')")
@@ -117,6 +117,7 @@ class FileMetadataResponse(BaseModel):
             "expires_at": obj.get("expires_at"),
             "file_name": obj.get("file_name"),
             "file_size": obj.get("file_size"),
+            "file_storage_type": obj.get("file_storage_type"),
             "id": obj.get("id"),
             "metadata": obj.get("metadata"),
             "mime_type": obj.get("mime_type"),
@@ -126,7 +127,6 @@ class FileMetadataResponse(BaseModel):
             "original_mime_type": obj.get("original_mime_type"),
             "original_url": obj.get("original_url"),
             "storage_path": obj.get("storage_path"),
-            "storage_type": obj.get("storage_type"),
             "team_id": obj.get("team_id"),
             "updated_at": obj.get("updated_at"),
             "upload_category": obj.get("upload_category"),

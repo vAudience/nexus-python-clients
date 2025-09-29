@@ -16,31 +16,102 @@
 
 __version__ = "1.0.0"
 
-# import apis into sdk package
-from filemanager.api.files_api import FilesApi
-from filemanager.api.files_metadata_api import FilesMetadataApi
-from filemanager.api.health_api import HealthApi
-from filemanager.api.metrics_api import MetricsApi
-from filemanager.api.version_api import VersionApi
+# Define package exports
+__all__ = [
+    "FilesApi",
+    "FilesMetadataApi",
+    "HealthApi",
+    "MetricsApi",
+    "VersionApi",
+    "ApiResponse",
+    "ApiClient",
+    "Configuration",
+    "OpenApiException",
+    "ApiTypeError",
+    "ApiValueError",
+    "ApiKeyError",
+    "ApiAttributeError",
+    "ApiException",
+    "ErrorDetail",
+    "ErrorResponse",
+    "FileMetadataBatchGetRequest",
+    "FileMetadataBatchResponse",
+    "FileMetadataResponse",
+    "FileUploadResponse",
+    "FileUploadSettings",
+    "HealthResponse",
+    "VersionResponse",
+]
+
+if __import__("typing").TYPE_CHECKING:
+    # import apis into sdk package
+    from filemanager.api.files_api import FilesApi as FilesApi
+    from filemanager.api.files_metadata_api import FilesMetadataApi as FilesMetadataApi
+    from filemanager.api.health_api import HealthApi as HealthApi
+    from filemanager.api.metrics_api import MetricsApi as MetricsApi
+    from filemanager.api.version_api import VersionApi as VersionApi
+    
+    # import ApiClient
+    from filemanager.api_response import ApiResponse as ApiResponse
+    from filemanager.api_client import ApiClient as ApiClient
+    from filemanager.configuration import Configuration as Configuration
+    from filemanager.exceptions import OpenApiException as OpenApiException
+    from filemanager.exceptions import ApiTypeError as ApiTypeError
+    from filemanager.exceptions import ApiValueError as ApiValueError
+    from filemanager.exceptions import ApiKeyError as ApiKeyError
+    from filemanager.exceptions import ApiAttributeError as ApiAttributeError
+    from filemanager.exceptions import ApiException as ApiException
+    
+    # import models into sdk package
+    from filemanager.models.error_detail import ErrorDetail as ErrorDetail
+    from filemanager.models.error_response import ErrorResponse as ErrorResponse
+    from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest as FileMetadataBatchGetRequest
+    from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse as FileMetadataBatchResponse
+    from filemanager.models.file_metadata_response import FileMetadataResponse as FileMetadataResponse
+    from filemanager.models.file_upload_response import FileUploadResponse as FileUploadResponse
+    from filemanager.models.file_upload_settings import FileUploadSettings as FileUploadSettings
+    from filemanager.models.health_response import HealthResponse as HealthResponse
+    from filemanager.models.version_response import VersionResponse as VersionResponse
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            ("__version__", __version__),
+            ("__all__", __all__),
+            """# import apis into sdk package
+from filemanager.api.files_api import FilesApi as FilesApi
+from filemanager.api.files_metadata_api import FilesMetadataApi as FilesMetadataApi
+from filemanager.api.health_api import HealthApi as HealthApi
+from filemanager.api.metrics_api import MetricsApi as MetricsApi
+from filemanager.api.version_api import VersionApi as VersionApi
 
 # import ApiClient
-from filemanager.api_response import ApiResponse
-from filemanager.api_client import ApiClient
-from filemanager.configuration import Configuration
-from filemanager.exceptions import OpenApiException
-from filemanager.exceptions import ApiTypeError
-from filemanager.exceptions import ApiValueError
-from filemanager.exceptions import ApiKeyError
-from filemanager.exceptions import ApiAttributeError
-from filemanager.exceptions import ApiException
+from filemanager.api_response import ApiResponse as ApiResponse
+from filemanager.api_client import ApiClient as ApiClient
+from filemanager.configuration import Configuration as Configuration
+from filemanager.exceptions import OpenApiException as OpenApiException
+from filemanager.exceptions import ApiTypeError as ApiTypeError
+from filemanager.exceptions import ApiValueError as ApiValueError
+from filemanager.exceptions import ApiKeyError as ApiKeyError
+from filemanager.exceptions import ApiAttributeError as ApiAttributeError
+from filemanager.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from filemanager.models.error_detail import ErrorDetail
-from filemanager.models.error_response import ErrorResponse
-from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest
-from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse
-from filemanager.models.file_metadata_response import FileMetadataResponse
-from filemanager.models.file_upload_response import FileUploadResponse
-from filemanager.models.file_upload_settings import FileUploadSettings
-from filemanager.models.health_response import HealthResponse
-from filemanager.models.version_response import VersionResponse
+from filemanager.models.error_detail import ErrorDetail as ErrorDetail
+from filemanager.models.error_response import ErrorResponse as ErrorResponse
+from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest as FileMetadataBatchGetRequest
+from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse as FileMetadataBatchResponse
+from filemanager.models.file_metadata_response import FileMetadataResponse as FileMetadataResponse
+from filemanager.models.file_upload_response import FileUploadResponse as FileUploadResponse
+from filemanager.models.file_upload_settings import FileUploadSettings as FileUploadSettings
+from filemanager.models.health_response import HealthResponse as HealthResponse
+from filemanager.models.version_response import VersionResponse as VersionResponse
+
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )

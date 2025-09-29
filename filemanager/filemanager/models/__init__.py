@@ -13,7 +13,25 @@
 """  # noqa: E501
 
 
-# import models into model package
+if __import__("typing").TYPE_CHECKING:
+    # import models into model package
+    from filemanager.models.error_detail import ErrorDetail
+    from filemanager.models.error_response import ErrorResponse
+    from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest
+    from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse
+    from filemanager.models.file_metadata_response import FileMetadataResponse
+    from filemanager.models.file_upload_response import FileUploadResponse
+    from filemanager.models.file_upload_settings import FileUploadSettings
+    from filemanager.models.health_response import HealthResponse
+    from filemanager.models.version_response import VersionResponse
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            """# import models into model package
 from filemanager.models.error_detail import ErrorDetail
 from filemanager.models.error_response import ErrorResponse
 from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest
@@ -23,3 +41,9 @@ from filemanager.models.file_upload_response import FileUploadResponse
 from filemanager.models.file_upload_settings import FileUploadSettings
 from filemanager.models.health_response import HealthResponse
 from filemanager.models.version_response import VersionResponse
+
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )

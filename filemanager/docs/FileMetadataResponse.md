@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **expires_at** | **str** |  | [optional] 
 **file_name** | **str** |  | 
 **file_size** | **int** |  | 
+**file_storage_type** | **str** |  | 
 **id** | **str** |  | 
 **metadata** | **object** |  | [optional] 
 **mime_type** | **str** |  | 
@@ -18,7 +19,6 @@ Name | Type | Description | Notes
 **original_mime_type** | **str** |  | 
 **original_url** | **str** |  | [optional] 
 **storage_path** | **str** |  | 
-**storage_type** | **str** |  | 
 **team_id** | **str** |  | [optional] 
 **updated_at** | **str** |  | 
 **upload_category** | **str** |  | 
