@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**updates** | **List[str]** |  | 
+**updates** | [**List[AIgencyFunctionStatusUpdateData]**](AIgencyFunctionStatusUpdateData.md) |  | 
 
 ## Example
 

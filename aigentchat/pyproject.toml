@@ -1,23 +1,30 @@
-[tool.poetry]
+[project]
 name = "aigentchat"
 version = "1.0.0"
 description = "vAudience AIgentChat API"
-authors = ["vAudience <contact@vaudience.ai>"]
+authors = [
+  {name = "vAudience",email = "contact@vaudience.ai"},
+]
 license = "Copyrighted"
 readme = "README.md"
-repository = "https://github.com/vaudience/nexus-python-clients/aigentchat"
 keywords = ["OpenAPI", "OpenAPI-Generator", "vAudience AIgentChat API"]
-include = ["aigentchat/py.typed"]
+requires-python = ">=3.9"
 
-[tool.poetry.dependencies]
-python = "^3.9"
+dependencies = [
+  "urllib3 (>=2.1.0,<3.0.0)",
+  "python-dateutil (>=2.8.2)",
+  "pydantic (>=2)",
+  "typing-extensions (>=4.7.1)",
+  "lazy-imports (>=1,<2)"
+]
 
-urllib3 = ">= 2.1.0, < 3.0.0"
-python-dateutil = ">= 2.8.2"
-pydantic = ">= 2"
-typing-extensions = ">= 4.7.1"
+[project.urls]
+Repository = "https://github.com/vaudience/nexus-python-clients/aigentchat"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry]
+requires-poetry = ">=2.0"
+
+[tool.poetry.group.dev.dependencies]
 pytest = ">= 7.2.1"
 pytest-cov = ">= 2.8.1"
 tox = ">= 3.9.0"

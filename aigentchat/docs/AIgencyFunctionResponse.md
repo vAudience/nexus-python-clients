@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **is_error** | **bool** |  | [optional] 
 **result** | **str** |  | 
+**result_meta_data** | **object** |  | [optional] 
 **tool_function_id** | **str** |  | [optional] 
 
 ## Example

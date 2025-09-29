@@ -10,6 +10,7 @@ aigentchat/api/agents_api.py
 aigentchat/api/ai_model_services_api.py
 aigentchat/api/ai_models_api.py
 aigentchat/api/audio_api.py
+aigentchat/api/audit_trails_api.py
 aigentchat/api/channels_api.py
 aigentchat/api/chat_completions_api.py
 aigentchat/api/connection_tokens_api.py
@@ -33,6 +34,7 @@ aigentchat/models/__init__.py
 aigentchat/models/a_igency_function_call.py
 aigentchat/models/a_igency_function_response.py
 aigentchat/models/a_igency_function_status_update.py
+aigentchat/models/a_igency_function_status_update_data.py
 aigentchat/models/a_igency_image.py
 aigentchat/models/a_igency_image_results.py
 aigentchat/models/a_igency_message.py
@@ -72,8 +74,12 @@ aigentchat/models/api_error.py
 aigentchat/models/api_error_code.py
 aigentchat/models/audio_generation_request.py
 aigentchat/models/audio_transcription_request.py
+aigentchat/models/audit_trail.py
+aigentchat/models/audit_trail_message.py
 aigentchat/models/channel.py
+aigentchat/models/channel_results.py
 aigentchat/models/channel_write_dto.py
+aigentchat/models/chat_completion_cost_tracking_request.py
 aigentchat/models/chat_completion_request_dto.py
 aigentchat/models/connection_token_response.py
 aigentchat/models/conversation_role.py
@@ -145,6 +151,7 @@ docs/AIModelsApi.md
 docs/AIgencyFunctionCall.md
 docs/AIgencyFunctionResponse.md
 docs/AIgencyFunctionStatusUpdate.md
+docs/AIgencyFunctionStatusUpdateData.md
 docs/AIgencyImage.md
 docs/AIgencyImageResults.md
 docs/AIgencyMessage.md
@@ -173,9 +180,14 @@ docs/ApiErrorCode.md
 docs/AudioApi.md
 docs/AudioGenerationRequest.md
 docs/AudioTranscriptionRequest.md
+docs/AuditTrail.md
+docs/AuditTrailMessage.md
+docs/AuditTrailsApi.md
 docs/Channel.md
+docs/ChannelResults.md
 docs/ChannelWriteDto.md
 docs/ChannelsApi.md
+docs/ChatCompletionCostTrackingRequest.md
 docs/ChatCompletionRequestDto.md
 docs/ChatCompletionsApi.md
 docs/ConnectionTokenResponse.md
@@ -251,6 +263,7 @@ test/__init__.py
 test/test_a_igency_function_call.py
 test/test_a_igency_function_response.py
 test/test_a_igency_function_status_update.py
+test/test_a_igency_function_status_update_data.py
 test/test_a_igency_image.py
 test/test_a_igency_image_results.py
 test/test_a_igency_message.py
@@ -294,9 +307,14 @@ test/test_api_error_code.py
 test/test_audio_api.py
 test/test_audio_generation_request.py
 test/test_audio_transcription_request.py
+test/test_audit_trail.py
+test/test_audit_trail_message.py
+test/test_audit_trails_api.py
 test/test_channel.py
+test/test_channel_results.py
 test/test_channel_write_dto.py
 test/test_channels_api.py
+test/test_chat_completion_cost_tracking_request.py
 test/test_chat_completion_request_dto.py
 test/test_chat_completions_api.py
 test/test_connection_token_response.py

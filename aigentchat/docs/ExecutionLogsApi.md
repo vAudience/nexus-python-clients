@@ -4,11 +4,98 @@ All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_chat_completion_costs**](ExecutionLogsApi.md#create_chat_completion_costs) | **POST** /v1/organizations/{org_id}/execution-logs/chat-completion-costs | Track chat completion costs
 [**create_document_conversion_costs**](ExecutionLogsApi.md#create_document_conversion_costs) | **POST** /v1/organizations/{org_id}/execution-logs/document-conversion-costs | Track document conversion costs
 [**create_file_upload_costs**](ExecutionLogsApi.md#create_file_upload_costs) | **POST** /v1/organizations/{org_id}/execution-logs/file-upload-costs | Track file upload costs
 [**get_execution_logs_costs**](ExecutionLogsApi.md#get_execution_logs_costs) | **GET** /v1/organizations/{org_id}/execution-logs/costs | Get execution logs costs
 [**search_execution_logs**](ExecutionLogsApi.md#search_execution_logs) | **GET** /v1/organizations/{org_id}/execution-logs/search | Search execution logs
 
+
+# **create_chat_completion_costs**
+> CostTrackingResponse create_chat_completion_costs(org_id, request)
+
+Track chat completion costs
+
+Track chat completion costs to execution log
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import aigentchat
+from aigentchat.models.chat_completion_cost_tracking_request import ChatCompletionCostTrackingRequest
+from aigentchat.models.cost_tracking_response import CostTrackingResponse
+from aigentchat.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = aigentchat.Configuration(
+    host = "https://aigentchat.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with aigentchat.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = aigentchat.ExecutionLogsApi(api_client)
+    org_id = 'org_id_example' # str | organization ID
+    request = aigentchat.ChatCompletionCostTrackingRequest() # ChatCompletionCostTrackingRequest | Chat completion cost tracking request
+
+    try:
+        # Track chat completion costs
+        api_response = api_instance.create_chat_completion_costs(org_id, request)
+        print("The response of ExecutionLogsApi->create_chat_completion_costs:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ExecutionLogsApi->create_chat_completion_costs: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_id** | **str**| organization ID | 
+ **request** | [**ChatCompletionCostTrackingRequest**](ChatCompletionCostTrackingRequest.md)| Chat completion cost tracking request | 
+
+### Return type
+
+[**CostTrackingResponse**](CostTrackingResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_document_conversion_costs**
 > CostTrackingResponse create_document_conversion_costs(org_id, request)
