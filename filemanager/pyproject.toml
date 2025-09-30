@@ -5,7 +5,7 @@ description = "vAudience AI File Manager API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
-license = "Copyrighted"
+license = "LicenseRef-Copyrighted"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "vAudience AI File Manager API"]
 requires-python = ">=3.9"
