@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **created_at** | **int** |  | [optional] 
+**default_file_upload_category** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **i18n** | [**Dict[str, AgentI18n]**](AgentI18n.md) |  | [optional] 
 **id** | **str** |  | 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **is_public** | **bool** |  | [optional] 
 **lifecycle** | **str** |  | [optional] 
 **meta_data** | **object** |  | [optional] 
+**model_capabilities** | **List[str]** |  | [optional] 
 **model_category** | **str** |  | [optional] 
 **model_host_location** | [**HostingLocation**](HostingLocation.md) |  | [optional] 
 **model_id** | **str** |  | 

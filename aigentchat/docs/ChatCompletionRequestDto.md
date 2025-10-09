@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | 
-**attached_temporary_files** | **List[str]** |  | [optional] 
+**attached_files** | **List[str]** |  | [optional] 
+**attached_temporary_files** | **List[str]** | Deprecated, use attached_files instead | [optional] 
 **channel_id** | **str** |  | [optional] 
 **continue_instruction_on_max_tokens** | **str** |  | [optional] 
 **continue_on_max_tokens** | **bool** |  | [optional] 

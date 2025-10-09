@@ -80,6 +80,7 @@ aigentchat/models/channel.py
 aigentchat/models/channel_results.py
 aigentchat/models/channel_write_dto.py
 aigentchat/models/chat_completion_cost_tracking_request.py
+aigentchat/models/chat_completion_file_settings.py
 aigentchat/models/chat_completion_request_dto.py
 aigentchat/models/connection_token_response.py
 aigentchat/models/conversation_role.py
@@ -93,11 +94,7 @@ aigentchat/models/execution_log.py
 aigentchat/models/execution_log_costs.py
 aigentchat/models/execution_log_results.py
 aigentchat/models/execution_usage_cost.py
-aigentchat/models/file_chat_settings.py
-aigentchat/models/file_settings.py
 aigentchat/models/file_upload_cost_tracking_request.py
-aigentchat/models/file_upload_response.py
-aigentchat/models/file_upload_settings.py
 aigentchat/models/finish_reason.py
 aigentchat/models/function_call.py
 aigentchat/models/function_call_i18n.py
@@ -188,6 +185,7 @@ docs/ChannelResults.md
 docs/ChannelWriteDto.md
 docs/ChannelsApi.md
 docs/ChatCompletionCostTrackingRequest.md
+docs/ChatCompletionFileSettings.md
 docs/ChatCompletionRequestDto.md
 docs/ChatCompletionsApi.md
 docs/ConnectionTokenResponse.md
@@ -205,11 +203,7 @@ docs/ExecutionLogCosts.md
 docs/ExecutionLogResults.md
 docs/ExecutionLogsApi.md
 docs/ExecutionUsageCost.md
-docs/FileChatSettings.md
-docs/FileSettings.md
 docs/FileUploadCostTrackingRequest.md
-docs/FileUploadResponse.md
-docs/FileUploadSettings.md
 docs/FinishReason.md
 docs/FunctionCall.md
 docs/FunctionCallI18n.md
@@ -315,6 +309,7 @@ test/test_channel_results.py
 test/test_channel_write_dto.py
 test/test_channels_api.py
 test/test_chat_completion_cost_tracking_request.py
+test/test_chat_completion_file_settings.py
 test/test_chat_completion_request_dto.py
 test/test_chat_completions_api.py
 test/test_connection_token_response.py
@@ -332,11 +327,7 @@ test/test_execution_log_costs.py
 test/test_execution_log_results.py
 test/test_execution_logs_api.py
 test/test_execution_usage_cost.py
-test/test_file_chat_settings.py
-test/test_file_settings.py
 test/test_file_upload_cost_tracking_request.py
-test/test_file_upload_response.py
-test/test_file_upload_settings.py
 test/test_finish_reason.py
 test/test_function_call.py
 test/test_function_call_i18n.py

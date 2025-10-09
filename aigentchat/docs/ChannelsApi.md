@@ -5,11 +5,9 @@ All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_channel**](ChannelsApi.md#create_channel) | **POST** /v1/organizations/{org_id}/channels | Create a new channel
-[**create_channel_file**](ChannelsApi.md#create_channel_file) | **POST** /v1/organizations/{org_id}/channels/files | Create a file for a channel
 [**delete_channel**](ChannelsApi.md#delete_channel) | **DELETE** /v1/organizations/{org_id}/channels/{id} | Delete a channel
 [**delete_channels_by_owner_id**](ChannelsApi.md#delete_channels_by_owner_id) | **DELETE** /v1/organizations/{org_id}/channels | Delete channels by their owner ID
 [**get_channel**](ChannelsApi.md#get_channel) | **GET** /v1/organizations/{org_id}/channels/{id} | Get a channel by ID
-[**get_channel_file_settings**](ChannelsApi.md#get_channel_file_settings) | **GET** /v1/organizations/{org_id}/channels/files/settings | Get channel file settings
 [**list_channels_by_org_id**](ChannelsApi.md#list_channels_by_org_id) | **GET** /v1/organizations/{org_id}/channels | List channels by organization ID
 [**list_channels_by_owner_id**](ChannelsApi.md#list_channels_by_owner_id) | **GET** /v1/organizations/{org_id}/channels/me | List channels owned by the current user
 [**search_channels**](ChannelsApi.md#search_channels) | **GET** /v1/organizations/{org_id}/channels/search | Search channels by query
@@ -98,95 +96,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_channel_file**
-> FileUploadResponse create_channel_file(org_id, file, channel_id=channel_id)
-
-Create a file for a channel
-
-Create a file for a channel
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.file_upload_response import FileUploadResponse
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.ChannelsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    file = None # bytearray | File to upload
-    channel_id = 'channel_id_example' # str | Channel id (optional)
-
-    try:
-        # Create a file for a channel
-        api_response = api_instance.create_channel_file(org_id, file, channel_id=channel_id)
-        print("The response of ChannelsApi->create_channel_file:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ChannelsApi->create_channel_file: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **file** | **bytearray**| File to upload | 
- **channel_id** | **str**| Channel id | [optional] 
-
-### Return type
-
-[**FileUploadResponse**](FileUploadResponse.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**413** | Request Entity Too Large |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -443,88 +352,6 @@ Name | Type | Description  | Notes
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_channel_file_settings**
-> FileSettings get_channel_file_settings(org_id)
-
-Get channel file settings
-
-Get channel file settings
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.file_settings import FileSettings
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.ChannelsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-
-    try:
-        # Get channel file settings
-        api_response = api_instance.get_channel_file_settings(org_id)
-        print("The response of ChannelsApi->get_channel_file_settings:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ChannelsApi->get_channel_file_settings: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
-
-### Return type
-
-[**FileSettings**](FileSettings.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

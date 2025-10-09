@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **file_name** | **str** |  | 
 **file_size** | **int** |  | 
 **id** | **str** |  | 
+**llm_input_type** | **str** |  | 
 **meta_data** | **object** |  | 
 **mime_type** | **str** |  | 
 **url** | **str** |  | 

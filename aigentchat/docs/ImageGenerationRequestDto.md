@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | 
-**attached_temporary_files** | **List[str]** |  | [optional] 
+**attached_files** | **List[str]** |  | [optional] 
 **message** | **str** |  | 
 **parameters** | **object** |  | [optional] 
 

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | [optional] 
-**attached_temporary_files** | **List[str]** |  | [optional] 
+**attached_files** | **List[str]** |  | [optional] 
 **channel_id** | **str** |  | [optional] 
 **dictionary** | **Dict[str, str]** |  | [optional] 
 **id** | **str** |  | [optional] 

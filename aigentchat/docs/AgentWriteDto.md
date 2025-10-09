@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
+**default_file_upload_category** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **i18n** | [**Dict[str, AgentI18n]**](AgentI18n.md) |  | [optional] 
 **ignore_incoming_overwrite** | **bool** |  | [optional] 
