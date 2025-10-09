@@ -9,8 +9,8 @@ docs/ErrorResponse.md
 docs/FileMetadataBatchGetRequest.md
 docs/FileMetadataBatchResponse.md
 docs/FileMetadataResponse.md
+docs/FileUploadCategoryResponse.md
 docs/FileUploadResponse.md
-docs/FileUploadSettings.md
 docs/FilesApi.md
 docs/FilesMetadataApi.md
 docs/HealthApi.md
@@ -35,8 +35,8 @@ filemanager/models/error_response.py
 filemanager/models/file_metadata_batch_get_request.py
 filemanager/models/file_metadata_batch_response.py
 filemanager/models/file_metadata_response.py
+filemanager/models/file_upload_category_response.py
 filemanager/models/file_upload_response.py
-filemanager/models/file_upload_settings.py
 filemanager/models/health_response.py
 filemanager/models/version_response.py
 filemanager/py.typed
@@ -53,8 +53,8 @@ test/test_error_response.py
 test/test_file_metadata_batch_get_request.py
 test/test_file_metadata_batch_response.py
 test/test_file_metadata_response.py
+test/test_file_upload_category_response.py
 test/test_file_upload_response.py
-test/test_file_upload_settings.py
 test/test_files_api.py
 test/test_files_metadata_api.py
 test/test_health_api.py

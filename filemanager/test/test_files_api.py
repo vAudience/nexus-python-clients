@@ -33,10 +33,10 @@ class TestFilesApi(unittest.TestCase):
         """
         pass
 
-    def test_get_file_upload_settings(self) -> None:
-        """Test case for get_file_upload_settings
+    def test_get_file_upload_categories(self) -> None:
+        """Test case for get_file_upload_categories
 
-        Get file upload settings for a category
+        Get file upload categories
         """
         pass
 

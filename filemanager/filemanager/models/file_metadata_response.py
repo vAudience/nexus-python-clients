@@ -28,6 +28,7 @@ class FileMetadataResponse(BaseModel):
     """ # noqa: E501
     created_at: StrictStr
     expires_at: Optional[StrictStr] = None
+    file_llm_input_type: StrictStr
     file_name: StrictStr
     file_size: StrictInt
     file_storage_type: StrictStr
@@ -46,7 +47,14 @@ class FileMetadataResponse(BaseModel):
     url: StrictStr
     user_id: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "expires_at", "file_name", "file_size", "file_storage_type", "id", "metadata", "mime_type", "organization_id", "original_file_name", "original_file_size", "original_mime_type", "original_url", "storage_path", "team_id", "updated_at", "upload_category", "url", "user_id"]
+    __properties: ClassVar[List[str]] = ["created_at", "expires_at", "file_llm_input_type", "file_name", "file_size", "file_storage_type", "id", "metadata", "mime_type", "organization_id", "original_file_name", "original_file_size", "original_mime_type", "original_url", "storage_path", "team_id", "updated_at", "upload_category", "url", "user_id"]
+
+    @field_validator('file_llm_input_type')
+    def file_llm_input_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['embedded', 'multimodal', 'reference']):
+            raise ValueError("must be one of enum values ('embedded', 'multimodal', 'reference')")
+        return value
 
     @field_validator('file_storage_type')
     def file_storage_type_validate_enum(cls, value):
@@ -115,6 +123,7 @@ class FileMetadataResponse(BaseModel):
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "expires_at": obj.get("expires_at"),
+            "file_llm_input_type": obj.get("file_llm_input_type"),
             "file_name": obj.get("file_name"),
             "file_size": obj.get("file_size"),
             "file_storage_type": obj.get("file_storage_type"),

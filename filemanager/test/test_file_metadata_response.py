@@ -37,6 +37,7 @@ class TestFileMetadataResponse(unittest.TestCase):
             return FileMetadataResponse(
                 created_at = '',
                 expires_at = '',
+                file_llm_input_type = 'embedded',
                 file_name = '',
                 file_size = 56,
                 file_storage_type = 'temp',
@@ -58,6 +59,7 @@ class TestFileMetadataResponse(unittest.TestCase):
         else:
             return FileMetadataResponse(
                 created_at = '',
+                file_llm_input_type = 'embedded',
                 file_name = '',
                 file_size = 56,
                 file_storage_type = 'temp',

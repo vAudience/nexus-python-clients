@@ -17,11 +17,11 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictBool, StrictBytes, StrictStr
-from typing import Any, Dict, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from filemanager.models.file_metadata_response import FileMetadataResponse
+from filemanager.models.file_upload_category_response import FileUploadCategoryResponse
 from filemanager.models.file_upload_response import FileUploadResponse
-from filemanager.models.file_upload_settings import FileUploadSettings
 
 from filemanager.api_client import ApiClient, RequestSerialized
 from filemanager.api_response import ApiResponse
@@ -315,10 +315,10 @@ class FilesApi:
 
 
     @validate_call
-    def get_file_upload_settings(
+    def get_file_upload_categories(
         self,
         org_id: Annotated[StrictStr, Field(description="organization ID")],
-        category: Annotated[StrictStr, Field(description="category ID")],
+        model_capabilities: Annotated[Optional[StrictStr], Field(description="Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -331,15 +331,15 @@ class FilesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> FileUploadSettings:
-        """Get file upload settings for a category
+    ) -> List[FileUploadCategoryResponse]:
+        """Get file upload categories
 
-        Get file upload settings for a category
+        Get file upload categories
 
         :param org_id: organization ID (required)
         :type org_id: str
-        :param category: category ID (required)
-        :type category: str
+        :param model_capabilities: Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text
+        :type model_capabilities: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -362,9 +362,9 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_file_upload_settings_serialize(
+        _param = self._get_file_upload_categories_serialize(
             org_id=org_id,
-            category=category,
+            model_capabilities=model_capabilities,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -372,10 +372,9 @@ class FilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FileUploadSettings",
+            '200': "List[FileUploadCategoryResponse]",
             '401': "ErrorResponse",
             '403': "ErrorResponse",
-            '404': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -389,10 +388,10 @@ class FilesApi:
 
 
     @validate_call
-    def get_file_upload_settings_with_http_info(
+    def get_file_upload_categories_with_http_info(
         self,
         org_id: Annotated[StrictStr, Field(description="organization ID")],
-        category: Annotated[StrictStr, Field(description="category ID")],
+        model_capabilities: Annotated[Optional[StrictStr], Field(description="Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -405,15 +404,15 @@ class FilesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[FileUploadSettings]:
-        """Get file upload settings for a category
+    ) -> ApiResponse[List[FileUploadCategoryResponse]]:
+        """Get file upload categories
 
-        Get file upload settings for a category
+        Get file upload categories
 
         :param org_id: organization ID (required)
         :type org_id: str
-        :param category: category ID (required)
-        :type category: str
+        :param model_capabilities: Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text
+        :type model_capabilities: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -436,9 +435,9 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_file_upload_settings_serialize(
+        _param = self._get_file_upload_categories_serialize(
             org_id=org_id,
-            category=category,
+            model_capabilities=model_capabilities,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -446,10 +445,9 @@ class FilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FileUploadSettings",
+            '200': "List[FileUploadCategoryResponse]",
             '401': "ErrorResponse",
             '403': "ErrorResponse",
-            '404': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -463,10 +461,10 @@ class FilesApi:
 
 
     @validate_call
-    def get_file_upload_settings_without_preload_content(
+    def get_file_upload_categories_without_preload_content(
         self,
         org_id: Annotated[StrictStr, Field(description="organization ID")],
-        category: Annotated[StrictStr, Field(description="category ID")],
+        model_capabilities: Annotated[Optional[StrictStr], Field(description="Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -480,14 +478,14 @@ class FilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get file upload settings for a category
+        """Get file upload categories
 
-        Get file upload settings for a category
+        Get file upload categories
 
         :param org_id: organization ID (required)
         :type org_id: str
-        :param category: category ID (required)
-        :type category: str
+        :param model_capabilities: Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text
+        :type model_capabilities: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -510,9 +508,9 @@ class FilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_file_upload_settings_serialize(
+        _param = self._get_file_upload_categories_serialize(
             org_id=org_id,
-            category=category,
+            model_capabilities=model_capabilities,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -520,10 +518,9 @@ class FilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FileUploadSettings",
+            '200': "List[FileUploadCategoryResponse]",
             '401': "ErrorResponse",
             '403': "ErrorResponse",
-            '404': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -532,10 +529,10 @@ class FilesApi:
         return response_data.response
 
 
-    def _get_file_upload_settings_serialize(
+    def _get_file_upload_categories_serialize(
         self,
         org_id,
-        category,
+        model_capabilities,
         _request_auth,
         _content_type,
         _headers,
@@ -559,9 +556,11 @@ class FilesApi:
         # process the path parameters
         if org_id is not None:
             _path_params['org_id'] = org_id
-        if category is not None:
-            _path_params['category'] = category
         # process the query parameters
+        if model_capabilities is not None:
+            
+            _query_params.append(('model_capabilities', model_capabilities))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -583,7 +582,7 @@ class FilesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v1/organizations/{org_id}/files/{category}/settings',
+            resource_path='/v1/organizations/{org_id}/files/categories',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -39,6 +39,7 @@ class TestFileUploadResponse(unittest.TestCase):
                     filemanager.models.file_metadata_response.FileMetadataResponse(
                         created_at = '', 
                         expires_at = '', 
+                        file_llm_input_type = 'embedded', 
                         file_name = '', 
                         file_size = 56, 
                         file_storage_type = 'temp', 
@@ -65,6 +66,7 @@ class TestFileUploadResponse(unittest.TestCase):
                     filemanager.models.file_metadata_response.FileMetadataResponse(
                         created_at = '', 
                         expires_at = '', 
+                        file_llm_input_type = 'embedded', 
                         file_name = '', 
                         file_size = 56, 
                         file_storage_type = 'temp', 

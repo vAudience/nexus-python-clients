@@ -37,8 +37,8 @@ __all__ = [
     "FileMetadataBatchGetRequest",
     "FileMetadataBatchResponse",
     "FileMetadataResponse",
+    "FileUploadCategoryResponse",
     "FileUploadResponse",
-    "FileUploadSettings",
     "HealthResponse",
     "VersionResponse",
 ]
@@ -68,8 +68,8 @@ if __import__("typing").TYPE_CHECKING:
     from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest as FileMetadataBatchGetRequest
     from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse as FileMetadataBatchResponse
     from filemanager.models.file_metadata_response import FileMetadataResponse as FileMetadataResponse
+    from filemanager.models.file_upload_category_response import FileUploadCategoryResponse as FileUploadCategoryResponse
     from filemanager.models.file_upload_response import FileUploadResponse as FileUploadResponse
-    from filemanager.models.file_upload_settings import FileUploadSettings as FileUploadSettings
     from filemanager.models.health_response import HealthResponse as HealthResponse
     from filemanager.models.version_response import VersionResponse as VersionResponse
     
@@ -105,8 +105,8 @@ from filemanager.models.error_response import ErrorResponse as ErrorResponse
 from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest as FileMetadataBatchGetRequest
 from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse as FileMetadataBatchResponse
 from filemanager.models.file_metadata_response import FileMetadataResponse as FileMetadataResponse
+from filemanager.models.file_upload_category_response import FileUploadCategoryResponse as FileUploadCategoryResponse
 from filemanager.models.file_upload_response import FileUploadResponse as FileUploadResponse
-from filemanager.models.file_upload_settings import FileUploadSettings as FileUploadSettings
 from filemanager.models.health_response import HealthResponse as HealthResponse
 from filemanager.models.version_response import VersionResponse as VersionResponse
 

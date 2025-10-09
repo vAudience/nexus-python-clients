@@ -20,8 +20,8 @@ if __import__("typing").TYPE_CHECKING:
     from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest
     from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse
     from filemanager.models.file_metadata_response import FileMetadataResponse
+    from filemanager.models.file_upload_category_response import FileUploadCategoryResponse
     from filemanager.models.file_upload_response import FileUploadResponse
-    from filemanager.models.file_upload_settings import FileUploadSettings
     from filemanager.models.health_response import HealthResponse
     from filemanager.models.version_response import VersionResponse
     
@@ -37,8 +37,8 @@ from filemanager.models.error_response import ErrorResponse
 from filemanager.models.file_metadata_batch_get_request import FileMetadataBatchGetRequest
 from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse
 from filemanager.models.file_metadata_response import FileMetadataResponse
+from filemanager.models.file_upload_category_response import FileUploadCategoryResponse
 from filemanager.models.file_upload_response import FileUploadResponse
-from filemanager.models.file_upload_settings import FileUploadSettings
 from filemanager.models.health_response import HealthResponse
 from filemanager.models.version_response import VersionResponse
 

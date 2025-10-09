@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **str** |  | 
 **expires_at** | **str** |  | [optional] 
+**file_llm_input_type** | **str** |  | 
 **file_name** | **str** |  | 
 **file_size** | **int** |  | 
 **file_storage_type** | **str** |  | 

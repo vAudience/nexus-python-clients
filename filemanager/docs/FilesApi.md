@@ -5,7 +5,7 @@ All URIs are relative to *https://file-manager.dev.ai.vaud.one*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_file**](FilesApi.md#delete_file) | **DELETE** /v1/files/{storage_path} | Delete a file
-[**get_file_upload_settings**](FilesApi.md#get_file_upload_settings) | **GET** /v1/organizations/{org_id}/files/{category}/settings | Get file upload settings for a category
+[**get_file_upload_categories**](FilesApi.md#get_file_upload_categories) | **GET** /v1/organizations/{org_id}/files/categories | Get file upload categories
 [**serve_file**](FilesApi.md#serve_file) | **GET** /v1/files/{storage_path} | Serve a file
 [**upload_file**](FilesApi.md#upload_file) | **POST** /v1/organizations/{org_id}/files/{category} | Create a file for a channel
 
@@ -93,12 +93,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_file_upload_settings**
-> FileUploadSettings get_file_upload_settings(org_id, category)
+# **get_file_upload_categories**
+> List[FileUploadCategoryResponse] get_file_upload_categories(org_id, model_capabilities=model_capabilities)
 
-Get file upload settings for a category
+Get file upload categories
 
-Get file upload settings for a category
+Get file upload categories
 
 ### Example
 
@@ -106,7 +106,7 @@ Get file upload settings for a category
 
 ```python
 import filemanager
-from filemanager.models.file_upload_settings import FileUploadSettings
+from filemanager.models.file_upload_category_response import FileUploadCategoryResponse
 from filemanager.rest import ApiException
 from pprint import pprint
 
@@ -132,15 +132,15 @@ with filemanager.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = filemanager.FilesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    category = 'category_example' # str | category ID
+    model_capabilities = 'model_capabilities_example' # str | Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text (optional)
 
     try:
-        # Get file upload settings for a category
-        api_response = api_instance.get_file_upload_settings(org_id, category)
-        print("The response of FilesApi->get_file_upload_settings:\n")
+        # Get file upload categories
+        api_response = api_instance.get_file_upload_categories(org_id, model_capabilities=model_capabilities)
+        print("The response of FilesApi->get_file_upload_categories:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FilesApi->get_file_upload_settings: %s\n" % e)
+        print("Exception when calling FilesApi->get_file_upload_categories: %s\n" % e)
 ```
 
 
@@ -151,11 +151,11 @@ with filemanager.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **category** | **str**| category ID | 
+ **model_capabilities** | **str**| Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text | [optional] 
 
 ### Return type
 
-[**FileUploadSettings**](FileUploadSettings.md)
+[**List[FileUploadCategoryResponse]**](FileUploadCategoryResponse.md)
 
 ### Authorization
 
@@ -173,7 +173,6 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
-**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

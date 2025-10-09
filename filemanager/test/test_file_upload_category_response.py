@@ -14,10 +14,10 @@
 
 import unittest
 
-from filemanager.models.file_upload_settings import FileUploadSettings
+from filemanager.models.file_upload_category_response import FileUploadCategoryResponse
 
-class TestFileUploadSettings(unittest.TestCase):
-    """FileUploadSettings unit test stubs"""
+class TestFileUploadCategoryResponse(unittest.TestCase):
+    """FileUploadCategoryResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,29 +25,31 @@ class TestFileUploadSettings(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FileUploadSettings:
-        """Test FileUploadSettings
+    def make_instance(self, include_optional) -> FileUploadCategoryResponse:
+        """Test FileUploadCategoryResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `FileUploadSettings`
+        # uncomment below to create an instance of `FileUploadCategoryResponse`
         """
-        model = FileUploadSettings()
+        model = FileUploadCategoryResponse()
         if include_optional:
-            return FileUploadSettings(
+            return FileUploadCategoryResponse(
                 accepted_mime_types = [
                     ''
                     ],
+                category = '',
+                llm_input_type = '',
                 max_file_size = 56,
                 min_file_size = 56
             )
         else:
-            return FileUploadSettings(
+            return FileUploadCategoryResponse(
         )
         """
 
-    def testFileUploadSettings(self):
-        """Test FileUploadSettings"""
+    def testFileUploadCategoryResponse(self):
+        """Test FileUploadCategoryResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
