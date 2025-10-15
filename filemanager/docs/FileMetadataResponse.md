@@ -15,10 +15,11 @@ Name | Type | Description | Notes
 **metadata** | **object** |  | [optional] 
 **mime_type** | **str** |  | 
 **organization_id** | **str** |  | [optional] 
+**original_file_mime_type** | **str** |  | 
 **original_file_name** | **str** |  | 
 **original_file_size** | **int** |  | 
-**original_mime_type** | **str** |  | 
-**original_url** | **str** |  | [optional] 
+**original_file_storage_path** | **str** |  | [optional] 
+**original_file_url** | **str** |  | [optional] 
 **storage_path** | **str** |  | 
 **team_id** | **str** |  | [optional] 
 **updated_at** | **str** |  | 
