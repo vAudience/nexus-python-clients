@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **recommended_task** | **str** |  | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
 **team_ids** | **List[str]** |  | [optional] 
+**tool_config** | **object** |  | [optional] 
 **type** | [**AgentType**](AgentType.md) |  | [optional] 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 

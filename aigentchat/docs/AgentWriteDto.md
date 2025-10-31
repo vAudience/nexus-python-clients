@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **recommended_task** | **str** |  | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
 **team_ids** | **List[str]** |  | [optional] 
+**tool_config** | **object** |  | [optional] 
 **type** | [**AgentType**](AgentType.md) |  | [optional] 
 **use_tools** | **bool** |  | [optional] 
 

@@ -12,9 +12,10 @@ Name | Type | Description | Notes
 **channel_name** | **str** |  | 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | 
 **created_at** | **int** |  | 
-**created_for_feature** | [**AIModelFeature**](AIModelFeature.md) |  | [optional] 
+**created_for_feature** | [**AIModelFeature**](AIModelFeature.md) | Deprecated, use FeatureUsage | [optional] 
 **error** | [**AiServiceError**](AiServiceError.md) |  | [optional] 
 **execution_id** | **str** |  | [optional] 
+**feature_usage** | [**List[ExecutionFeatureUsage]**](ExecutionFeatureUsage.md) |  | [optional] 
 **finish_reason** | [**FinishReason**](FinishReason.md) |  | [optional] 
 **id** | **str** |  | 
 **meta_data** | **object** |  | [optional] 
