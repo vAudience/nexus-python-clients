@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**delete_team_member**](OrganizationsApi.md#delete_team_member) | **DELETE** /v1/organizations/{id}/teams/{teamId}/members/{memberId} | Remove a member from a team
 [**end_trial**](OrganizationsApi.md#end_trial) | **PATCH** /v1/organizations/{id}/subscription/end-trial | End the trial period early for an Organization
 [**get_all_my_organizations**](OrganizationsApi.md#get_all_my_organizations) | **GET** /v1/organizations/me | Get all my organizations
+[**get_all_my_organizations_with_details**](OrganizationsApi.md#get_all_my_organizations_with_details) | **GET** /v1/organizations/me/details | Get all my organizations with details (subscriptions, ...)
 [**get_all_my_teams**](OrganizationsApi.md#get_all_my_teams) | **GET** /v1/organizations/{id}/teams/me | Get all teams for an Organization of the current user
 [**get_all_organizations**](OrganizationsApi.md#get_all_organizations) | **GET** /v1/organizations | Get all Organizations
 [**get_checkout_session**](OrganizationsApi.md#get_checkout_session) | **GET** /v1/organizations/{id}/checkout-sessions/{productId} | Get a checkout session for an Organization
@@ -1821,6 +1822,84 @@ This endpoint does not need any parameter.
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
+**500** | Server or Database Internal Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_my_organizations_with_details**
+> List[OrganizationDetailsResponse] get_all_my_organizations_with_details()
+
+Get all my organizations with details (subscriptions, ...)
+
+Get all my organizations with details (subscriptions, ...)
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import core
+from core.models.organization_details_response import OrganizationDetailsResponse
+from core.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://core.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = core.Configuration(
+    host = "https://core.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = core.OrganizationsApi(api_client)
+
+    try:
+        # Get all my organizations with details (subscriptions, ...)
+        api_response = api_instance.get_all_my_organizations_with_details()
+        print("The response of OrganizationsApi->get_all_my_organizations_with_details:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->get_all_my_organizations_with_details: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List[OrganizationDetailsResponse]**](OrganizationDetailsResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
 **500** | Server or Database Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -17,18 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from core.models.organization_response import OrganizationResponse
+from core.models.organization_subscription_response import OrganizationSubscriptionResponse
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HealthResponse(BaseModel):
+class OrganizationDetailsResponse(BaseModel):
     """
-    HealthResponse
+    OrganizationDetailsResponse
     """ # noqa: E501
-    health: StrictStr
+    organization: OrganizationResponse
+    subscription: Optional[OrganizationSubscriptionResponse] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["health"]
+    __properties: ClassVar[List[str]] = ["organization", "subscription"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +51,7 @@ class HealthResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HealthResponse from a JSON string"""
+        """Create an instance of OrganizationDetailsResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,6 +74,12 @@ class HealthResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of organization
+        if self.organization:
+            _dict['organization'] = self.organization.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of subscription
+        if self.subscription:
+            _dict['subscription'] = self.subscription.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -80,7 +89,7 @@ class HealthResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HealthResponse from a dict"""
+        """Create an instance of OrganizationDetailsResponse from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +97,8 @@ class HealthResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "health": obj.get("health")
+            "organization": OrganizationResponse.from_dict(obj["organization"]) if obj.get("organization") is not None else None,
+            "subscription": OrganizationSubscriptionResponse.from_dict(obj["subscription"]) if obj.get("subscription") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
