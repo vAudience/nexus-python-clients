@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **mission_id** | **str** |  | [optional] 
 **parameters** | **object** |  | [optional] 
 **selected_tools** | **List[str]** |  | [optional] 
+**service_channel** | **bool** |  | [optional] 
 **set_message_history_ids** | **List[str]** | If UseChannelMessagesAsHistory is false, this list of message IDs will be used as history, if empty, the history will be empty, ignored if UseChannelMessagesAsHistory is true | [optional] 
 **use_channel_messages_as_history** | **bool** | If true, the channel messages will be used as history and SetMessageHistoryIds will be ignored | [optional] 
 **use_summary_service** | **bool** |  | [optional] 

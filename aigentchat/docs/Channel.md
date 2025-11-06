@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 
 **summary** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 **updated_at** | **int** |  | [optional] 
 
 ## Example

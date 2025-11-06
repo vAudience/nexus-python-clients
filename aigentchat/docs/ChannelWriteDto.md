@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **metadata** | **object** |  | [optional] 
 **mission_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**service_channel** | **bool** |  | [optional] 
 **summary** | **str** |  | [optional] 
 
 ## Example

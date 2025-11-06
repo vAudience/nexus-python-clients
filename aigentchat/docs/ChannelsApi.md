@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_channels**
-> ChannelResults search_channels(org_id, user_id=user_id, limit=limit, offset=offset)
+> ChannelResults search_channels(org_id, user_id=user_id, q=q, include_services=include_services, limit=limit, offset=offset)
 
 Search channels by query
 
@@ -559,12 +559,14 @@ with aigentchat.ApiClient(configuration) as api_client:
     api_instance = aigentchat.ChannelsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     user_id = 'user_id_example' # str | user ID or me for current user (optional)
+    q = 'q_example' # str | Search term for name, description or summary (optional)
+    include_services = False # bool | Whether to include service channels in the results (optional) (default to False)
     limit = 1000 # int | Limit the number of results (optional) (default to 1000)
     offset = 0 # int | Offset for pagination (optional) (default to 0)
 
     try:
         # Search channels by query
-        api_response = api_instance.search_channels(org_id, user_id=user_id, limit=limit, offset=offset)
+        api_response = api_instance.search_channels(org_id, user_id=user_id, q=q, include_services=include_services, limit=limit, offset=offset)
         print("The response of ChannelsApi->search_channels:\n")
         pprint(api_response)
     except Exception as e:
@@ -580,6 +582,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **user_id** | **str**| user ID or me for current user | [optional] 
+ **q** | **str**| Search term for name, description or summary | [optional] 
+ **include_services** | **bool**| Whether to include service channels in the results | [optional] [default to False]
  **limit** | **int**| Limit the number of results | [optional] [default to 1000]
  **offset** | **int**| Offset for pagination | [optional] [default to 0]
 

@@ -72,8 +72,7 @@ aigentchat/models/ai_service_error.py
 aigentchat/models/ai_service_id.py
 aigentchat/models/api_error.py
 aigentchat/models/api_error_code.py
-aigentchat/models/audio_generation_request.py
-aigentchat/models/audio_transcription_request.py
+aigentchat/models/audio_transcription.py
 aigentchat/models/audit_trail.py
 aigentchat/models/audit_trail_message.py
 aigentchat/models/channel.py
@@ -90,6 +89,7 @@ aigentchat/models/document_conversion_cost_tracking_request.py
 aigentchat/models/embedding_item.py
 aigentchat/models/estimate_image_generation_cost_request_dto.py
 aigentchat/models/execution_cost_template.py
+aigentchat/models/execution_feature_usage.py
 aigentchat/models/execution_log.py
 aigentchat/models/execution_log_costs.py
 aigentchat/models/execution_log_results.py
@@ -128,6 +128,7 @@ aigentchat/models/tool.py
 aigentchat/models/tool_function.py
 aigentchat/models/tool_i18n.py
 aigentchat/models/version_response.py
+aigentchat/models/voice_chat_input_request_dto.py
 aigentchat/py.typed
 aigentchat/rest.py
 docs/AIModel.md
@@ -175,8 +176,7 @@ docs/AiServiceId.md
 docs/ApiError.md
 docs/ApiErrorCode.md
 docs/AudioApi.md
-docs/AudioGenerationRequest.md
-docs/AudioTranscriptionRequest.md
+docs/AudioTranscription.md
 docs/AuditTrail.md
 docs/AuditTrailMessage.md
 docs/AuditTrailsApi.md
@@ -198,6 +198,7 @@ docs/EmbeddingItem.md
 docs/EmbeddingsApi.md
 docs/EstimateImageGenerationCostRequestDto.md
 docs/ExecutionCostTemplate.md
+docs/ExecutionFeatureUsage.md
 docs/ExecutionLog.md
 docs/ExecutionLogCosts.md
 docs/ExecutionLogResults.md
@@ -247,6 +248,7 @@ docs/ToolI18n.md
 docs/ToolsApi.md
 docs/VersionApi.md
 docs/VersionResponse.md
+docs/VoiceChatInputRequestDto.md
 git_push.sh
 pyproject.toml
 requirements.txt
@@ -299,8 +301,7 @@ test/test_ai_service_id.py
 test/test_api_error.py
 test/test_api_error_code.py
 test/test_audio_api.py
-test/test_audio_generation_request.py
-test/test_audio_transcription_request.py
+test/test_audio_transcription.py
 test/test_audit_trail.py
 test/test_audit_trail_message.py
 test/test_audit_trails_api.py
@@ -322,6 +323,7 @@ test/test_embedding_item.py
 test/test_embeddings_api.py
 test/test_estimate_image_generation_cost_request_dto.py
 test/test_execution_cost_template.py
+test/test_execution_feature_usage.py
 test/test_execution_log.py
 test/test_execution_log_costs.py
 test/test_execution_log_results.py
@@ -371,4 +373,5 @@ test/test_tool_i18n.py
 test/test_tools_api.py
 test/test_version_api.py
 test/test_version_response.py
+test/test_voice_chat_input_request_dto.py
 tox.ini
