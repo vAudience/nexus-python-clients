@@ -14,10 +14,10 @@
 
 import unittest
 
-from filemanager.models.error_detail import ErrorDetail
+from filemanager.models.file_access_token_request import FileAccessTokenRequest
 
-class TestErrorDetail(unittest.TestCase):
-    """ErrorDetail unit test stubs"""
+class TestFileAccessTokenRequest(unittest.TestCase):
+    """FileAccessTokenRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,27 +25,26 @@ class TestErrorDetail(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ErrorDetail:
-        """Test ErrorDetail
+    def make_instance(self, include_optional) -> FileAccessTokenRequest:
+        """Test FileAccessTokenRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ErrorDetail`
+        # uncomment below to create an instance of `FileAccessTokenRequest`
         """
-        model = ErrorDetail()
+        model = FileAccessTokenRequest()
         if include_optional:
-            return ErrorDetail(
-                var_field = '',
-                tag = '',
-                value = ''
+            return FileAccessTokenRequest(
+                storage_path = ''
             )
         else:
-            return ErrorDetail(
+            return FileAccessTokenRequest(
+                storage_path = '',
         )
         """
 
-    def testErrorDetail(self):
-        """Test ErrorDetail"""
+    def testFileAccessTokenRequest(self):
+        """Test FileAccessTokenRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

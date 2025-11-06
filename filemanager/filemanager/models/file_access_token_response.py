@@ -17,22 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class FileUploadCategoryResponse(BaseModel):
+class FileAccessTokenResponse(BaseModel):
     """
-    FileUploadCategoryResponse
+    FileAccessTokenResponse
     """ # noqa: E501
-    accepted_mime_types: Optional[List[StrictStr]] = Field(default=None, description="Upload category settings")
-    category: Optional[StrictStr] = None
-    llm_input_type: Optional[StrictStr] = None
-    max_file_size: Optional[StrictInt] = None
-    min_file_size: Optional[StrictInt] = None
+    token: StrictStr
+    url: StrictStr
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["accepted_mime_types", "category", "llm_input_type", "max_file_size", "min_file_size"]
+    __properties: ClassVar[List[str]] = ["token", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +49,7 @@ class FileUploadCategoryResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of FileUploadCategoryResponse from a JSON string"""
+        """Create an instance of FileAccessTokenResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -84,7 +81,7 @@ class FileUploadCategoryResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of FileUploadCategoryResponse from a dict"""
+        """Create an instance of FileAccessTokenResponse from a dict"""
         if obj is None:
             return None
 
@@ -92,11 +89,8 @@ class FileUploadCategoryResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "accepted_mime_types": obj.get("accepted_mime_types"),
-            "category": obj.get("category"),
-            "llm_input_type": obj.get("llm_input_type"),
-            "max_file_size": obj.get("max_file_size"),
-            "min_file_size": obj.get("min_file_size")
+            "token": obj.get("token"),
+            "url": obj.get("url")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -4,11 +4,97 @@ All URIs are relative to *https://file-manager.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_file_access_token**](FilesApi.md#create_file_access_token) | **POST** /v1/file-access-tokens | Create a file access token
 [**delete_file**](FilesApi.md#delete_file) | **DELETE** /v1/files/{storage_path} | Delete a file
 [**get_file_upload_categories**](FilesApi.md#get_file_upload_categories) | **GET** /v1/organizations/{org_id}/files/categories | Get file upload categories
 [**serve_file**](FilesApi.md#serve_file) | **GET** /v1/files/{storage_path} | Serve a file
 [**upload_file**](FilesApi.md#upload_file) | **POST** /v1/organizations/{org_id}/files/{category} | Create a file for a channel
 
+
+# **create_file_access_token**
+> FileAccessTokenResponse create_file_access_token(file_access_token_request)
+
+Create a file access token
+
+Create a file access token
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import filemanager
+from filemanager.models.file_access_token_request import FileAccessTokenRequest
+from filemanager.models.file_access_token_response import FileAccessTokenResponse
+from filemanager.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://file-manager.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = filemanager.Configuration(
+    host = "https://file-manager.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with filemanager.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = filemanager.FilesApi(api_client)
+    file_access_token_request = filemanager.FileAccessTokenRequest() # FileAccessTokenRequest | File access token request
+
+    try:
+        # Create a file access token
+        api_response = api_instance.create_file_access_token(file_access_token_request)
+        print("The response of FilesApi->create_file_access_token:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FilesApi->create_file_access_token: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_access_token_request** | [**FileAccessTokenRequest**](FileAccessTokenRequest.md)| File access token request | 
+
+### Return type
+
+[**FileAccessTokenResponse**](FileAccessTokenResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_file**
 > FileMetadataResponse delete_file(storage_path)
@@ -86,10 +172,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -177,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serve_file**
-> bytearray serve_file(storage_path, download=download, filename=filename)
+> bytearray serve_file(storage_path, download=download, filename=filename, fat=fat)
 
 Serve a file
 
@@ -216,10 +302,11 @@ with filemanager.ApiClient(configuration) as api_client:
     storage_path = 'storage_path_example' # str | Storage path
     download = True # bool | Force download as attachment (optional)
     filename = 'filename_example' # str | Custom filename for download (optional)
+    fat = 'fat_example' # str | File access token (optional)
 
     try:
         # Serve a file
-        api_response = api_instance.serve_file(storage_path, download=download, filename=filename)
+        api_response = api_instance.serve_file(storage_path, download=download, filename=filename, fat=fat)
         print("The response of FilesApi->serve_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -236,6 +323,7 @@ Name | Type | Description  | Notes
  **storage_path** | **str**| Storage path | 
  **download** | **bool**| Force download as attachment | [optional] 
  **filename** | **str**| Custom filename for download | [optional] 
+ **fat** | **str**| File access token | [optional] 
 
 ### Return type
 
@@ -255,11 +343,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | File content |  -  |
-**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
-**501** | Not Implemented |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
