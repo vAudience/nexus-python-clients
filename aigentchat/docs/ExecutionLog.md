@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **message_id** | **str** |  | [optional] 
 **owner_id** | **str** |  | [optional] 
 **owner_organization_id** | **str** |  | [optional] 
+**request_id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **usage** | [**List[ExecutionUsageCost]**](ExecutionUsageCost.md) |  | [optional] 
 

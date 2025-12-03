@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**limit** | **int** |  | [optional] 
+**offset** | **int** |  | [optional] 
 **results** | [**List[Channel]**](Channel.md) |  | 
 **total_results** | **int** |  | [optional] 
 

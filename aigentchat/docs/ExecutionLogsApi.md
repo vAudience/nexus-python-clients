@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_execution_logs**
-> ExecutionLogResults search_execution_logs(org_id, user_id=user_id, exec_type=exec_type, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
+> ExecutionLogResults search_execution_logs(org_id, user_id=user_id, exec_type=exec_type, request_id=request_id, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
 
 Search execution logs
 
@@ -399,6 +399,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     org_id = 'org_id_example' # str | organization ID
     user_id = 'user_id_example' # str | User ID or me (optional)
     exec_type = 'exec_type_example' # str | Execution log type (optional)
+    request_id = 'request_id_example' # str | Request ID (optional)
     start_date = 'start_date_example' # str | Start date in Unix milliseconds (optional)
     end_date = 'end_date_example' # str | End date in Unix milliseconds (optional)
     offset = 56 # int | Offset (optional)
@@ -406,7 +407,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 
     try:
         # Search execution logs
-        api_response = api_instance.search_execution_logs(org_id, user_id=user_id, exec_type=exec_type, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
+        api_response = api_instance.search_execution_logs(org_id, user_id=user_id, exec_type=exec_type, request_id=request_id, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
         print("The response of ExecutionLogsApi->search_execution_logs:\n")
         pprint(api_response)
     except Exception as e:
@@ -423,6 +424,7 @@ Name | Type | Description  | Notes
  **org_id** | **str**| organization ID | 
  **user_id** | **str**| User ID or me | [optional] 
  **exec_type** | **str**| Execution log type | [optional] 
+ **request_id** | **str**| Request ID | [optional] 
  **start_date** | **str**| Start date in Unix milliseconds | [optional] 
  **end_date** | **str**| End date in Unix milliseconds | [optional] 
  **offset** | **int**| Offset | [optional] 

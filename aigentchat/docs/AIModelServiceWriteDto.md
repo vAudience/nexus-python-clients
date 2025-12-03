@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ai_service_id** | **str** |  | 
 **cost_multiplier** | **float** |  | [optional] 
 **description** | **str** |  | [optional] 
 **hosting_locations** | [**Dict[str, HostingLocation]**](HostingLocation.md) |  | [optional] 
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **name** | **str** |  | 
-**service_impl** | [**AiServiceId**](AiServiceId.md) |  | 
+**service_impl** | [**AiServiceId**](AiServiceId.md) | Deprecated: use ai_service_id instead | 
 
 ## Example
 

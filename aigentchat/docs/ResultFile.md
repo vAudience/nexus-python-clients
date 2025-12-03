@@ -7,10 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **file_name** | **str** |  | 
 **file_size** | **int** |  | 
+**llm_input_type** | **str** |  | 
+**meta_data** | **object** |  | [optional] 
 **mime_type** | **str** |  | 
 **original_file_mime_type** | **str** |  | 
 **original_file_name** | **str** |  | 
 **original_file_url** | **str** |  | 
+**upload_category** | **str** |  | 
 **url** | **str** |  | 
 
 ## Example

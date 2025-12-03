@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **default_agent_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 
+**internal_id** | **str** |  | [optional] 
 **owner_id** | **str** |  | [optional] 
 **owner_organization_id** | **str** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 

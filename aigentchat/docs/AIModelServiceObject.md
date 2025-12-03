@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ai_service_id** | **str** |  | 
 **cost_multiplier** | **float** |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 
-**service_impl** | [**AiServiceId**](AiServiceId.md) |  | 
+**service_impl** | [**AiServiceId**](AiServiceId.md) | Deprecated: use ai_service_id instead | 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 
 

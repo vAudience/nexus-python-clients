@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **llm_input_type** | **str** |  | 
 **meta_data** | **object** |  | 
 **mime_type** | **str** |  | 
+**upload_category** | **str** |  | 
 **url** | **str** |  | 
 
 ## Example

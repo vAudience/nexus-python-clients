@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ai_model_id** | **str** |  | 
 **ai_service_id** | **str** |  | 
-**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | 
+**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) | Deprecated, add files to content instead | 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | 
 **created_at** | **int** |  | 
-**created_for_feature** | [**AIModelFeature**](AIModelFeature.md) | Deprecated, use FeatureUsage | [optional] 
+**created_for_feature** | [**AIModelFeature**](AIModelFeature.md) | Deprecated, use feature_usage | [optional] 
 **error** | [**AiServiceError**](AiServiceError.md) |  | [optional] 
 **execution_id** | **str** |  | [optional] 
 **feature_usage** | [**List[ExecutionFeatureUsage]**](ExecutionFeatureUsage.md) |  | [optional] 

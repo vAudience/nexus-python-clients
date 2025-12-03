@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ai_model_id** | **str** |  | 
 **ai_service_id** | **str** |  | 
-**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) |  | [optional] 
+**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) | Deprecated, add files to content instead | [optional] 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | [optional] 

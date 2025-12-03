@@ -92,6 +92,7 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
 **403** | Forbidden |  -  |
 **500** | Internal Server Error |  -  |
 

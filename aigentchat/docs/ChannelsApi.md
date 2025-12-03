@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_channels**
-> ChannelResults search_channels(org_id, user_id=user_id, q=q, include_services=include_services, limit=limit, offset=offset)
+> ChannelResults search_channels(org_id, user_id=user_id, q=q, include_services=include_services, limit=limit, offset=offset, offset_channel_id=offset_channel_id)
 
 Search channels by query
 
@@ -563,10 +563,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     include_services = False # bool | Whether to include service channels in the results (optional) (default to False)
     limit = 1000 # int | Limit the number of results (optional) (default to 1000)
     offset = 0 # int | Offset for pagination (optional) (default to 0)
+    offset_channel_id = 'offset_channel_id_example' # str | Offset the results to center around the specified channel ID, disables offset parameter (optional)
 
     try:
         # Search channels by query
-        api_response = api_instance.search_channels(org_id, user_id=user_id, q=q, include_services=include_services, limit=limit, offset=offset)
+        api_response = api_instance.search_channels(org_id, user_id=user_id, q=q, include_services=include_services, limit=limit, offset=offset, offset_channel_id=offset_channel_id)
         print("The response of ChannelsApi->search_channels:\n")
         pprint(api_response)
     except Exception as e:
@@ -586,6 +587,7 @@ Name | Type | Description  | Notes
  **include_services** | **bool**| Whether to include service channels in the results | [optional] [default to False]
  **limit** | **int**| Limit the number of results | [optional] [default to 1000]
  **offset** | **int**| Offset for pagination | [optional] [default to 0]
+ **offset_channel_id** | **str**| Offset the results to center around the specified channel ID, disables offset parameter | [optional] 
 
 ### Return type
 

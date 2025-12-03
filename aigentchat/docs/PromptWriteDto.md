@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **content** | **str** |  | [optional] 
 **default_agent_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**internal_id** | **str** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **thumbnail_url** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
