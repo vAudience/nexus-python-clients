@@ -6,9 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**model_category** | **str** |  | [optional] 
 **name** | **str** |  | 
-**recommended_task** | **str** |  | [optional] 
+**recommended_task** | **str** | TODO: will be replaced by tags | [optional] 
 
 ## Example
 

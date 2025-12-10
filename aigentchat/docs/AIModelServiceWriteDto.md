@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ai_service_id** | **str** |  | 
+**ai_service_id** | **str** |  | [optional] 
 **cost_multiplier** | **float** |  | [optional] 
 **description** | **str** |  | [optional] 
 **hosting_locations** | [**Dict[str, HostingLocation]**](HostingLocation.md) |  | [optional] 
 **i18n** | [**Dict[str, AIModelServiceI18n]**](AIModelServiceI18n.md) |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
-**name** | **str** |  | 
-**service_impl** | [**AiServiceId**](AiServiceId.md) | Deprecated: use ai_service_id instead | 
+**name** | **str** |  | [optional] 
+**service_impl** | [**AiServiceId**](AiServiceId.md) | Deprecated fields | 
 
 ## Example
 

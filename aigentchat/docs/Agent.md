@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**abilities** | [**List[Ability]**](Ability.md) |  | [optional] 
-**abilities_v2** | [**List[AbilityV2]**](AbilityV2.md) |  | [optional] 
 **add_tool_guidelines** | **bool** |  | [optional] 
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
@@ -20,18 +18,16 @@ Name | Type | Description | Notes
 **initial_user_messages** | **List[str]** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
-**lifecycle** | **str** |  | [optional] 
 **meta_data** | **object** |  | [optional] 
-**model_capabilities** | **List[str]** |  | [optional] 
-**model_category** | **str** |  | [optional] 
+**model** | [**AIModel**](AIModel.md) | Note: only set when returning the agent (not stored at agent level) | [optional] 
+**model_actions** | **List[str]** |  | [optional] 
 **model_host_location** | [**HostingLocation**](HostingLocation.md) |  | [optional] 
 **model_id** | **str** |  | 
-**model_release_date** | **int** |  | [optional] 
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 
 **parameters** | **object** |  | [optional] 
-**recommended_task** | **str** |  | [optional] 
+**recommended_task** | **str** | TODO: will be replaced by tags | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
 **team_ids** | **List[str]** |  | [optional] 
 **tool_config** | **object** |  | [optional] 

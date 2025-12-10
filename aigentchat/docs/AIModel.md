@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**abilities** | [**List[Ability]**](Ability.md) |  | [optional] 
-**abilities_v2** | [**List[AbilityV2]**](AbilityV2.md) |  | [optional] 
 **accepted_file_mimetypes** | **List[str]** |  | [optional] 
+**actions** | **List[str]** |  | 
+**capabilities** | **List[str]** | Note: only set when returning the model (not stored at model level), derived from features | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **documentation_url** | **str** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **owner_organization_id** | **str** |  | 
 **parameter_definitions** | **object** |  | [optional] 
 **parameters** | **object** |  | [optional] 
-**service_host_locations** | [**List[HostingLocation]**](HostingLocation.md) |  | [optional] 
+**service_host_locations** | [**List[HostingLocation]**](HostingLocation.md) |  | 
 **service_id** | **str** |  | 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 

@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_agents**
-> List[Agent] list_agents(org_id, add_default_agents=add_default_agents, skip_default_agents_filter=skip_default_agents_filter, ability=ability, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access, lifecycle=lifecycle)
+> List[Agent] list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access)
 
 List agents
 
@@ -669,15 +669,13 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
+    action = 'action_example' # str | Filter agents by model action (optional)
     add_default_agents = True # bool | Include default agents to the list of org owned agents (optional)
-    skip_default_agents_filter = True # bool | Skip the default agent filtering of the organization settings (optional)
-    ability = 'ability_example' # str | Filter agents by ability type (optional)
     ignore_manage_basic_agents_access = True # bool | Ignore hasManageBasicAgentsAccess when listing agents (optional)
-    lifecycle = 'lifecycle_example' # str | Filter agents by lifecycle status (optional)
 
     try:
         # List agents
-        api_response = api_instance.list_agents(org_id, add_default_agents=add_default_agents, skip_default_agents_filter=skip_default_agents_filter, ability=ability, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access, lifecycle=lifecycle)
+        api_response = api_instance.list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access)
         print("The response of AgentsApi->list_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -692,11 +690,9 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
+ **action** | **str**| Filter agents by model action | [optional] 
  **add_default_agents** | **bool**| Include default agents to the list of org owned agents | [optional] 
- **skip_default_agents_filter** | **bool**| Skip the default agent filtering of the organization settings | [optional] 
- **ability** | **str**| Filter agents by ability type | [optional] 
  **ignore_manage_basic_agents_access** | **bool**| Ignore hasManageBasicAgentsAccess when listing agents | [optional] 
- **lifecycle** | **str**| Filter agents by lifecycle status | [optional] 
 
 ### Return type
 
