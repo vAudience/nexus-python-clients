@@ -5,12 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allowed_hosting_locations** | **List[str]** |  | 
-**allowed_predefined_agent_ids** | **List[str]** |  | 
+**audio_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**chat_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**chat_default_agent_id** | **str** |  | [optional] 
 **created_at** | **str** |  | 
-**default_agent_id** | **str** |  | 
+**embedding_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**embedding_default_agent_id** | **str** |  | [optional] 
 **id** | **str** |  | 
+**image_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**image_default_agent_id** | **str** |  | [optional] 
 **organization_id** | **str** |  | 
+**tools_allowed_hosting_locations** | **List[str]** |  | [optional] 
 **updated_at** | **str** |  | 
 
 ## Example

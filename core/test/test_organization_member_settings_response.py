@@ -14,10 +14,10 @@
 
 import unittest
 
-from core.models.organization_role_response import OrganizationRoleResponse
+from core.models.organization_member_settings_response import OrganizationMemberSettingsResponse
 
-class TestOrganizationRoleResponse(unittest.TestCase):
-    """OrganizationRoleResponse unit test stubs"""
+class TestOrganizationMemberSettingsResponse(unittest.TestCase):
+    """OrganizationMemberSettingsResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,42 +25,37 @@ class TestOrganizationRoleResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> OrganizationRoleResponse:
-        """Test OrganizationRoleResponse
+    def make_instance(self, include_optional) -> OrganizationMemberSettingsResponse:
+        """Test OrganizationMemberSettingsResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `OrganizationRoleResponse`
+        # uncomment below to create an instance of `OrganizationMemberSettingsResponse`
         """
-        model = OrganizationRoleResponse()
+        model = OrganizationMemberSettingsResponse()
         if include_optional:
-            return OrganizationRoleResponse(
+            return OrganizationMemberSettingsResponse(
+                chat_default_agent_id = '',
                 created_at = '',
-                default_member_role = True,
+                embedding_default_agent_id = '',
                 id = '',
-                name = '',
+                image_default_agent_id = '',
+                member_id = '',
                 organization_id = '',
-                permissions = [
-                    ''
-                    ],
                 updated_at = ''
             )
         else:
-            return OrganizationRoleResponse(
+            return OrganizationMemberSettingsResponse(
                 created_at = '',
-                default_member_role = True,
                 id = '',
-                name = '',
+                member_id = '',
                 organization_id = '',
-                permissions = [
-                    ''
-                    ],
                 updated_at = '',
         )
         """
 
-    def testOrganizationRoleResponse(self):
-        """Test OrganizationRoleResponse"""
+    def testOrganizationMemberSettingsResponse(self):
+        """Test OrganizationMemberSettingsResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

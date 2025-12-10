@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**create_organization**](OrganizationsApi.md#create_organization) | **POST** /v1/organizations | Create an Organization
 [**create_organization_api_key**](OrganizationsApi.md#create_organization_api_key) | **POST** /v1/organizations/{id}/keys | Create an api key for an Organization
 [**create_organization_role**](OrganizationsApi.md#create_organization_role) | **POST** /v1/organizations/{id}/roles | Create a role for an Organization
-[**create_organization_settings**](OrganizationsApi.md#create_organization_settings) | **POST** /v1/organizations/{id}/settings | Create settings for an Organization
 [**create_subscription**](OrganizationsApi.md#create_subscription) | **POST** /v1/organizations/{id}/subscription | Create a subscription for an Organization
 [**create_team**](OrganizationsApi.md#create_team) | **POST** /v1/organizations/{id}/teams | Create a team for an Organization
 [**create_team_member**](OrganizationsApi.md#create_team_member) | **POST** /v1/organizations/{id}/teams/{teamId}/members | Add a member to a team
@@ -34,6 +33,7 @@ Method | HTTP request | Description
 [**get_invite**](OrganizationsApi.md#get_invite) | **GET** /v1/organizations/{id}/invites/{inviteId} | Get an invite for an Organization
 [**get_invites**](OrganizationsApi.md#get_invites) | **GET** /v1/organizations/{id}/invites | Get all invites for an Organization
 [**get_member**](OrganizationsApi.md#get_member) | **GET** /v1/organizations/{id}/members/{memberId} | Get a member for an Organization
+[**get_member_settings**](OrganizationsApi.md#get_member_settings) | **GET** /v1/organizations/{id}/members/{memberId}/settings | Get member settings for an Organization
 [**get_members**](OrganizationsApi.md#get_members) | **GET** /v1/organizations/{id}/members | Get all members for an Organization
 [**get_organization**](OrganizationsApi.md#get_organization) | **GET** /v1/organizations/{id} | Get an Organization by id
 [**get_organization_api_keys**](OrganizationsApi.md#get_organization_api_keys) | **GET** /v1/organizations/{id}/keys | Get all api keys for an Organization
@@ -47,6 +47,7 @@ Method | HTTP request | Description
 [**get_teams**](OrganizationsApi.md#get_teams) | **GET** /v1/organizations/{id}/teams | Get all teams for an Organization
 [**invite**](OrganizationsApi.md#invite) | **POST** /v1/organizations/{id}/invites | Invite a user to an Organization
 [**patch_member**](OrganizationsApi.md#patch_member) | **PATCH** /v1/organizations/{id}/members/{memberId} | Patch a member for an Organization
+[**patch_member_settings**](OrganizationsApi.md#patch_member_settings) | **PATCH** /v1/organizations/{id}/members/{memberId}/settings | Patch member settings for an Organization
 [**patch_organization**](OrganizationsApi.md#patch_organization) | **PATCH** /v1/organizations/{id} | Patch an Organization by ID
 [**patch_organization_api_key**](OrganizationsApi.md#patch_organization_api_key) | **PATCH** /v1/organizations/{id}/keys/{keyId} | Patch an api key for an Organization
 [**patch_organization_ownership**](OrganizationsApi.md#patch_organization_ownership) | **PATCH** /v1/organizations/{id}/owner | Transfer the ownership of an organization
@@ -488,94 +489,6 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Organization Not Found |  -  |
-**500** | Server or Database Internal Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_organization_settings**
-> OrganizationSettingsResponse create_organization_settings(id, settings)
-
-Create settings for an Organization
-
-Create settings for an Organization
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import core
-from core.models.organization_settings_post_request import OrganizationSettingsPostRequest
-from core.models.organization_settings_response import OrganizationSettingsResponse
-from core.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://core.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = core.Configuration(
-    host = "https://core.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with core.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = core.OrganizationsApi(api_client)
-    id = 'id_example' # str | id of the organization
-    settings = core.OrganizationSettingsPostRequest() # OrganizationSettingsPostRequest | settings object
-
-    try:
-        # Create settings for an Organization
-        api_response = api_instance.create_organization_settings(id, settings)
-        print("The response of OrganizationsApi->create_organization_settings:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OrganizationsApi->create_organization_settings: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| id of the organization | 
- **settings** | [**OrganizationSettingsPostRequest**](OrganizationSettingsPostRequest.md)| settings object | 
-
-### Return type
-
-[**OrganizationSettingsResponse**](OrganizationSettingsResponse.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Organization Not Found |  -  |
-**409** | Organization Settings Exists |  -  |
 **500** | Server or Database Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2600,6 +2513,91 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_member_settings**
+> OrganizationMemberSettingsResponse get_member_settings(id, member_id)
+
+Get member settings for an Organization
+
+Get member settings for an Organization
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import core
+from core.models.organization_member_settings_response import OrganizationMemberSettingsResponse
+from core.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://core.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = core.Configuration(
+    host = "https://core.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = core.OrganizationsApi(api_client)
+    id = 'id_example' # str | id of the organization
+    member_id = 'member_id_example' # str | id of the member
+
+    try:
+        # Get member settings for an Organization
+        api_response = api_instance.get_member_settings(id, member_id)
+        print("The response of OrganizationsApi->get_member_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->get_member_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| id of the organization | 
+ **member_id** | **str**| id of the member | 
+
+### Return type
+
+[**OrganizationMemberSettingsResponse**](OrganizationMemberSettingsResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Organization Member Not Found |  -  |
+**500** | Server or Database Internal Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_members**
 > List[OrganizationMemberResponse] get_members(id)
 
@@ -3678,6 +3676,95 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrganizationMemberResponse**](OrganizationMemberResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Organization Member Not Found |  -  |
+**500** | Server or Database Internal Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_member_settings**
+> OrganizationMemberSettingsResponse patch_member_settings(id, member_id, settings)
+
+Patch member settings for an Organization
+
+Patch member settings for an Organization
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import core
+from core.models.organization_member_settings_patch_request import OrganizationMemberSettingsPatchRequest
+from core.models.organization_member_settings_response import OrganizationMemberSettingsResponse
+from core.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://core.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = core.Configuration(
+    host = "https://core.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = core.OrganizationsApi(api_client)
+    id = 'id_example' # str | id of the organization
+    member_id = 'member_id_example' # str | id of the member
+    settings = core.OrganizationMemberSettingsPatchRequest() # OrganizationMemberSettingsPatchRequest | settings object
+
+    try:
+        # Patch member settings for an Organization
+        api_response = api_instance.patch_member_settings(id, member_id, settings)
+        print("The response of OrganizationsApi->patch_member_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->patch_member_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| id of the organization | 
+ **member_id** | **str**| id of the member | 
+ **settings** | [**OrganizationMemberSettingsPatchRequest**](OrganizationMemberSettingsPatchRequest.md)| settings object | 
+
+### Return type
+
+[**OrganizationMemberSettingsResponse**](OrganizationMemberSettingsResponse.md)
 
 ### Authorization
 

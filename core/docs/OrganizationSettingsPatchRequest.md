@@ -5,9 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allowed_hosting_locations** | **List[str]** |  | [optional] 
-**allowed_predefined_agent_ids** | **List[str]** |  | [optional] 
-**default_agent_id** | **str** |  | [optional] 
+**audio_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**chat_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**chat_default_agent_id** | **str** |  | [optional] 
+**embedding_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**embedding_default_agent_id** | **str** |  | [optional] 
+**image_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**image_default_agent_id** | **str** |  | [optional] 
+**tools_allowed_hosting_locations** | **List[str]** |  | [optional] 
 
 ## Example
 
