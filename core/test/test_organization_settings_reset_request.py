@@ -14,10 +14,10 @@
 
 import unittest
 
-from core.models.refresh_response import RefreshResponse
+from core.models.organization_settings_reset_request import OrganizationSettingsResetRequest
 
-class TestRefreshResponse(unittest.TestCase):
-    """RefreshResponse unit test stubs"""
+class TestOrganizationSettingsResetRequest(unittest.TestCase):
+    """OrganizationSettingsResetRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,26 +25,27 @@ class TestRefreshResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RefreshResponse:
-        """Test RefreshResponse
+    def make_instance(self, include_optional) -> OrganizationSettingsResetRequest:
+        """Test OrganizationSettingsResetRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RefreshResponse`
+        # uncomment below to create an instance of `OrganizationSettingsResetRequest`
         """
-        model = RefreshResponse()
+        model = OrganizationSettingsResetRequest()
         if include_optional:
-            return RefreshResponse(
-                token_expires_in_sec = 56
+            return OrganizationSettingsResetRequest(
+                fields = [
+                    ''
+                    ]
             )
         else:
-            return RefreshResponse(
-                token_expires_in_sec = 56,
+            return OrganizationSettingsResetRequest(
         )
         """
 
-    def testRefreshResponse(self):
-        """Test RefreshResponse"""
+    def testOrganizationSettingsResetRequest(self):
+        """Test OrganizationSettingsResetRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

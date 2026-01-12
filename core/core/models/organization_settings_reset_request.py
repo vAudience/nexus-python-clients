@@ -18,17 +18,17 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OrganizationInviteRequest(BaseModel):
+class OrganizationSettingsResetRequest(BaseModel):
     """
-    OrganizationInviteRequest
+    OrganizationSettingsResetRequest
     """ # noqa: E501
-    email: StrictStr
+    fields: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["email"]
+    __properties: ClassVar[List[str]] = ["fields"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +48,7 @@ class OrganizationInviteRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OrganizationInviteRequest from a JSON string"""
+        """Create an instance of OrganizationSettingsResetRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,7 +80,7 @@ class OrganizationInviteRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OrganizationInviteRequest from a dict"""
+        """Create an instance of OrganizationSettingsResetRequest from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +88,7 @@ class OrganizationInviteRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "email": obj.get("email")
+            "fields": obj.get("fields")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

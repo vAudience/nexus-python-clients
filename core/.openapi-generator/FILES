@@ -51,6 +51,7 @@ core/models/organization_results_response.py
 core/models/organization_role_reduced_response.py
 core/models/organization_role_response.py
 core/models/organization_settings_patch_request.py
+core/models/organization_settings_reset_request.py
 core/models/organization_settings_response.py
 core/models/organization_subscription_patch_request.py
 core/models/organization_subscription_post_request.py
@@ -110,6 +111,7 @@ docs/OrganizationResultsResponse.md
 docs/OrganizationRoleReducedResponse.md
 docs/OrganizationRoleResponse.md
 docs/OrganizationSettingsPatchRequest.md
+docs/OrganizationSettingsResetRequest.md
 docs/OrganizationSettingsResponse.md
 docs/OrganizationSubscriptionPatchRequest.md
 docs/OrganizationSubscriptionPostRequest.md
@@ -180,6 +182,7 @@ test/test_organization_results_response.py
 test/test_organization_role_reduced_response.py
 test/test_organization_role_response.py
 test/test_organization_settings_patch_request.py
+test/test_organization_settings_reset_request.py
 test/test_organization_settings_response.py
 test/test_organization_subscription_patch_request.py
 test/test_organization_subscription_post_request.py

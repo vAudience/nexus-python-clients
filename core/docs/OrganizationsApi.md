@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**create_subscription**](OrganizationsApi.md#create_subscription) | **POST** /v1/organizations/{id}/subscription | Create a subscription for an Organization
 [**create_team**](OrganizationsApi.md#create_team) | **POST** /v1/organizations/{id}/teams | Create a team for an Organization
 [**create_team_member**](OrganizationsApi.md#create_team_member) | **POST** /v1/organizations/{id}/teams/{teamId}/members | Add a member to a team
-[**create_vaud_enterprise_credits_payment**](OrganizationsApi.md#create_vaud_enterprise_credits_payment) | **POST** /v1/organizations/{id}/vaud-credits-payments | Create a credits payment for an vaud enterprise Organization
+[**create_vaud_credits_payment**](OrganizationsApi.md#create_vaud_credits_payment) | **POST** /v1/organizations/{id}/vaud-credits-payments | Create a vaud credits payment for an organization with active subscription
 [**delete_invite**](OrganizationsApi.md#delete_invite) | **DELETE** /v1/organizations/{id}/invites/{inviteId} | Delete Organization Invite by ID
 [**delete_member**](OrganizationsApi.md#delete_member) | **DELETE** /v1/organizations/{id}/members/{memberId} | Delete a member for an Organization
 [**delete_organization**](OrganizationsApi.md#delete_organization) | **DELETE** /v1/organizations/{id} | Delete Organization by ID
@@ -56,6 +56,7 @@ Method | HTTP request | Description
 [**patch_team**](OrganizationsApi.md#patch_team) | **PATCH** /v1/organizations/{id}/teams/{teamId} | Patch a team for an Organization
 [**reactivate_subscription**](OrganizationsApi.md#reactivate_subscription) | **PATCH** /v1/organizations/{id}/subscription/reactivate | Reactivate a subscription for an Organization
 [**resend_invite**](OrganizationsApi.md#resend_invite) | **POST** /v1/organizations/{id}/invites/{inviteId}/resend | Resend Organization Invite by ID
+[**reset_organization_settings**](OrganizationsApi.md#reset_organization_settings) | **PATCH** /v1/organizations/{id}/settings/reset | Reset settings for an Organization to default values
 [**update_subscription**](OrganizationsApi.md#update_subscription) | **PATCH** /v1/organizations/{id}/subscription | Update a subscription for an Organization
 
 
@@ -756,12 +757,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_vaud_enterprise_credits_payment**
-> create_vaud_enterprise_credits_payment(id, organization_credits_payment)
+# **create_vaud_credits_payment**
+> create_vaud_credits_payment(id, organization_credits_payment)
 
-Create a credits payment for an vaud enterprise Organization
+Create a vaud credits payment for an organization with active subscription
 
-Create a credits payment for an vaud enterprise Organization
+Create a vaud credits payment for an organization with active subscription
 
 ### Example
 
@@ -798,10 +799,10 @@ with core.ApiClient(configuration) as api_client:
     organization_credits_payment = core.OrganizationCreditsPaymentPostRequest() # OrganizationCreditsPaymentPostRequest | organization credits payment object
 
     try:
-        # Create a credits payment for an vaud enterprise Organization
-        api_instance.create_vaud_enterprise_credits_payment(id, organization_credits_payment)
+        # Create a vaud credits payment for an organization with active subscription
+        api_instance.create_vaud_credits_payment(id, organization_credits_payment)
     except Exception as e:
-        print("Exception when calling OrganizationsApi->create_vaud_enterprise_credits_payment: %s\n" % e)
+        print("Exception when calling OrganizationsApi->create_vaud_credits_payment: %s\n" % e)
 ```
 
 
@@ -4483,6 +4484,93 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Invite Not Found |  -  |
+**500** | Server or Database Internal Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reset_organization_settings**
+> OrganizationSettingsResponse reset_organization_settings(id, fields)
+
+Reset settings for an Organization to default values
+
+Reset settings for an Organization to default values
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import core
+from core.models.organization_settings_reset_request import OrganizationSettingsResetRequest
+from core.models.organization_settings_response import OrganizationSettingsResponse
+from core.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://core.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = core.Configuration(
+    host = "https://core.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = core.OrganizationsApi(api_client)
+    id = 'id_example' # str | id of the organization
+    fields = core.OrganizationSettingsResetRequest() # OrganizationSettingsResetRequest | fields to reset, if empty all fields will be reset
+
+    try:
+        # Reset settings for an Organization to default values
+        api_response = api_instance.reset_organization_settings(id, fields)
+        print("The response of OrganizationsApi->reset_organization_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->reset_organization_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| id of the organization | 
+ **fields** | [**OrganizationSettingsResetRequest**](OrganizationSettingsResetRequest.md)| fields to reset, if empty all fields will be reset | 
+
+### Return type
+
+[**OrganizationSettingsResponse**](OrganizationSettingsResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Organization Not Found |  -  |
 **500** | Server or Database Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
