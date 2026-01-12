@@ -15,10 +15,10 @@
 
 import unittest
 
-from aigentchat.models.agent_i18n import AgentI18n
+from aigentchat.models.tool_continuation_instructions import ToolContinuationInstructions
 
-class TestAgentI18n(unittest.TestCase):
-    """AgentI18n unit test stubs"""
+class TestToolContinuationInstructions(unittest.TestCase):
+    """ToolContinuationInstructions unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,27 @@ class TestAgentI18n(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AgentI18n:
-        """Test AgentI18n
+    def make_instance(self, include_optional) -> ToolContinuationInstructions:
+        """Test ToolContinuationInstructions
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AgentI18n`
+        # uncomment below to create an instance of `ToolContinuationInstructions`
         """
-        model = AgentI18n()
+        model = ToolContinuationInstructions()
         if include_optional:
-            return AgentI18n(
-                description = '',
-                name = '0',
-                recommended_task = ''
+            return ToolContinuationInstructions(
+                continuation_function_call = '',
+                continuation_id = '',
+                human_input_prompt = ''
             )
         else:
-            return AgentI18n(
-                name = '0',
+            return ToolContinuationInstructions(
         )
         """
 
-    def testAgentI18n(self):
-        """Test AgentI18n"""
+    def testToolContinuationInstructions(self):
+        """Test ToolContinuationInstructions"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

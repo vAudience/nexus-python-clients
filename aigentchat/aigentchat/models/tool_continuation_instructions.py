@@ -23,14 +23,15 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AIgencyFunctionStatusUpdateData(BaseModel):
+class ToolContinuationInstructions(BaseModel):
     """
-    AIgencyFunctionStatusUpdateData
+    ToolContinuationInstructions
     """ # noqa: E501
-    message: StrictStr
-    meta_data: Optional[Dict[str, Any]] = None
+    continuation_function_call: Optional[StrictStr] = None
+    continuation_id: Optional[StrictStr] = None
+    human_input_prompt: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["message", "meta_data"]
+    __properties: ClassVar[List[str]] = ["continuation_function_call", "continuation_id", "human_input_prompt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +51,7 @@ class AIgencyFunctionStatusUpdateData(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AIgencyFunctionStatusUpdateData from a JSON string"""
+        """Create an instance of ToolContinuationInstructions from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -82,7 +83,7 @@ class AIgencyFunctionStatusUpdateData(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AIgencyFunctionStatusUpdateData from a dict"""
+        """Create an instance of ToolContinuationInstructions from a dict"""
         if obj is None:
             return None
 
@@ -90,8 +91,9 @@ class AIgencyFunctionStatusUpdateData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "message": obj.get("message"),
-            "meta_data": obj.get("meta_data")
+            "continuation_function_call": obj.get("continuation_function_call"),
+            "continuation_id": obj.get("continuation_id"),
+            "human_input_prompt": obj.get("human_input_prompt")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

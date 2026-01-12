@@ -122,6 +122,7 @@ aigentchat/models/text_embedding_item_dto.py
 aigentchat/models/text_embedding_request_dto.py
 aigentchat/models/token_direction.py
 aigentchat/models/tool.py
+aigentchat/models/tool_continuation_instructions.py
 aigentchat/models/tool_function.py
 aigentchat/models/tool_i18n.py
 aigentchat/models/version_response.py
@@ -237,6 +238,7 @@ docs/TextEmbeddingItemDto.md
 docs/TextEmbeddingRequestDto.md
 docs/TokenDirection.md
 docs/Tool.md
+docs/ToolContinuationInstructions.md
 docs/ToolFunction.md
 docs/ToolI18n.md
 docs/ToolsApi.md
@@ -359,6 +361,7 @@ test/test_text_embedding_item_dto.py
 test/test_text_embedding_request_dto.py
 test/test_token_direction.py
 test/test_tool.py
+test/test_tool_continuation_instructions.py
 test/test_tool_function.py
 test/test_tool_i18n.py
 test/test_tools_api.py

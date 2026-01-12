@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | 
+**continuation_instructions** | [**ToolContinuationInstructions**](ToolContinuationInstructions.md) |  | [optional] 
 **created_at** | **int** |  | 
 **created_for_feature** | [**AIModelFeature**](AIModelFeature.md) | Deprecated, use feature_usage | [optional] 
 **error** | [**AiServiceError**](AiServiceError.md) |  | [optional] 

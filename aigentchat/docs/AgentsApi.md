@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_agents**
-> List[Agent] list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access)
+> List[Agent] list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access, visibility=visibility)
 
 List agents
 
@@ -672,10 +672,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     action = 'action_example' # str | Filter agents by model action (optional)
     add_default_agents = True # bool | Include default agents to the list of org owned agents (optional)
     ignore_manage_basic_agents_access = True # bool | Ignore hasManageBasicAgentsAccess when listing agents (optional)
+    visibility = 'visibility_example' # str | Filter agents by access visibility (optional)
 
     try:
         # List agents
-        api_response = api_instance.list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access)
+        api_response = api_instance.list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access, visibility=visibility)
         print("The response of AgentsApi->list_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -693,6 +694,7 @@ Name | Type | Description  | Notes
  **action** | **str**| Filter agents by model action | [optional] 
  **add_default_agents** | **bool**| Include default agents to the list of org owned agents | [optional] 
  **ignore_manage_basic_agents_access** | **bool**| Ignore hasManageBasicAgentsAccess when listing agents | [optional] 
+ **visibility** | **str**| Filter agents by access visibility | [optional] 
 
 ### Return type
 

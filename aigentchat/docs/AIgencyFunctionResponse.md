@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**continuation_instructions** | [**ToolContinuationInstructions**](ToolContinuationInstructions.md) |  | [optional] 
 **function_name** | **str** |  | 
 **id** | **str** |  | 
 **is_error** | **bool** |  | [optional] 
