@@ -1741,7 +1741,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_my_organizations_with_details**
-> List[OrganizationDetailsResponse] get_all_my_organizations_with_details()
+> OrganizationDetailsResultsResponse get_all_my_organizations_with_details(limit=limit, offset=offset)
 
 Get all my organizations with details (subscriptions, ...)
 
@@ -1753,7 +1753,7 @@ Get all my organizations with details (subscriptions, ...)
 
 ```python
 import core
-from core.models.organization_details_response import OrganizationDetailsResponse
+from core.models.organization_details_results_response import OrganizationDetailsResultsResponse
 from core.rest import ApiException
 from pprint import pprint
 
@@ -1778,10 +1778,12 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 with core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = core.OrganizationsApi(api_client)
+    limit = 20 # int | Limit the number of results, 0 > limit <= 100 (optional) (default to 20)
+    offset = 0 # int | Offset for pagination, 0 >= offset (optional) (default to 0)
 
     try:
         # Get all my organizations with details (subscriptions, ...)
-        api_response = api_instance.get_all_my_organizations_with_details()
+        api_response = api_instance.get_all_my_organizations_with_details(limit=limit, offset=offset)
         print("The response of OrganizationsApi->get_all_my_organizations_with_details:\n")
         pprint(api_response)
     except Exception as e:
@@ -1792,11 +1794,15 @@ with core.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Limit the number of results, 0 &gt; limit &lt;&#x3D; 100 | [optional] [default to 20]
+ **offset** | **int**| Offset for pagination, 0 &gt;&#x3D; offset | [optional] [default to 0]
 
 ### Return type
 
-[**List[OrganizationDetailsResponse]**](OrganizationDetailsResponse.md)
+[**OrganizationDetailsResultsResponse**](OrganizationDetailsResultsResponse.md)
 
 ### Authorization
 

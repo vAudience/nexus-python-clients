@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **audio_allowed_hosting_locations** | **List[str]** |  | [optional] 
+**chat_agent_quick_filters** | [**List[AgentQuickFilter]**](AgentQuickFilter.md) |  | [optional] 
 **chat_allowed_hosting_locations** | **List[str]** |  | [optional] 
 **chat_default_agent_id** | **str** |  | [optional] 
 **created_at** | **str** |  | 

@@ -21,7 +21,11 @@ core/api_response.py
 core/configuration.py
 core/exceptions.py
 core/models/__init__.py
+core/models/agent_filter_options.py
+core/models/agent_quick_filter.py
+core/models/agent_quick_filter_i18n.py
 core/models/authenticated_response.py
+core/models/credentials_response.py
 core/models/entitlement_response.py
 core/models/error_code.py
 core/models/error_detail.py
@@ -38,6 +42,7 @@ core/models/organization_credits_payment_post_request.py
 core/models/organization_credits_payment_response.py
 core/models/organization_customer_portal_session_response.py
 core/models/organization_details_response.py
+core/models/organization_details_results_response.py
 core/models/organization_invite_request.py
 core/models/organization_invite_response.py
 core/models/organization_member_response.py
@@ -77,8 +82,12 @@ core/models/user_settings_response.py
 core/models/version_response.py
 core/py.typed
 core/rest.py
+docs/AgentFilterOptions.md
+docs/AgentQuickFilter.md
+docs/AgentQuickFilterI18n.md
 docs/AuthApi.md
 docs/AuthenticatedResponse.md
+docs/CredentialsResponse.md
 docs/EntitlementResponse.md
 docs/EntitlementsApi.md
 docs/ErrorCode.md
@@ -98,6 +107,7 @@ docs/OrganizationCreditsPaymentPostRequest.md
 docs/OrganizationCreditsPaymentResponse.md
 docs/OrganizationCustomerPortalSessionResponse.md
 docs/OrganizationDetailsResponse.md
+docs/OrganizationDetailsResultsResponse.md
 docs/OrganizationInviteRequest.md
 docs/OrganizationInviteResponse.md
 docs/OrganizationMemberResponse.md
@@ -148,8 +158,12 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_agent_filter_options.py
+test/test_agent_quick_filter.py
+test/test_agent_quick_filter_i18n.py
 test/test_auth_api.py
 test/test_authenticated_response.py
+test/test_credentials_response.py
 test/test_entitlement_response.py
 test/test_entitlements_api.py
 test/test_error_code.py
@@ -169,6 +183,7 @@ test/test_organization_credits_payment_post_request.py
 test/test_organization_credits_payment_response.py
 test/test_organization_customer_portal_session_response.py
 test/test_organization_details_response.py
+test/test_organization_details_results_response.py
 test/test_organization_invite_request.py
 test/test_organization_invite_response.py
 test/test_organization_member_response.py
