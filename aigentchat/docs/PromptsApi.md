@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_prompts**
-> List[Prompt] list_prompts(org_id, offset=offset, limit=limit)
+> List[Prompt] list_prompts(org_id, visibility=visibility, offset=offset, limit=limit)
 
 List prompts
 
@@ -306,12 +306,13 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.PromptsApi(api_client)
     org_id = 'org_id_example' # str | Organization ID
+    visibility = 'visibility_example' # str | Filter prompts by access visibility (optional)
     offset = 56 # int | Offset (optional)
     limit = 56 # int | Limit (optional)
 
     try:
         # List prompts
-        api_response = api_instance.list_prompts(org_id, offset=offset, limit=limit)
+        api_response = api_instance.list_prompts(org_id, visibility=visibility, offset=offset, limit=limit)
         print("The response of PromptsApi->list_prompts:\n")
         pprint(api_response)
     except Exception as e:
@@ -326,6 +327,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| Organization ID | 
+ **visibility** | **str**| Filter prompts by access visibility | [optional] 
  **offset** | **int**| Offset | [optional] 
  **limit** | **int**| Limit | [optional] 
 

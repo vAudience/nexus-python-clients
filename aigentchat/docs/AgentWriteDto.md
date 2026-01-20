@@ -15,19 +15,19 @@ Name | Type | Description | Notes
 **ignore_incoming_overwrite** | **bool** |  | [optional] 
 **initial_user_messages** | **List[str]** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
-**is_public** | **bool** |  | [optional] 
 **meta_data** | **object** |  | [optional] 
 **model_actions** | **List[str]** |  | [optional] 
 **model_host_location** | [**HostingLocation**](HostingLocation.md) |  | [optional] 
 **model_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **parameters** | **object** |  | [optional] 
-**recommended_task** | **str** | TODO: will be replaced by tags | [optional] 
+**read_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
-**team_ids** | **List[str]** |  | [optional] 
+**tag_ids** | **List[str]** |  | [optional] 
 **tool_config** | **object** |  | [optional] 
 **type** | [**AgentType**](AgentType.md) |  | [optional] 
 **use_tools** | **bool** |  | [optional] 
+**write_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 
 ## Example
 

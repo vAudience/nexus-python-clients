@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | 
 **attached_files** | **List[str]** |  | [optional] 
-**attached_temporary_files** | **List[str]** | Deprecated, use attached_files instead | [optional] 
 **channel_id** | **str** |  | [optional] 
 **continue_instruction_on_max_tokens** | **str** |  | [optional] 
 **continue_on_max_tokens** | **bool** |  | [optional] 
@@ -15,7 +14,6 @@ Name | Type | Description | Notes
 **message** | **str** |  | 
 **message_reference_id** | **str** |  | [optional] 
 **message_response_to_id** | **str** |  | [optional] 
-**mission_id** | **str** |  | [optional] 
 **parameters** | **object** |  | [optional] 
 **selected_tools** | **List[str]** |  | [optional] 
 **service_channel** | **bool** |  | [optional] 

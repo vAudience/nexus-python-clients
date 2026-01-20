@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
-**lifecycle** | **str** |  | [optional] 
-**model_category** | **str** |  | [optional] 
 **model_id** | **str** |  | 
+**model_knowledge_cutoff** | **int** |  | [optional] 
 **model_release_date** | **int** |  | [optional] 
+**model_stats** | [**AIModelStats**](AIModelStats.md) |  | [optional] 
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 

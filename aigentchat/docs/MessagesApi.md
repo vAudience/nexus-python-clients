@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**delete_message**](MessagesApi.md#delete_message) | **DELETE** /v1/organizations/{org_id}/messages/{id} | Delete a message
 [**get_channel_messages**](MessagesApi.md#get_channel_messages) | **GET** /v1/organizations/{org_id}/messages/channel/{channel_id} | Get messages for a channel
 [**get_message**](MessagesApi.md#get_message) | **GET** /v1/organizations/{org_id}/messages/{id} | Get a message by ID
-[**search_messages**](MessagesApi.md#search_messages) | **GET** /v1/organizations/{org_id}/messages/search | Search messages
+[**list_messages**](MessagesApi.md#list_messages) | **GET** /v1/organizations/{org_id}/messages | List messages
 [**update_message**](MessagesApi.md#update_message) | **PUT** /v1/organizations/{org_id}/messages/{id} | Update a message
 
 
@@ -359,12 +359,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_messages**
-> AIgencyMessageResults search_messages(org_id, content=content, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
+# **list_messages**
+> AIgencyMessageResults list_messages(org_id, content=content, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
 
-Search messages
+List messages
 
-Search for messages based on content, sender ID, and date range
+List messages based on content, sender ID, and date range
 
 ### Example
 
@@ -405,12 +405,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     limit = 56 # int | Limit results (optional)
 
     try:
-        # Search messages
-        api_response = api_instance.search_messages(org_id, content=content, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
-        print("The response of MessagesApi->search_messages:\n")
+        # List messages
+        api_response = api_instance.list_messages(org_id, content=content, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
+        print("The response of MessagesApi->list_messages:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MessagesApi->search_messages: %s\n" % e)
+        print("Exception when calling MessagesApi->list_messages: %s\n" % e)
 ```
 
 

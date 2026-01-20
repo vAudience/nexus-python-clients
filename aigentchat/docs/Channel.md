@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **is_public** | **bool** |  | [optional] 
 **last_message_at** | **int** |  | [optional] 
 **metadata** | **object** |  | [optional] 
-**mission_id** | **str** |  | [optional] 
 **name** | **str** |  | 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 

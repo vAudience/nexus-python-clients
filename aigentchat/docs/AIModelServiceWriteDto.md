@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
-**service_impl** | [**AiServiceId**](AiServiceId.md) | Deprecated fields | 
 
 ## Example
 

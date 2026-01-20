@@ -7,20 +7,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ai_model_id** | **str** |  | 
 **ai_service_id** | **str** |  | 
-**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) | Deprecated, add files to content instead | 
+**attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) | Note: deprecated, but we need to keep it for backward compatibility or do a message data migration | 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | 
 **continuation_instructions** | [**ToolContinuationInstructions**](ToolContinuationInstructions.md) |  | [optional] 
 **created_at** | **int** |  | 
-**created_for_feature** | [**AIModelFeature**](AIModelFeature.md) | Deprecated, use feature_usage | [optional] 
 **error** | [**AiServiceError**](AiServiceError.md) |  | [optional] 
 **execution_id** | **str** |  | [optional] 
 **feature_usage** | [**List[ExecutionFeatureUsage]**](ExecutionFeatureUsage.md) |  | [optional] 
 **finish_reason** | [**FinishReason**](FinishReason.md) |  | [optional] 
 **id** | **str** |  | 
 **meta_data** | **object** |  | [optional] 
-**mission_id** | **str** |  | [optional] 
 **owner_organization_id** | **str** |  | 
 **parameters** | **object** |  | [optional] 
 **reference_id** | **str** |  | [optional] 

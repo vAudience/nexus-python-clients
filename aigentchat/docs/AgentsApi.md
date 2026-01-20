@@ -16,7 +16,6 @@ Method | HTTP request | Description
 [**remove_attached_file_id**](AgentsApi.md#remove_attached_file_id) | **PATCH** /v1/organizations/{org_id}/agents/{id}/remove-file/{file_id} | Remove an attached file ID from an agent
 [**remove_initial_user_message**](AgentsApi.md#remove_initial_user_message) | **PATCH** /v1/organizations/{org_id}/agents/{id}/messages/remove-user-message | Remove an initial user message from an agent
 [**remove_system_message**](AgentsApi.md#remove_system_message) | **PATCH** /v1/organizations/{org_id}/agents/{id}/messages/remove-system-message | Remove a system message from an agent
-[**search_agents**](AgentsApi.md#search_agents) | **GET** /v1/organizations/{org_id}/agents/search | Search agents
 [**update_agent**](AgentsApi.md#update_agent) | **PUT** /v1/organizations/{org_id}/agents/{id} | Update an agent
 
 
@@ -631,11 +630,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_agents**
-> List[Agent] list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access, visibility=visibility)
+> List[Agent] list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
 
 List agents
 
-Retrieve a list of agents by ownership and organization
+Retrieve a list of agents based on criteria
 
 ### Example
 
@@ -669,14 +668,22 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    action = 'action_example' # str | Filter agents by model action (optional)
-    add_default_agents = True # bool | Include default agents to the list of org owned agents (optional)
-    ignore_manage_basic_agents_access = True # bool | Ignore hasManageBasicAgentsAccess when listing agents (optional)
-    visibility = 'visibility_example' # str | Filter agents by access visibility (optional)
+    model_ids = ['model_ids_example'] # List[str] | Model ID to filter by (comma separated) (optional)
+    tag_ids = ['tag_ids_example'] # List[str] | Tag IDs to filter by (comma separated) (optional)
+    q = 'q_example' # str | Search term for name or description (optional)
+    action = 'action_example' # str | Filter agents by model action (chat, image, etc.) (optional)
+    types = ['types_example'] # List[str] | Filter agents by types (basic, background, service - comma separated) (optional)
+    add_predefined_agents = True # bool | Include default agents to the list of org owned agents (optional)
+    admin_mode = True # bool | Admin mode to bypass certain permission checks (optional)
+    visibility = 'visibility_example' # str | Filter agents by access visibility (public, organization) (optional)
+    limit = 1000 # int | Limit the number of results (optional) (default to 1000)
+    offset = 0 # int | Offset for pagination (optional) (default to 0)
+    sort_by = '"name"' # str | Field to sort by (name, createdat, updatedat) (optional) (default to '"name"')
+    sort_order = '"asc"' # str | Sort order (asc or desc) (optional) (default to '"asc"')
 
     try:
         # List agents
-        api_response = api_instance.list_agents(org_id, action=action, add_default_agents=add_default_agents, ignore_manage_basic_agents_access=ignore_manage_basic_agents_access, visibility=visibility)
+        api_response = api_instance.list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
         print("The response of AgentsApi->list_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -691,10 +698,18 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **action** | **str**| Filter agents by model action | [optional] 
- **add_default_agents** | **bool**| Include default agents to the list of org owned agents | [optional] 
- **ignore_manage_basic_agents_access** | **bool**| Ignore hasManageBasicAgentsAccess when listing agents | [optional] 
- **visibility** | **str**| Filter agents by access visibility | [optional] 
+ **model_ids** | [**List[str]**](str.md)| Model ID to filter by (comma separated) | [optional] 
+ **tag_ids** | [**List[str]**](str.md)| Tag IDs to filter by (comma separated) | [optional] 
+ **q** | **str**| Search term for name or description | [optional] 
+ **action** | **str**| Filter agents by model action (chat, image, etc.) | [optional] 
+ **types** | [**List[str]**](str.md)| Filter agents by types (basic, background, service - comma separated) | [optional] 
+ **add_predefined_agents** | **bool**| Include default agents to the list of org owned agents | [optional] 
+ **admin_mode** | **bool**| Admin mode to bypass certain permission checks | [optional] 
+ **visibility** | **str**| Filter agents by access visibility (public, organization) | [optional] 
+ **limit** | **int**| Limit the number of results | [optional] [default to 1000]
+ **offset** | **int**| Offset for pagination | [optional] [default to 0]
+ **sort_by** | **str**| Field to sort by (name, createdat, updatedat) | [optional] [default to &#39;&quot;name&quot;&#39;]
+ **sort_order** | **str**| Sort order (asc or desc) | [optional] [default to &#39;&quot;asc&quot;&#39;]
 
 ### Return type
 
@@ -1068,93 +1083,6 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_agents**
-> List[Agent] search_agents(org_id, name=name, model_id=model_id)
-
-Search agents
-
-Search agents based on criteria
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.agent import Agent
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.AgentsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    name = 'name_example' # str | Agent Name (optional)
-    model_id = 'model_id_example' # str | Model ID (optional)
-
-    try:
-        # Search agents
-        api_response = api_instance.search_agents(org_id, name=name, model_id=model_id)
-        print("The response of AgentsApi->search_agents:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AgentsApi->search_agents: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **name** | **str**| Agent Name | [optional] 
- **model_id** | **str**| Model ID | [optional] 
-
-### Return type
-
-[**List[Agent]**](Agent.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

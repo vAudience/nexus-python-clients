@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **execute_function_call**
-> FunctionCallResults execute_function_call(org_id, ref, arguments)
+> FunctionCallResults execute_function_call(org_id, ref, request)
 
 Execute a function call
 
@@ -22,6 +22,7 @@ Executes a specified function call with provided arguments
 
 ```python
 import aigentchat
+from aigentchat.models.function_call_request_dto import FunctionCallRequestDto
 from aigentchat.models.function_call_results import FunctionCallResults
 from aigentchat.rest import ApiException
 from pprint import pprint
@@ -49,11 +50,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     api_instance = aigentchat.FunctionCallsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     ref = 'ref_example' # str | Function call name or ID
-    arguments = None # object | Function call arguments
+    request = aigentchat.FunctionCallRequestDto() # FunctionCallRequestDto | Function call request
 
     try:
         # Execute a function call
-        api_response = api_instance.execute_function_call(org_id, ref, arguments)
+        api_response = api_instance.execute_function_call(org_id, ref, request)
         print("The response of FunctionCallsApi->execute_function_call:\n")
         pprint(api_response)
     except Exception as e:
@@ -69,7 +70,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **ref** | **str**| Function call name or ID | 
- **arguments** | **object**| Function call arguments | 
+ **request** | [**FunctionCallRequestDto**](FunctionCallRequestDto.md)| Function call request | 
 
 ### Return type
 

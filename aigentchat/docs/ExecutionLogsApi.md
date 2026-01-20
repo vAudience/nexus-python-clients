@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**create_document_conversion_costs**](ExecutionLogsApi.md#create_document_conversion_costs) | **POST** /v1/organizations/{org_id}/execution-logs/document-conversion-costs | Track document conversion costs
 [**create_file_upload_costs**](ExecutionLogsApi.md#create_file_upload_costs) | **POST** /v1/organizations/{org_id}/execution-logs/file-upload-costs | Track file upload costs
 [**get_execution_logs_costs**](ExecutionLogsApi.md#get_execution_logs_costs) | **GET** /v1/organizations/{org_id}/execution-logs/costs | Get execution logs costs
-[**search_execution_logs**](ExecutionLogsApi.md#search_execution_logs) | **GET** /v1/organizations/{org_id}/execution-logs/search | Search execution logs
+[**list_execution_logs**](ExecutionLogsApi.md#list_execution_logs) | **GET** /v1/organizations/{org_id}/execution-logs | List execution logs
 
 
 # **create_chat_completion_costs**
@@ -358,12 +358,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_execution_logs**
-> ExecutionLogResults search_execution_logs(org_id, user_id=user_id, exec_type=exec_type, request_id=request_id, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
+# **list_execution_logs**
+> ExecutionLogResults list_execution_logs(org_id, user_id=user_id, exec_type=exec_type, request_id=request_id, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
 
-Search execution logs
+List execution logs
 
-Search for execution logs by user, org, API key, and date range. leave any field empty to no limit by that field.
+List execution logs by user, org, API key, and date range. leave any field empty to no limit by that field.
 
 ### Example
 
@@ -406,12 +406,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     limit = 56 # int | Limit (optional)
 
     try:
-        # Search execution logs
-        api_response = api_instance.search_execution_logs(org_id, user_id=user_id, exec_type=exec_type, request_id=request_id, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
-        print("The response of ExecutionLogsApi->search_execution_logs:\n")
+        # List execution logs
+        api_response = api_instance.list_execution_logs(org_id, user_id=user_id, exec_type=exec_type, request_id=request_id, start_date=start_date, end_date=end_date, offset=offset, limit=limit)
+        print("The response of ExecutionLogsApi->list_execution_logs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ExecutionLogsApi->search_execution_logs: %s\n" % e)
+        print("Exception when calling ExecutionLogsApi->list_execution_logs: %s\n" % e)
 ```
 
 

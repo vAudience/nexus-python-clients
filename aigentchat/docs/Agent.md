@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **ignore_incoming_overwrite** | **bool** |  | [optional] 
 **initial_user_messages** | **List[str]** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
-**is_public** | **bool** |  | [optional] 
 **meta_data** | **object** |  | [optional] 
 **model** | [**AIModel**](AIModel.md) | Note: only set when returning the agent (not stored at agent level) | [optional] 
 **model_actions** | **List[str]** |  | [optional] 
@@ -27,14 +26,16 @@ Name | Type | Description | Notes
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 
 **parameters** | **object** |  | [optional] 
-**recommended_task** | **str** | TODO: will be replaced by tags | [optional] 
+**read_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 **system_messages** | **List[str]** |  | [optional] 
-**team_ids** | **List[str]** |  | [optional] 
+**tag_ids** | **List[str]** |  | [optional] 
 **tool_config** | **object** |  | [optional] 
 **type** | [**AgentType**](AgentType.md) |  | [optional] 
 **updated_at** | **int** |  | [optional] 
 **updated_by** | **str** |  | [optional] 
 **use_tools** | **bool** |  | [optional] 
+**user_access** | [**UserAccessView**](UserAccessView.md) |  | [optional] 
+**write_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 
 ## Example
 

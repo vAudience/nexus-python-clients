@@ -1,23 +1,22 @@
-# aigentchat.MissionsApi
+# aigentchat.TagsApi
 
 All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_mission**](MissionsApi.md#cancel_mission) | **POST** /v1/organizations/{org_id}/missions/{mission_id}/cancel | Cancel a mission
-[**create_mission**](MissionsApi.md#create_mission) | **POST** /v1/organizations/{org_id}/missions/{mission_executor_id} | Create a new mission
-[**delete_mission**](MissionsApi.md#delete_mission) | **DELETE** /v1/organizations/{org_id}/missions/{mission_id} | Delete a mission
-[**get_mission**](MissionsApi.md#get_mission) | **GET** /v1/organizations/{org_id}/missions/{mission_id} | Get a mission
-[**list_missions_by_executor_id**](MissionsApi.md#list_missions_by_executor_id) | **GET** /v1/organizations/{org_id}/missions/executor/{mission_executor_id} | List all missions by a executorID (Executing Agent)
-[**list_missions_by_org**](MissionsApi.md#list_missions_by_org) | **GET** /v1/organizations/{org_id}/missions | List all missions of an organization and owned by the current user
+[**create_tag**](TagsApi.md#create_tag) | **POST** /v1/organizations/{org_id}/tags | Create a new tag
+[**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /v1/organizations/{org_id}/tags/{id} | Delete a tag
+[**get_tag**](TagsApi.md#get_tag) | **GET** /v1/organizations/{org_id}/tags/{id} | Get a tag
+[**search_tags**](TagsApi.md#search_tags) | **GET** /v1/organizations/{org_id}/tags | Search tags
+[**update_tag**](TagsApi.md#update_tag) | **PATCH** /v1/organizations/{org_id}/tags/{id} | Update a tag
 
 
-# **cancel_mission**
-> cancel_mission(org_id, mission_id)
+# **create_tag**
+> Tag create_tag(org_id, tag)
 
-Cancel a mission
+Create a new tag
 
-Cancel a mission
+Create a new tag with the provided details
 
 ### Example
 
@@ -25,6 +24,8 @@ Cancel a mission
 
 ```python
 import aigentchat
+from aigentchat.models.tag import Tag
+from aigentchat.models.tag_write_dto import TagWriteDto
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -48,103 +49,17 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = aigentchat.MissionsApi(api_client)
-    org_id = 'org_id_example' # str | Organization ID
-    mission_id = 'mission_id_example' # str | Mission ID
+    api_instance = aigentchat.TagsApi(api_client)
+    org_id = 'org_id_example' # str | organization ID
+    tag = aigentchat.TagWriteDto() # TagWriteDto | Tag
 
     try:
-        # Cancel a mission
-        api_instance.cancel_mission(org_id, mission_id)
-    except Exception as e:
-        print("Exception when calling MissionsApi->cancel_mission: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organization ID | 
- **mission_id** | **str**| Mission ID | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_mission**
-> Mission create_mission(org_id, mission_executor_id, mission)
-
-Create a new mission
-
-Create a new mission
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.mission import Mission
-from aigentchat.models.mission_write_dto import MissionWriteDto
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.MissionsApi(api_client)
-    org_id = 'org_id_example' # str | Organization ID
-    mission_executor_id = 'mission_executor_id_example' # str | Agent ID to run the mission with
-    mission = aigentchat.MissionWriteDto() # MissionWriteDto | Mission object that needs to be created
-
-    try:
-        # Create a new mission
-        api_response = api_instance.create_mission(org_id, mission_executor_id, mission)
-        print("The response of MissionsApi->create_mission:\n")
+        # Create a new tag
+        api_response = api_instance.create_tag(org_id, tag)
+        print("The response of TagsApi->create_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MissionsApi->create_mission: %s\n" % e)
+        print("Exception when calling TagsApi->create_tag: %s\n" % e)
 ```
 
 
@@ -154,13 +69,12 @@ with aigentchat.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organization ID | 
- **mission_executor_id** | **str**| Agent ID to run the mission with | 
- **mission** | [**MissionWriteDto**](MissionWriteDto.md)| Mission object that needs to be created | 
+ **org_id** | **str**| organization ID | 
+ **tag** | [**TagWriteDto**](TagWriteDto.md)| Tag | 
 
 ### Return type
 
-[**Mission**](Mission.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -178,19 +92,17 @@ Name | Type | Description  | Notes
 **201** | Created |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
 **403** | Forbidden |  -  |
-**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_mission**
-> delete_mission(org_id, mission_id)
+# **delete_tag**
+> Tag delete_tag(org_id, id)
 
-Delete a mission
+Delete a tag
 
-Delete a mission
+Delete a tag by its ID
 
 ### Example
 
@@ -198,6 +110,7 @@ Delete a mission
 
 ```python
 import aigentchat
+from aigentchat.models.tag import Tag
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -221,102 +134,17 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = aigentchat.MissionsApi(api_client)
-    org_id = 'org_id_example' # str | Organization ID
-    mission_id = 'mission_id_example' # str | Mission ID
+    api_instance = aigentchat.TagsApi(api_client)
+    org_id = 'org_id_example' # str | organization ID
+    id = 'id_example' # str | Tag ID
 
     try:
-        # Delete a mission
-        api_instance.delete_mission(org_id, mission_id)
-    except Exception as e:
-        print("Exception when calling MissionsApi->delete_mission: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organization ID | 
- **mission_id** | **str**| Mission ID | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**409** | Conflict |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_mission**
-> Mission get_mission(org_id, mission_id)
-
-Get a mission
-
-Get a mission
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.mission import Mission
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.MissionsApi(api_client)
-    org_id = 'org_id_example' # str | Organization ID
-    mission_id = 'mission_id_example' # str | Mission ID
-
-    try:
-        # Get a mission
-        api_response = api_instance.get_mission(org_id, mission_id)
-        print("The response of MissionsApi->get_mission:\n")
+        # Delete a tag
+        api_response = api_instance.delete_tag(org_id, id)
+        print("The response of TagsApi->delete_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MissionsApi->get_mission: %s\n" % e)
+        print("Exception when calling TagsApi->delete_tag: %s\n" % e)
 ```
 
 
@@ -326,12 +154,12 @@ with aigentchat.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organization ID | 
- **mission_id** | **str**| Mission ID | 
+ **org_id** | **str**| organization ID | 
+ **id** | **str**| Tag ID | 
 
 ### Return type
 
-[**Mission**](Mission.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -355,12 +183,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_missions_by_executor_id**
-> MissionResults list_missions_by_executor_id(org_id, mission_executor_id, offset=offset, limit=limit)
+# **get_tag**
+> Tag get_tag(org_id, id)
 
-List all missions by a executorID (Executing Agent)
+Get a tag
 
-List all missions by a a executorID (Executing Agent)
+Retrieve a tag by its ID
 
 ### Example
 
@@ -368,7 +196,7 @@ List all missions by a a executorID (Executing Agent)
 
 ```python
 import aigentchat
-from aigentchat.models.mission_results import MissionResults
+from aigentchat.models.tag import Tag
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -392,19 +220,17 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = aigentchat.MissionsApi(api_client)
-    org_id = 'org_id_example' # str | Organization ID
-    mission_executor_id = 'mission_executor_id_example' # str | Executor Agent ID
-    offset = 56 # int | Offset the number of missions returned (optional)
-    limit = 56 # int | Limit the number of missions returned (optional)
+    api_instance = aigentchat.TagsApi(api_client)
+    org_id = 'org_id_example' # str | organization ID
+    id = 'id_example' # str | Tag ID
 
     try:
-        # List all missions by a executorID (Executing Agent)
-        api_response = api_instance.list_missions_by_executor_id(org_id, mission_executor_id, offset=offset, limit=limit)
-        print("The response of MissionsApi->list_missions_by_executor_id:\n")
+        # Get a tag
+        api_response = api_instance.get_tag(org_id, id)
+        print("The response of TagsApi->get_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MissionsApi->list_missions_by_executor_id: %s\n" % e)
+        print("Exception when calling TagsApi->get_tag: %s\n" % e)
 ```
 
 
@@ -414,14 +240,12 @@ with aigentchat.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organization ID | 
- **mission_executor_id** | **str**| Executor Agent ID | 
- **offset** | **int**| Offset the number of missions returned | [optional] 
- **limit** | **int**| Limit the number of missions returned | [optional] 
+ **org_id** | **str**| organization ID | 
+ **id** | **str**| Tag ID | 
 
 ### Return type
 
-[**MissionResults**](MissionResults.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -438,18 +262,109 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_tags**
+> List[Tag] search_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
+
+Search tags
+
+Search tags based on criteria
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import aigentchat
+from aigentchat.models.tag import Tag
+from aigentchat.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = aigentchat.Configuration(
+    host = "https://aigentchat.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with aigentchat.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = aigentchat.TagsApi(api_client)
+    org_id = 'org_id_example' # str | organization ID
+    type = 'type_example' # str | Filter tags by type (optional)
+    add_predefined_tags = True # bool | Include predefined tags to the list of org owned tags (optional)
+    limit = 1000 # int | Limit the number of results (optional) (default to 1000)
+    offset = 0 # int | Offset for pagination (optional) (default to 0)
+
+    try:
+        # Search tags
+        api_response = api_instance.search_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
+        print("The response of TagsApi->search_tags:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TagsApi->search_tags: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_id** | **str**| organization ID | 
+ **type** | **str**| Filter tags by type | [optional] 
+ **add_predefined_tags** | **bool**| Include predefined tags to the list of org owned tags | [optional] 
+ **limit** | **int**| Limit the number of results | [optional] [default to 1000]
+ **offset** | **int**| Offset for pagination | [optional] [default to 0]
+
+### Return type
+
+[**List[Tag]**](Tag.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_missions_by_org**
-> MissionResults list_missions_by_org(org_id, offset=offset, limit=limit)
+# **update_tag**
+> Tag update_tag(org_id, id, tag)
 
-List all missions of an organization and owned by the current user
+Update a tag
 
-List all missions of an organization and owned by the current user
+Update a tag by its ID
 
 ### Example
 
@@ -457,7 +372,8 @@ List all missions of an organization and owned by the current user
 
 ```python
 import aigentchat
-from aigentchat.models.mission_results import MissionResults
+from aigentchat.models.tag import Tag
+from aigentchat.models.tag_write_dto import TagWriteDto
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -481,18 +397,18 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = aigentchat.MissionsApi(api_client)
-    org_id = 'org_id_example' # str | Organization ID
-    offset = 56 # int | Offset the number of missions returned (optional)
-    limit = 56 # int | Limit the number of missions returned (optional)
+    api_instance = aigentchat.TagsApi(api_client)
+    org_id = 'org_id_example' # str | organization ID
+    id = 'id_example' # str | Tag ID
+    tag = aigentchat.TagWriteDto() # TagWriteDto | Tag
 
     try:
-        # List all missions of an organization and owned by the current user
-        api_response = api_instance.list_missions_by_org(org_id, offset=offset, limit=limit)
-        print("The response of MissionsApi->list_missions_by_org:\n")
+        # Update a tag
+        api_response = api_instance.update_tag(org_id, id, tag)
+        print("The response of TagsApi->update_tag:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MissionsApi->list_missions_by_org: %s\n" % e)
+        print("Exception when calling TagsApi->update_tag: %s\n" % e)
 ```
 
 
@@ -502,13 +418,13 @@ with aigentchat.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organization ID | 
- **offset** | **int**| Offset the number of missions returned | [optional] 
- **limit** | **int**| Limit the number of missions returned | [optional] 
+ **org_id** | **str**| organization ID | 
+ **id** | **str**| Tag ID | 
+ **tag** | [**TagWriteDto**](TagWriteDto.md)| Tag | 
 
 ### Return type
 
-[**MissionResults**](MissionResults.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -516,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -527,6 +443,7 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

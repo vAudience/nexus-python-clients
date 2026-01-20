@@ -9,10 +9,11 @@ Name | Type | Description | Notes
 **default_agent_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
+**read_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **thumbnail_url** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**visibility** | [**PromptVisibilityStates**](PromptVisibilityStates.md) |  | [optional] 
+**write_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 
 ## Example
 

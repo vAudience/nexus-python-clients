@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
 **name** | **str** |  | 
-**recommended_task** | **str** | TODO: will be replaced by tags | [optional] 
 
 ## Example
 

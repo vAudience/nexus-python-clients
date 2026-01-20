@@ -13,12 +13,14 @@ Name | Type | Description | Notes
 **internal_id** | **str** |  | [optional] 
 **owner_id** | **str** |  | [optional] 
 **owner_organization_id** | **str** |  | [optional] 
+**read_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **thumbnail_url** | **str** |  | [optional] 
 **title** | **str** |  | 
 **updated_at** | **int** |  | [optional] 
+**user_access** | [**UserAccessView**](UserAccessView.md) |  | [optional] 
 **versions** | [**List[PromptVersion]**](PromptVersion.md) |  | [optional] 
-**visibility** | [**PromptVisibilityStates**](PromptVisibilityStates.md) |  | [optional] 
+**write_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
 
 ## Example
 

@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**model_category** | **str** |  | [optional] 
 **name** | **str** |  | 
 
 ## Example

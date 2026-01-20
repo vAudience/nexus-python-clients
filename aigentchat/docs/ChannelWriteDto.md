@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **is_org_public** | **bool** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **metadata** | **object** |  | [optional] 
-**mission_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **service_channel** | **bool** |  | [optional] 
 **summary** | **str** |  | [optional] 

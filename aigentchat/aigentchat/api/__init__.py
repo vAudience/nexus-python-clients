@@ -17,9 +17,9 @@ if __import__("typing").TYPE_CHECKING:
     from aigentchat.api.images_api import ImagesApi
     from aigentchat.api.messages_api import MessagesApi
     from aigentchat.api.metrics_api import MetricsApi
-    from aigentchat.api.missions_api import MissionsApi
     from aigentchat.api.org_cost_budgets_api import OrgCostBudgetsApi
     from aigentchat.api.prompts_api import PromptsApi
+    from aigentchat.api.tags_api import TagsApi
     from aigentchat.api.tools_api import ToolsApi
     from aigentchat.api.version_api import VersionApi
     
@@ -45,9 +45,9 @@ from aigentchat.api.health_api import HealthApi
 from aigentchat.api.images_api import ImagesApi
 from aigentchat.api.messages_api import MessagesApi
 from aigentchat.api.metrics_api import MetricsApi
-from aigentchat.api.missions_api import MissionsApi
 from aigentchat.api.org_cost_budgets_api import OrgCostBudgetsApi
 from aigentchat.api.prompts_api import PromptsApi
+from aigentchat.api.tags_api import TagsApi
 from aigentchat.api.tools_api import ToolsApi
 from aigentchat.api.version_api import VersionApi
 
