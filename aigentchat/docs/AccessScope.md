@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **has_teams** | **bool** |  | [optional] 
-**include_organization** | **bool** | Organization-wide access - all organization members Cannot be combined with IsPrivate and IsPublic | [optional] 
+**include_organization** | **bool** | Organization-wide access - all organization members When true, all other settings need to be false or empty | [optional] 
 **is_private** | **bool** | Private access - only owner When true, all other settings need to be false or empty | [optional] 
 **is_public** | **bool** | Public access - all authenticated users can access When true, all other settings need to be false or empty | [optional] 
-**team_ids** | **List[str]** | Team-based access - members of these teams Can be combined with IncludeOrganization and UserIDs, but not with IsPrivate and IsPublic | [optional] 
-**user_ids** | **List[str]** | User-specific access - these specific users Can be combined with IncludeOrganization and TeamIDs, but not with IsPrivate and IsPublic | [optional] 
+**team_ids** | **List[str]** | Team-based access - members of these teams Can be combined with UserIDs, but not with IsPrivate, IsPublic and IncludeOrganization | [optional] 
+**user_ids** | **List[str]** | User-specific access - these specific users Can be combined with TeamIDs, but not with IsPrivate, IsPublic and IncludeOrganization | [optional] 
 
 ## Example
 

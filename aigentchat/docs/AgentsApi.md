@@ -675,7 +675,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     types = ['types_example'] # List[str] | Filter agents by types (basic, background, service - comma separated) (optional)
     add_predefined_agents = True # bool | Include default agents to the list of org owned agents (optional)
     admin_mode = True # bool | Admin mode to bypass certain permission checks (optional)
-    visibility = 'visibility_example' # str | Filter agents by access visibility (public, organization) (optional)
+    visibility = 'visibility_example' # str | Filter agents by access visibility (public, private, organization) (optional)
     limit = 1000 # int | Limit the number of results (optional) (default to 1000)
     offset = 0 # int | Offset for pagination (optional) (default to 0)
     sort_by = '"name"' # str | Field to sort by (name, createdat, updatedat) (optional) (default to '"name"')
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
  **types** | [**List[str]**](str.md)| Filter agents by types (basic, background, service - comma separated) | [optional] 
  **add_predefined_agents** | **bool**| Include default agents to the list of org owned agents | [optional] 
  **admin_mode** | **bool**| Admin mode to bypass certain permission checks | [optional] 
- **visibility** | **str**| Filter agents by access visibility (public, organization) | [optional] 
+ **visibility** | **str**| Filter agents by access visibility (public, private, organization) | [optional] 
  **limit** | **int**| Limit the number of results | [optional] [default to 1000]
  **offset** | **int**| Offset for pagination | [optional] [default to 0]
  **sort_by** | **str**| Field to sort by (name, createdat, updatedat) | [optional] [default to &#39;&quot;name&quot;&#39;]
