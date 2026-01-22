@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_tag**](TagsApi.md#create_tag) | **POST** /v1/organizations/{org_id}/tags | Create a new tag
 [**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /v1/organizations/{org_id}/tags/{id} | Delete a tag
 [**get_tag**](TagsApi.md#get_tag) | **GET** /v1/organizations/{org_id}/tags/{id} | Get a tag
-[**search_tags**](TagsApi.md#search_tags) | **GET** /v1/organizations/{org_id}/tags | Search tags
+[**list_tags**](TagsApi.md#list_tags) | **GET** /v1/organizations/{org_id}/tags | List tags
 [**update_tag**](TagsApi.md#update_tag) | **PATCH** /v1/organizations/{org_id}/tags/{id} | Update a tag
 
 
@@ -269,12 +269,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_tags**
-> List[Tag] search_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
+# **list_tags**
+> TagResults list_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
 
-Search tags
+List tags
 
-Search tags based on criteria
+List tags based on criteria
 
 ### Example
 
@@ -282,7 +282,7 @@ Search tags based on criteria
 
 ```python
 import aigentchat
-from aigentchat.models.tag import Tag
+from aigentchat.models.tag_results import TagResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -314,12 +314,12 @@ with aigentchat.ApiClient(configuration) as api_client:
     offset = 0 # int | Offset for pagination (optional) (default to 0)
 
     try:
-        # Search tags
-        api_response = api_instance.search_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
-        print("The response of TagsApi->search_tags:\n")
+        # List tags
+        api_response = api_instance.list_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
+        print("The response of TagsApi->list_tags:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TagsApi->search_tags: %s\n" % e)
+        print("Exception when calling TagsApi->list_tags: %s\n" % e)
 ```
 
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Tag]**](Tag.md)
+[**TagResults**](TagResults.md)
 
 ### Authorization
 

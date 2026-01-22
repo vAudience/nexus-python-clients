@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_agents**
-> List[Agent] list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
+> AgentResults list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
 
 List agents
 
@@ -642,7 +642,7 @@ Retrieve a list of agents based on criteria
 
 ```python
 import aigentchat
-from aigentchat.models.agent import Agent
+from aigentchat.models.agent_results import AgentResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -713,7 +713,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Agent]**](Agent.md)
+[**AgentResults**](AgentResults.md)
 
 ### Authorization
 

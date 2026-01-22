@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_prompts**
-> List[Prompt] list_prompts(org_id, visibility=visibility, offset=offset, limit=limit)
+> PromptResults list_prompts(org_id, visibility=visibility, offset=offset, limit=limit)
 
 List prompts
 
@@ -280,7 +280,7 @@ List prompts for an organization
 
 ```python
 import aigentchat
-from aigentchat.models.prompt import Prompt
+from aigentchat.models.prompt_results import PromptResults
 from aigentchat.rest import ApiException
 from pprint import pprint
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Prompt]**](Prompt.md)
+[**PromptResults**](PromptResults.md)
 
 ### Authorization
 

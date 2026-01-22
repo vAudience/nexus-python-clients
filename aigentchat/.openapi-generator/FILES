@@ -51,6 +51,8 @@ aigentchat/models/a_igency_thumbnail.py
 aigentchat/models/access_scope.py
 aigentchat/models/agent.py
 aigentchat/models/agent_i18n.py
+aigentchat/models/agent_results.py
+aigentchat/models/agent_statistics.py
 aigentchat/models/agent_type.py
 aigentchat/models/agent_write_dto.py
 aigentchat/models/ai_model.py
@@ -106,12 +108,14 @@ aigentchat/models/org_cost_budget_check.py
 aigentchat/models/org_cost_budget_write_dto.py
 aigentchat/models/prompt.py
 aigentchat/models/prompt_render_dto.py
+aigentchat/models/prompt_results.py
 aigentchat/models/prompt_version.py
 aigentchat/models/prompt_write_dto.py
 aigentchat/models/rendered_prompt.py
 aigentchat/models/result_file.py
 aigentchat/models/tag.py
 aigentchat/models/tag_i18n.py
+aigentchat/models/tag_results.py
 aigentchat/models/tag_write_dto.py
 aigentchat/models/text_embedding.py
 aigentchat/models/text_embedding_item_dto.py
@@ -162,6 +166,8 @@ docs/AIgencyThumbnail.md
 docs/AccessScope.md
 docs/Agent.md
 docs/AgentI18n.md
+docs/AgentResults.md
+docs/AgentStatistics.md
 docs/AgentType.md
 docs/AgentWriteDto.md
 docs/AgentsApi.md
@@ -217,6 +223,7 @@ docs/OrgCostBudgetWriteDto.md
 docs/OrgCostBudgetsApi.md
 docs/Prompt.md
 docs/PromptRenderDto.md
+docs/PromptResults.md
 docs/PromptVersion.md
 docs/PromptWriteDto.md
 docs/PromptsApi.md
@@ -224,6 +231,7 @@ docs/RenderedPrompt.md
 docs/ResultFile.md
 docs/Tag.md
 docs/TagI18n.md
+docs/TagResults.md
 docs/TagWriteDto.md
 docs/TagsApi.md
 docs/TextEmbedding.md
@@ -266,6 +274,8 @@ test/test_a_igency_thumbnail.py
 test/test_access_scope.py
 test/test_agent.py
 test/test_agent_i18n.py
+test/test_agent_results.py
+test/test_agent_statistics.py
 test/test_agent_type.py
 test/test_agent_write_dto.py
 test/test_agents_api.py
@@ -337,6 +347,7 @@ test/test_org_cost_budget_write_dto.py
 test/test_org_cost_budgets_api.py
 test/test_prompt.py
 test/test_prompt_render_dto.py
+test/test_prompt_results.py
 test/test_prompt_version.py
 test/test_prompt_write_dto.py
 test/test_prompts_api.py
@@ -344,6 +355,7 @@ test/test_rendered_prompt.py
 test/test_result_file.py
 test/test_tag.py
 test/test_tag_i18n.py
+test/test_tag_results.py
 test/test_tag_write_dto.py
 test/test_tags_api.py
 test/test_text_embedding.py
