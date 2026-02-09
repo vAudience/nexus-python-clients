@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_ai_model_services_with_models**
-> List[AIModelServiceWithModels] list_ai_model_services_with_models(org_id)
+> List[AIModelServiceWithModels] list_ai_model_services_with_models(org_id, action=action)
 
 List AI services with models
 
@@ -392,10 +392,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AIModelServicesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
+    action = 'action_example' # str | Filter models by action (chat, image, etc.) (optional)
 
     try:
         # List AI services with models
-        api_response = api_instance.list_ai_model_services_with_models(org_id)
+        api_response = api_instance.list_ai_model_services_with_models(org_id, action=action)
         print("The response of AIModelServicesApi->list_ai_model_services_with_models:\n")
         pprint(api_response)
     except Exception as e:
@@ -410,6 +411,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
+ **action** | **str**| Filter models by action (chat, image, etc.) | [optional] 
 
 ### Return type
 
@@ -436,7 +438,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_ai_models_for_service**
-> List[AIModel] list_ai_models_for_service(org_id, id)
+> List[AIModel] list_ai_models_for_service(org_id, id, action=action)
 
 List AI models for a service
 
@@ -475,10 +477,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     api_instance = aigentchat.AIModelServicesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     id = 'id_example' # str | AI Model Service ID
+    action = 'action_example' # str | Filter models by action (chat, image, etc.) (optional)
 
     try:
         # List AI models for a service
-        api_response = api_instance.list_ai_models_for_service(org_id, id)
+        api_response = api_instance.list_ai_models_for_service(org_id, id, action=action)
         print("The response of AIModelServicesApi->list_ai_models_for_service:\n")
         pprint(api_response)
     except Exception as e:
@@ -494,6 +497,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **id** | **str**| AI Model Service ID | 
+ **action** | **str**| Filter models by action (chat, image, etc.) | [optional] 
 
 ### Return type
 

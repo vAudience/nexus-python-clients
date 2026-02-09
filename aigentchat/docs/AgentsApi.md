@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_agents**
-> AgentResults list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
+> AgentResults list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, location=location, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
 
 List agents
 
@@ -672,6 +672,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     tag_ids = ['tag_ids_example'] # List[str] | Tag IDs to filter by (comma separated) (optional)
     q = 'q_example' # str | Search term for name or description (optional)
     action = 'action_example' # str | Filter agents by model action (chat, image, etc.) (optional)
+    location = 'location_example' # str | Filter agents by the model hosting location (europe, usa, etc.). If this violates the organization's allowed hosting locations, the parameter will be ignored. (optional)
     types = ['types_example'] # List[str] | Filter agents by types (basic, background, service - comma separated) (optional)
     add_predefined_agents = True # bool | Include default agents to the list of org owned agents (optional)
     admin_mode = True # bool | Admin mode to bypass certain permission checks (optional)
@@ -683,7 +684,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 
     try:
         # List agents
-        api_response = api_instance.list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
+        api_response = api_instance.list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, location=location, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
         print("The response of AgentsApi->list_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -702,6 +703,7 @@ Name | Type | Description  | Notes
  **tag_ids** | [**List[str]**](str.md)| Tag IDs to filter by (comma separated) | [optional] 
  **q** | **str**| Search term for name or description | [optional] 
  **action** | **str**| Filter agents by model action (chat, image, etc.) | [optional] 
+ **location** | **str**| Filter agents by the model hosting location (europe, usa, etc.). If this violates the organization&#39;s allowed hosting locations, the parameter will be ignored. | [optional] 
  **types** | [**List[str]**](str.md)| Filter agents by types (basic, background, service - comma separated) | [optional] 
  **add_predefined_agents** | **bool**| Include default agents to the list of org owned agents | [optional] 
  **admin_mode** | **bool**| Admin mode to bypass certain permission checks | [optional] 

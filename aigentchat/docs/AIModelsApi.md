@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_ai_models**
-> List[AIModel] list_ai_models(org_id)
+> List[AIModel] list_ai_models(org_id, action=action)
 
 List AI models
 
@@ -308,10 +308,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AIModelsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
+    action = 'action_example' # str | Filter models by action (chat, image, etc.) (optional)
 
     try:
         # List AI models
-        api_response = api_instance.list_ai_models(org_id)
+        api_response = api_instance.list_ai_models(org_id, action=action)
         print("The response of AIModelsApi->list_ai_models:\n")
         pprint(api_response)
     except Exception as e:
@@ -326,6 +327,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
+ **action** | **str**| Filter models by action (chat, image, etc.) | [optional] 
 
 ### Return type
 
