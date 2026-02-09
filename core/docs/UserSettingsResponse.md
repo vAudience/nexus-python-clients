@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **color_scheme** | **str** |  | 
 **id** | **str** |  | 
-**language** | **str** |  | 
+**language** | **str** |  | [optional] 
+**onboarding_done** | **bool** |  | [optional] 
+**onboarding_hold_until** | **str** |  | [optional] 
 **user_id** | **str** |  | 
 
 ## Example
