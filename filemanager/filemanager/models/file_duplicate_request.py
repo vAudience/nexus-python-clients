@@ -17,19 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
-from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class FileMetadataBatchGetRequest(BaseModel):
+class FileDuplicateRequest(BaseModel):
     """
-    FileMetadataBatchGetRequest
+    FileDuplicateRequest
     """ # noqa: E501
-    storage_paths: Annotated[List[StrictStr], Field(min_length=1)]
+    storage_path: StrictStr
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["storage_paths"]
+    __properties: ClassVar[List[str]] = ["storage_path"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +48,7 @@ class FileMetadataBatchGetRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of FileMetadataBatchGetRequest from a JSON string"""
+        """Create an instance of FileDuplicateRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,7 +80,7 @@ class FileMetadataBatchGetRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of FileMetadataBatchGetRequest from a dict"""
+        """Create an instance of FileDuplicateRequest from a dict"""
         if obj is None:
             return None
 
@@ -89,7 +88,7 @@ class FileMetadataBatchGetRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "storage_paths": obj.get("storage_paths")
+            "storage_path": obj.get("storage_path")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

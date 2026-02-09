@@ -14,10 +14,10 @@
 
 import unittest
 
-from filemanager.models.health_response import HealthResponse
+from filemanager.models.file_duplicate_request import FileDuplicateRequest
 
-class TestHealthResponse(unittest.TestCase):
-    """HealthResponse unit test stubs"""
+class TestFileDuplicateRequest(unittest.TestCase):
+    """FileDuplicateRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,26 +25,26 @@ class TestHealthResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> HealthResponse:
-        """Test HealthResponse
+    def make_instance(self, include_optional) -> FileDuplicateRequest:
+        """Test FileDuplicateRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `HealthResponse`
+        # uncomment below to create an instance of `FileDuplicateRequest`
         """
-        model = HealthResponse()
+        model = FileDuplicateRequest()
         if include_optional:
-            return HealthResponse(
-                health = ''
+            return FileDuplicateRequest(
+                storage_path = ''
             )
         else:
-            return HealthResponse(
-                health = '',
+            return FileDuplicateRequest(
+                storage_path = '',
         )
         """
 
-    def testHealthResponse(self):
-        """Test HealthResponse"""
+    def testFileDuplicateRequest(self):
+        """Test FileDuplicateRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

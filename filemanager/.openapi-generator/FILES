@@ -8,6 +8,7 @@ docs/ErrorDetail.md
 docs/ErrorResponse.md
 docs/FileAccessTokenRequest.md
 docs/FileAccessTokenResponse.md
+docs/FileDuplicateRequest.md
 docs/FileMetadataBatchGetRequest.md
 docs/FileMetadataBatchResponse.md
 docs/FileMetadataResponse.md
@@ -36,6 +37,7 @@ filemanager/models/error_detail.py
 filemanager/models/error_response.py
 filemanager/models/file_access_token_request.py
 filemanager/models/file_access_token_response.py
+filemanager/models/file_duplicate_request.py
 filemanager/models/file_metadata_batch_get_request.py
 filemanager/models/file_metadata_batch_response.py
 filemanager/models/file_metadata_response.py
@@ -56,6 +58,7 @@ test/test_error_detail.py
 test/test_error_response.py
 test/test_file_access_token_request.py
 test/test_file_access_token_response.py
+test/test_file_duplicate_request.py
 test/test_file_metadata_batch_get_request.py
 test/test_file_metadata_batch_response.py
 test/test_file_metadata_response.py
