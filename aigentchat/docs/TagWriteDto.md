@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**i18n** | [**Dict[str, TagI18n]**](TagI18n.md) |  | [optional] 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 

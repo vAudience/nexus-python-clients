@@ -10,10 +10,13 @@ Name | Type | Description | Notes
 **default_agent_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 
+**image_url** | **str** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
-**owner_id** | **str** |  | [optional] 
-**owner_organization_id** | **str** |  | [optional] 
+**legacy_uuid** | **str** |  | [optional] 
+**owner_id** | **str** |  | 
+**owner_organization_id** | **str** |  | 
 **read_access** | [**AccessScope**](AccessScope.md) |  | [optional] 
+**system_tags** | **List[str]** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **thumbnail_url** | **str** |  | [optional] 
 **title** | **str** |  | 

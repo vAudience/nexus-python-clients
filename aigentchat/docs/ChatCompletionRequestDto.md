@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**agent_id** | **str** |  | 
+**agent_id** | **str** |  | [optional] 
 **attached_files** | **List[str]** |  | [optional] 
 **channel_id** | **str** |  | [optional] 
 **continue_instruction_on_max_tokens** | **str** |  | [optional] 

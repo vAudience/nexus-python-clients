@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **content** | **str** |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **created_by** | **str** |  | [optional] 
+**structured_content** | [**List[PromptContent]**](PromptContent.md) |  | [optional] 
 **version** | **int** |  | [optional] 
 
 ## Example

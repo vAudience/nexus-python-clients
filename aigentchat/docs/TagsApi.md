@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_tags**
-> TagResults list_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
+> TagResults list_tags(org_id, types=types, limit=limit, offset=offset)
 
 List tags
 
@@ -308,14 +308,13 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.TagsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    type = 'type_example' # str | Filter tags by type (optional)
-    add_predefined_tags = True # bool | Include predefined tags to the list of org owned tags (optional)
+    types = ['types_example'] # List[str] | Filter tags by types (comma separated, defaults to 'user') (optional)
     limit = 1000 # int | Limit the number of results (optional) (default to 1000)
     offset = 0 # int | Offset for pagination (optional) (default to 0)
 
     try:
         # List tags
-        api_response = api_instance.list_tags(org_id, type=type, add_predefined_tags=add_predefined_tags, limit=limit, offset=offset)
+        api_response = api_instance.list_tags(org_id, types=types, limit=limit, offset=offset)
         print("The response of TagsApi->list_tags:\n")
         pprint(api_response)
     except Exception as e:
@@ -330,8 +329,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **type** | **str**| Filter tags by type | [optional] 
- **add_predefined_tags** | **bool**| Include predefined tags to the list of org owned tags | [optional] 
+ **types** | [**List[str]**](str.md)| Filter tags by types (comma separated, defaults to &#39;user&#39;) | [optional] 
  **limit** | **int**| Limit the number of results | [optional] [default to 1000]
  **offset** | **int**| Offset for pagination | [optional] [default to 0]
 

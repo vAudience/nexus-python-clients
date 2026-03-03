@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **int** |  | [optional] 
-**i18n** | [**Dict[str, TagI18n]**](TagI18n.md) |  | [optional] 
 **id** | **str** |  | 
 **internal_id** | **str** |  | [optional] 
 **is_public** | **bool** |  | [optional] 

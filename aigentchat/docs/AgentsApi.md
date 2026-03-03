@@ -6,16 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_assigned_tool**](AgentsApi.md#add_assigned_tool) | **PATCH** /v1/organizations/{org_id}/agents/{id}/add-tool/{tool_id} | Add an assigned tool to an agent
 [**add_attached_file_id**](AgentsApi.md#add_attached_file_id) | **PATCH** /v1/organizations/{org_id}/agents/{id}/add-file/{file_id} | Add an attached file ID to an agent
-[**add_initial_user_message**](AgentsApi.md#add_initial_user_message) | **PATCH** /v1/organizations/{org_id}/agents/{id}/messages/add-user-message | Add an initial user message to an agent
-[**add_system_message**](AgentsApi.md#add_system_message) | **PATCH** /v1/organizations/{org_id}/agents/{id}/messages/add-system-message | Add a system message to an agent
 [**create_agent**](AgentsApi.md#create_agent) | **POST** /v1/organizations/{org_id}/agents | Create a new agent
 [**delete_agent**](AgentsApi.md#delete_agent) | **DELETE** /v1/organizations/{org_id}/agents/{id} | Delete an agent
 [**get_agent**](AgentsApi.md#get_agent) | **GET** /v1/organizations/{org_id}/agents/{id} | Get an agent
 [**list_agents**](AgentsApi.md#list_agents) | **GET** /v1/organizations/{org_id}/agents | List agents
 [**remove_assigned_tool**](AgentsApi.md#remove_assigned_tool) | **PATCH** /v1/organizations/{org_id}/agents/{id}/remove-tool/{tool_id} | Remove an assigned tool from an agent
 [**remove_attached_file_id**](AgentsApi.md#remove_attached_file_id) | **PATCH** /v1/organizations/{org_id}/agents/{id}/remove-file/{file_id} | Remove an attached file ID from an agent
-[**remove_initial_user_message**](AgentsApi.md#remove_initial_user_message) | **PATCH** /v1/organizations/{org_id}/agents/{id}/messages/remove-user-message | Remove an initial user message from an agent
-[**remove_system_message**](AgentsApi.md#remove_system_message) | **PATCH** /v1/organizations/{org_id}/agents/{id}/messages/remove-system-message | Remove a system message from an agent
 [**update_agent**](AgentsApi.md#update_agent) | **PUT** /v1/organizations/{org_id}/agents/{id} | Update an agent
 
 
@@ -180,182 +176,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **add_initial_user_message**
-> Agent add_initial_user_message(org_id, id, message)
-
-Add an initial user message to an agent
-
-Add an initial user message to an agent
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.agent import Agent
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.AgentsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
-    message = 'message_example' # str | Initial User Message
-
-    try:
-        # Add an initial user message to an agent
-        api_response = api_instance.add_initial_user_message(org_id, id, message)
-        print("The response of AgentsApi->add_initial_user_message:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AgentsApi->add_initial_user_message: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
- **message** | **str**| Initial User Message | 
-
-### Return type
-
-[**Agent**](Agent.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **add_system_message**
-> Agent add_system_message(org_id, id, message)
-
-Add a system message to an agent
-
-Add a system message to an agent
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.agent import Agent
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.AgentsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
-    message = 'message_example' # str | System Message
-
-    try:
-        # Add a system message to an agent
-        api_response = api_instance.add_system_message(org_id, id, message)
-        print("The response of AgentsApi->add_system_message:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AgentsApi->add_system_message: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
- **message** | **str**| System Message | 
-
-### Return type
-
-[**Agent**](Agent.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -630,7 +450,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_agents**
-> AgentResults list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, location=location, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
+> AgentResults list_agents(org_id, model_ids=model_ids, tags=tags, system_tags=system_tags, q=q, action=action, location=location, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
 
 List agents
 
@@ -669,8 +489,9 @@ with aigentchat.ApiClient(configuration) as api_client:
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     model_ids = ['model_ids_example'] # List[str] | Model ID to filter by (comma separated) (optional)
-    tag_ids = ['tag_ids_example'] # List[str] | Tag IDs to filter by (comma separated) (optional)
-    q = 'q_example' # str | Search term for name or description (optional)
+    tags = ['tags_example'] # List[str] | Tags to filter by (comma separated) (optional)
+    system_tags = ['system_tags_example'] # List[str] | System tags to filter by (comma separated) (optional)
+    q = 'q_example' # str | Search term for name, description or tags (optional)
     action = 'action_example' # str | Filter agents by model action (chat, image, etc.) (optional)
     location = 'location_example' # str | Filter agents by the model hosting location (europe, usa, etc.). If this violates the organization's allowed hosting locations, the parameter will be ignored. (optional)
     types = ['types_example'] # List[str] | Filter agents by types (basic, background, service - comma separated) (optional)
@@ -684,7 +505,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 
     try:
         # List agents
-        api_response = api_instance.list_agents(org_id, model_ids=model_ids, tag_ids=tag_ids, q=q, action=action, location=location, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
+        api_response = api_instance.list_agents(org_id, model_ids=model_ids, tags=tags, system_tags=system_tags, q=q, action=action, location=location, types=types, add_predefined_agents=add_predefined_agents, admin_mode=admin_mode, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
         print("The response of AgentsApi->list_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -700,8 +521,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **model_ids** | [**List[str]**](str.md)| Model ID to filter by (comma separated) | [optional] 
- **tag_ids** | [**List[str]**](str.md)| Tag IDs to filter by (comma separated) | [optional] 
- **q** | **str**| Search term for name or description | [optional] 
+ **tags** | [**List[str]**](str.md)| Tags to filter by (comma separated) | [optional] 
+ **system_tags** | [**List[str]**](str.md)| System tags to filter by (comma separated) | [optional] 
+ **q** | **str**| Search term for name, description or tags | [optional] 
  **action** | **str**| Filter agents by model action (chat, image, etc.) | [optional] 
  **location** | **str**| Filter agents by the model hosting location (europe, usa, etc.). If this violates the organization&#39;s allowed hosting locations, the parameter will be ignored. | [optional] 
  **types** | [**List[str]**](str.md)| Filter agents by types (basic, background, service - comma separated) | [optional] 
@@ -898,182 +720,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **remove_initial_user_message**
-> Agent remove_initial_user_message(org_id, id, message)
-
-Remove an initial user message from an agent
-
-Remove an initial user message from an agent
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.agent import Agent
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.AgentsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
-    message = 'message_example' # str | Initial User Message
-
-    try:
-        # Remove an initial user message from an agent
-        api_response = api_instance.remove_initial_user_message(org_id, id, message)
-        print("The response of AgentsApi->remove_initial_user_message:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AgentsApi->remove_initial_user_message: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
- **message** | **str**| Initial User Message | 
-
-### Return type
-
-[**Agent**](Agent.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **remove_system_message**
-> Agent remove_system_message(org_id, id, message)
-
-Remove a system message from an agent
-
-Remove a system message from an agent
-
-### Example
-
-* Api Key Authentication (ApiKey):
-
-```python
-import aigentchat
-from aigentchat.models.agent import Agent
-from aigentchat.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
-# See configuration.py for a list of all supported configuration parameters.
-configuration = aigentchat.Configuration(
-    host = "https://aigentchat.dev.ai.vaud.one"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with aigentchat.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = aigentchat.AgentsApi(api_client)
-    org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
-    message = 'message_example' # str | System Message
-
-    try:
-        # Remove a system message from an agent
-        api_response = api_instance.remove_system_message(org_id, id, message)
-        print("The response of AgentsApi->remove_system_message:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AgentsApi->remove_system_message: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
- **message** | **str**| System Message | 
-
-### Return type
-
-[**Agent**](Agent.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_prompt**](PromptsApi.md#create_prompt) | **POST** /v1/organizations/{org_id}/prompts | Create a new prompt
 [**delete_prompt**](PromptsApi.md#delete_prompt) | **DELETE** /v1/organizations/{org_id}/prompts/{prompt_id} | Delete a prompt
+[**duplicate_prompt**](PromptsApi.md#duplicate_prompt) | **POST** /v1/organizations/{org_id}/prompts/{prompt_id}/duplicate | Duplicate Prompt
 [**get_prompt**](PromptsApi.md#get_prompt) | **GET** /v1/organizations/{org_id}/prompts/{prompt_id} | Get a specific prompt
 [**list_prompts**](PromptsApi.md#list_prompts) | **GET** /v1/organizations/{org_id}/prompts | List prompts
 [**render_prompt**](PromptsApi.md#render_prompt) | **POST** /v1/organizations/{org_id}/prompts/render | Render Prompt
@@ -181,6 +182,81 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **duplicate_prompt**
+> Prompt duplicate_prompt(org_id, prompt_id)
+
+Duplicate Prompt
+
+Duplicates an existing prompt.
+
+### Example
+
+
+```python
+import aigentchat
+from aigentchat.models.prompt import Prompt
+from aigentchat.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = aigentchat.Configuration(
+    host = "https://aigentchat.dev.ai.vaud.one"
+)
+
+
+# Enter a context with an instance of the API client
+with aigentchat.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = aigentchat.PromptsApi(api_client)
+    org_id = 'org_id_example' # str | Organization ID
+    prompt_id = 'prompt_id_example' # str | Prompt ID
+
+    try:
+        # Duplicate Prompt
+        api_response = api_instance.duplicate_prompt(org_id, prompt_id)
+        print("The response of PromptsApi->duplicate_prompt:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PromptsApi->duplicate_prompt: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_id** | **str**| Organization ID | 
+ **prompt_id** | **str**| Prompt ID | 
+
+### Return type
+
+[**Prompt**](Prompt.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Duplicated prompt |  -  |
+**400** | Invalid payload or prompt ID |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Prompt not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_prompt**
 > Prompt get_prompt(org_id, prompt_id)
 
@@ -268,7 +344,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_prompts**
-> PromptResults list_prompts(org_id, visibility=visibility, offset=offset, limit=limit)
+> PromptResults list_prompts(org_id, owner_id=owner_id, tags=tags, system_tags=system_tags, q=q, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
 
 List prompts
 
@@ -305,14 +381,20 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.PromptsApi(api_client)
-    org_id = 'org_id_example' # str | Organization ID
-    visibility = 'visibility_example' # str | Filter prompts by access visibility (optional)
-    offset = 56 # int | Offset (optional)
-    limit = 56 # int | Limit (optional)
+    org_id = 'org_id_example' # str | Organization ID to filter by
+    owner_id = 'owner_id_example' # str | Owner ID to filter by (optional)
+    tags = ['tags_example'] # List[str] | Tags to filter by (comma separated) (optional)
+    system_tags = ['system_tags_example'] # List[str] | System tags to filter by (comma separated) (optional)
+    q = 'q_example' # str | Search term for title, description or tags (optional)
+    visibility = 'visibility_example' # str | Filter prompts by access visibility (public, private, organization) (optional)
+    limit = 1000 # int | Limit the number of results (optional) (default to 1000)
+    offset = 0 # int | Offset for pagination (optional) (default to 0)
+    sort_by = '"title"' # str | Field to sort by (title, createdat, updatedat) (optional) (default to '"title"')
+    sort_order = '"asc"' # str | Sort order (asc or desc) (optional) (default to '"asc"')
 
     try:
         # List prompts
-        api_response = api_instance.list_prompts(org_id, visibility=visibility, offset=offset, limit=limit)
+        api_response = api_instance.list_prompts(org_id, owner_id=owner_id, tags=tags, system_tags=system_tags, q=q, visibility=visibility, limit=limit, offset=offset, sort_by=sort_by, sort_order=sort_order)
         print("The response of PromptsApi->list_prompts:\n")
         pprint(api_response)
     except Exception as e:
@@ -326,10 +408,16 @@ with aigentchat.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organization ID | 
- **visibility** | **str**| Filter prompts by access visibility | [optional] 
- **offset** | **int**| Offset | [optional] 
- **limit** | **int**| Limit | [optional] 
+ **org_id** | **str**| Organization ID to filter by | 
+ **owner_id** | **str**| Owner ID to filter by | [optional] 
+ **tags** | [**List[str]**](str.md)| Tags to filter by (comma separated) | [optional] 
+ **system_tags** | [**List[str]**](str.md)| System tags to filter by (comma separated) | [optional] 
+ **q** | **str**| Search term for title, description or tags | [optional] 
+ **visibility** | **str**| Filter prompts by access visibility (public, private, organization) | [optional] 
+ **limit** | **int**| Limit the number of results | [optional] [default to 1000]
+ **offset** | **int**| Offset for pagination | [optional] [default to 0]
+ **sort_by** | **str**| Field to sort by (title, createdat, updatedat) | [optional] [default to &#39;&quot;title&quot;&#39;]
+ **sort_order** | **str**| Sort order (asc or desc) | [optional] [default to &#39;&quot;asc&quot;&#39;]
 
 ### Return type
 

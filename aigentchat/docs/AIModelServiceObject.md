@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ai_service_id** | **str** |  | 
 **cost_multiplier** | **float** |  | 
 **created_at** | **int** |  | [optional] 
+**deleted** | **bool** |  | [optional] 
 **description** | **str** |  | [optional] 
 **hosting_locations** | [**Dict[str, HostingLocation]**](HostingLocation.md) |  | [optional] 
 **i18n** | [**Dict[str, AIModelServiceI18n]**](AIModelServiceI18n.md) |  | [optional] 

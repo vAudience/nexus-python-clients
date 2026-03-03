@@ -5,8 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**limit** | **int** |  | [optional] 
+**offset** | **int** |  | [optional] 
 **results** | [**List[Prompt]**](Prompt.md) |  | 
-**total_results** | **int** |  | 
+**stats** | [**PromptStatistics**](PromptStatistics.md) |  | [optional] 
+**total_results** | **int** |  | [optional] 
 
 ## Example
 
