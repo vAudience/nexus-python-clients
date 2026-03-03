@@ -67,6 +67,7 @@ core/models/role_patch_request.py
 core/models/role_post_request.py
 core/models/role_reduced_response.py
 core/models/role_response.py
+core/models/service_status.py
 core/models/team_member_response.py
 core/models/team_patch_request.py
 core/models/team_post_request.py
@@ -134,6 +135,7 @@ docs/RolePostRequest.md
 docs/RoleReducedResponse.md
 docs/RoleResponse.md
 docs/RolesApi.md
+docs/ServiceStatus.md
 docs/StripeApi.md
 docs/TeamMemberResponse.md
 docs/TeamPatchRequest.md
@@ -210,6 +212,7 @@ test/test_role_post_request.py
 test/test_role_reduced_response.py
 test/test_role_response.py
 test/test_roles_api.py
+test/test_service_status.py
 test/test_stripe_api.py
 test/test_team_member_response.py
 test/test_team_patch_request.py

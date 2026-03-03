@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **add_predefined_agents** | **bool** |  | [optional] 
 **model_ids** | **List[str]** |  | [optional] 
 **q** | **str** |  | [optional] 
-**tag_ids** | **List[str]** |  | [optional] 
+**system_tags** | **List[str]** |  | [optional] 
+**tags** | **List[str]** |  | [optional] 
 **visibility** | **str** |  | [optional] 
 
 ## Example

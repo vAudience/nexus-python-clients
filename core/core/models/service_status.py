@@ -17,35 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
-from core.models.product_type import ProductType
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OrganizationSubscriptionResponse(BaseModel):
+class ServiceStatus(BaseModel):
     """
-    OrganizationSubscriptionResponse
+    ServiceStatus
     """ # noqa: E501
-    active: StrictBool
-    cancel_at_period_end: StrictBool = Field(alias="cancelAtPeriodEnd")
-    created_at: StrictStr = Field(alias="createdAt")
-    currency: StrictStr
-    current_period_end: StrictStr = Field(alias="currentPeriodEnd")
-    id: StrictStr
-    name: StrictStr
-    organization_id: StrictStr = Field(alias="organizationId")
-    product_id: StrictStr = Field(alias="productId")
-    product_type: ProductType = Field(alias="productType")
-    seats: StrictInt
-    seats_taken: StrictInt = Field(alias="seatsTaken")
-    status: StrictStr
-    total_amount: StrictInt = Field(description="total amount in cents", alias="totalAmount")
-    trial: StrictBool
-    trial_end: StrictStr = Field(alias="trialEnd")
-    updated_at: StrictStr = Field(alias="updatedAt")
+    message: Optional[StrictStr] = None
+    status: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["active", "cancelAtPeriodEnd", "createdAt", "currency", "currentPeriodEnd", "id", "name", "organizationId", "productId", "productType", "seats", "seatsTaken", "status", "totalAmount", "trial", "trialEnd", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["message", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -65,7 +49,7 @@ class OrganizationSubscriptionResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OrganizationSubscriptionResponse from a JSON string"""
+        """Create an instance of ServiceStatus from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -97,7 +81,7 @@ class OrganizationSubscriptionResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OrganizationSubscriptionResponse from a dict"""
+        """Create an instance of ServiceStatus from a dict"""
         if obj is None:
             return None
 
@@ -105,23 +89,8 @@ class OrganizationSubscriptionResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "active": obj.get("active"),
-            "cancelAtPeriodEnd": obj.get("cancelAtPeriodEnd"),
-            "createdAt": obj.get("createdAt"),
-            "currency": obj.get("currency"),
-            "currentPeriodEnd": obj.get("currentPeriodEnd"),
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "organizationId": obj.get("organizationId"),
-            "productId": obj.get("productId"),
-            "productType": obj.get("productType"),
-            "seats": obj.get("seats"),
-            "seatsTaken": obj.get("seatsTaken"),
-            "status": obj.get("status"),
-            "totalAmount": obj.get("totalAmount"),
-            "trial": obj.get("trial"),
-            "trialEnd": obj.get("trialEnd"),
-            "updatedAt": obj.get("updatedAt")
+            "message": obj.get("message"),
+            "status": obj.get("status")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

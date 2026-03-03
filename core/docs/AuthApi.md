@@ -399,6 +399,7 @@ No authorization required
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
 **500** | Server or Database Internal Error |  -  |
+**503** | Service unavailable: 2FA is disabled |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -468,6 +469,7 @@ No authorization required
 **302** | Redirect to keycloak configure TOTP page |  -  |
 **400** | Bad Request |  -  |
 **500** | Server or Database Internal Error |  -  |
+**503** | Service unavailable: 2FA is disabled |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**delete_team**](OrganizationsApi.md#delete_team) | **DELETE** /v1/organizations/{id}/teams/{teamId} | Delete a team for an Organization
 [**delete_team_member**](OrganizationsApi.md#delete_team_member) | **DELETE** /v1/organizations/{id}/teams/{teamId}/members/{memberId} | Remove a member from a team
 [**end_trial**](OrganizationsApi.md#end_trial) | **PATCH** /v1/organizations/{id}/subscription/end-trial | End the trial period early for an Organization
+[**export_members**](OrganizationsApi.md#export_members) | **GET** /v1/organizations/{id}/members/export | Export all members for an Organization as CSV
 [**get_all_my_organizations**](OrganizationsApi.md#get_all_my_organizations) | **GET** /v1/organizations/me | Get all my organizations
 [**get_all_my_organizations_with_details**](OrganizationsApi.md#get_all_my_organizations_with_details) | **GET** /v1/organizations/me/details | Get all my organizations with details (subscriptions, ...)
 [**get_all_my_teams**](OrganizationsApi.md#get_all_my_teams) | **GET** /v1/organizations/{id}/teams/me | Get all teams for an Organization of the current user
@@ -925,7 +926,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_member**
-> MemberDeleteResponse delete_member(id, member_id, resources_action=resources_action)
+> MemberDeleteResponse delete_member(id, member_id)
 
 Delete a member for an Organization
 
@@ -964,11 +965,10 @@ with core.ApiClient(configuration) as api_client:
     api_instance = core.OrganizationsApi(api_client)
     id = 'id_example' # str | id of the organization
     member_id = 'member_id_example' # str | id of the member
-    resources_action = 'resources_action_example' # str | action to take on resources owned by the member (optional)
 
     try:
         # Delete a member for an Organization
-        api_response = api_instance.delete_member(id, member_id, resources_action=resources_action)
+        api_response = api_instance.delete_member(id, member_id)
         print("The response of OrganizationsApi->delete_member:\n")
         pprint(api_response)
     except Exception as e:
@@ -984,7 +984,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| id of the organization | 
  **member_id** | **str**| id of the member | 
- **resources_action** | **str**| action to take on resources owned by the member | [optional] 
 
 ### Return type
 
@@ -1654,6 +1653,88 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Organization Not Found |  -  |
+**500** | Server or Database Internal Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_members**
+> bytearray export_members(id)
+
+Export all members for an Organization as CSV
+
+Export all members for an Organization as CSV file with their teams
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import core
+from core.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://core.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = core.Configuration(
+    host = "https://core.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = core.OrganizationsApi(api_client)
+    id = 'id_example' # str | id of the organization
+
+    try:
+        # Export all members for an Organization as CSV
+        api_response = api_instance.export_members(id)
+        print("The response of OrganizationsApi->export_members:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->export_members: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| id of the organization | 
+
+### Return type
+
+**bytearray**
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/csv
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | CSV file download |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Organization Not Found |  -  |

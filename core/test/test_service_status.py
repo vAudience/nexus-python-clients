@@ -14,10 +14,10 @@
 
 import unittest
 
-from core.models.role_reduced_response import RoleReducedResponse
+from core.models.service_status import ServiceStatus
 
-class TestRoleReducedResponse(unittest.TestCase):
-    """RoleReducedResponse unit test stubs"""
+class TestServiceStatus(unittest.TestCase):
+    """ServiceStatus unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,32 +25,26 @@ class TestRoleReducedResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RoleReducedResponse:
-        """Test RoleReducedResponse
+    def make_instance(self, include_optional) -> ServiceStatus:
+        """Test ServiceStatus
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RoleReducedResponse`
+        # uncomment below to create an instance of `ServiceStatus`
         """
-        model = RoleReducedResponse()
+        model = ServiceStatus()
         if include_optional:
-            return RoleReducedResponse(
-                created_at = '',
-                id = '',
-                name = '',
-                updated_at = ''
+            return ServiceStatus(
+                message = '',
+                status = ''
             )
         else:
-            return RoleReducedResponse(
-                created_at = '',
-                id = '',
-                name = '',
-                updated_at = '',
+            return ServiceStatus(
         )
         """
 
-    def testRoleReducedResponse(self):
-        """Test RoleReducedResponse"""
+    def testServiceStatus(self):
+        """Test ServiceStatus"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

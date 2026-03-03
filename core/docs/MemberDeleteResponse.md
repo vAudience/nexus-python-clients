@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**resource_ids** | **List[str]** |  | 
-**resources_action** | **str** |  | 
+**resources_deleted** | **List[str]** |  | [optional] 
+**resources_transferred** | **List[str]** |  | [optional] 
 
 ## Example
 
