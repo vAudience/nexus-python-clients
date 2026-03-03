@@ -19,18 +19,17 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from filemanager.models.service_status import ServiceStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HealthResponse(BaseModel):
+class ServiceStatus(BaseModel):
     """
-    HealthResponse
+    ServiceStatus
     """ # noqa: E501
-    services: Optional[Dict[str, ServiceStatus]] = None
+    message: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["services", "status"]
+    __properties: ClassVar[List[str]] = ["message", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class HealthResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HealthResponse from a JSON string"""
+        """Create an instance of ServiceStatus from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,13 +72,6 @@ class HealthResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each value in services (dict)
-        _field_dict = {}
-        if self.services:
-            for _key_services in self.services:
-                if self.services[_key_services]:
-                    _field_dict[_key_services] = self.services[_key_services].to_dict()
-            _dict['services'] = _field_dict
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -89,7 +81,7 @@ class HealthResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HealthResponse from a dict"""
+        """Create an instance of ServiceStatus from a dict"""
         if obj is None:
             return None
 
@@ -97,12 +89,7 @@ class HealthResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "services": dict(
-                (_k, ServiceStatus.from_dict(_v))
-                for _k, _v in obj["services"].items()
-            )
-            if obj.get("services") is not None
-            else None,
+            "message": obj.get("message"),
             "status": obj.get("status")
         })
         # store additional fields in additional_properties

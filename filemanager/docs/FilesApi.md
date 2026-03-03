@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> FileUploadResponse upload_file(org_id, category, file, metadata=metadata)
+> FileUploadResponse upload_file(org_id, category, file, for_user_id=for_user_id, metadata=metadata)
 
 Upload a file
 
@@ -481,11 +481,12 @@ with filemanager.ApiClient(configuration) as api_client:
     org_id = 'org_id_example' # str | organization ID
     category = 'category_example' # str | category ID
     file = None # bytearray | File to upload
+    for_user_id = 'for_user_id_example' # str | User ID to upload the file for (optional)
     metadata = None # object | Metadata for the uploaded file (optional)
 
     try:
         # Upload a file
-        api_response = api_instance.upload_file(org_id, category, file, metadata=metadata)
+        api_response = api_instance.upload_file(org_id, category, file, for_user_id=for_user_id, metadata=metadata)
         print("The response of FilesApi->upload_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -502,6 +503,7 @@ Name | Type | Description  | Notes
  **org_id** | **str**| organization ID | 
  **category** | **str**| category ID | 
  **file** | **bytearray**| File to upload | 
+ **for_user_id** | **str**| User ID to upload the file for | [optional] 
  **metadata** | [**object**](object.md)| Metadata for the uploaded file | [optional] 
 
 ### Return type

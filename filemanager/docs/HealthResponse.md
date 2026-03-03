@@ -5,7 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**health** | **str** |  | 
+**services** | [**Dict[str, ServiceStatus]**](ServiceStatus.md) |  | [optional] 
+**status** | **str** |  | [optional] 
 
 ## Example
 

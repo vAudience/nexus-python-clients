@@ -19,6 +19,7 @@ docs/FilesMetadataApi.md
 docs/HealthApi.md
 docs/HealthResponse.md
 docs/MetricsApi.md
+docs/ServiceStatus.md
 docs/VersionApi.md
 docs/VersionResponse.md
 filemanager/__init__.py
@@ -44,6 +45,7 @@ filemanager/models/file_metadata_response.py
 filemanager/models/file_upload_category_response.py
 filemanager/models/file_upload_response.py
 filemanager/models/health_response.py
+filemanager/models/service_status.py
 filemanager/models/version_response.py
 filemanager/py.typed
 filemanager/rest.py
@@ -69,6 +71,7 @@ test/test_files_metadata_api.py
 test/test_health_api.py
 test/test_health_response.py
 test/test_metrics_api.py
+test/test_service_status.py
 test/test_version_api.py
 test/test_version_response.py
 tox.ini

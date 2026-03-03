@@ -14,10 +14,10 @@
 
 import unittest
 
-from filemanager.models.error_response import ErrorResponse
+from filemanager.models.service_status import ServiceStatus
 
-class TestErrorResponse(unittest.TestCase):
-    """ErrorResponse unit test stubs"""
+class TestServiceStatus(unittest.TestCase):
+    """ServiceStatus unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,33 +25,26 @@ class TestErrorResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ErrorResponse:
-        """Test ErrorResponse
+    def make_instance(self, include_optional) -> ServiceStatus:
+        """Test ServiceStatus
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ErrorResponse`
+        # uncomment below to create an instance of `ServiceStatus`
         """
-        model = ErrorResponse()
+        model = ServiceStatus()
         if include_optional:
-            return ErrorResponse(
-                code = '',
-                details = [
-                    filemanager.models.error_detail.ErrorDetail(
-                        field = '', 
-                        tag = '', 
-                        value = '', )
-                    ],
+            return ServiceStatus(
                 message = '',
-                status = 56
+                status = ''
             )
         else:
-            return ErrorResponse(
+            return ServiceStatus(
         )
         """
 
-    def testErrorResponse(self):
-        """Test ErrorResponse"""
+    def testServiceStatus(self):
+        """Test ServiceStatus"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
