@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**List[AIgencyMessageContent]**](AIgencyMessageContent.md) |  | 
 **full_text** | **str** |  | 
+**full_text_mime_type** | **str** |  | [optional] 
 
 ## Example
 

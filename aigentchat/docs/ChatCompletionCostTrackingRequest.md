@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **batch** | **bool** |  | [optional] 
 **execution_id** | **str** |  | [optional] 
 **input_tokens** | **int** |  | [optional] 
+**model_host_location** | [**HostingLocation**](HostingLocation.md) |  | [optional] 
 **model_internal_id** | **str** |  | 
 **output_tokens** | **int** |  | [optional] 
 **service_internal_id** | **str** |  | 

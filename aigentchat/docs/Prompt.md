@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **int** |  | [optional] 
-**current_version** | **int** |  | [optional] 
 **default_agent_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 
 **image_url** | **str** |  | [optional] 
 **internal_id** | **str** |  | [optional] 
+**latest_version** | **int** |  | [optional] 
 **legacy_uuid** | **str** |  | [optional] 
 **owner_id** | **str** |  | 
 **owner_organization_id** | **str** |  | 

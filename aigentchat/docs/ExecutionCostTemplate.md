@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**batch_cost_factor** | **float** |  | [optional] 
 **cost_per_unit_in_euro** | **float** |  | [optional] 
 **cost_unit** | [**AIModelCostUnit**](AIModelCostUnit.md) |  | [optional] 
 **description** | **str** |  | [optional] 
+**long_context_cost_per_unit_in_euro** | **float** |  | [optional] 
 
 ## Example
 

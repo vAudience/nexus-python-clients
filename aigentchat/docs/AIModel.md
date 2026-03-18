@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **actions** | **List[str]** |  | 
 **capabilities** | **List[str]** | Note: only set when returning the model (not stored at model level), derived from features | [optional] 
 **created_at** | **int** |  | [optional] 
+**default_hosting_location** | [**HostingLocation**](HostingLocation.md) |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **description** | **str** |  | [optional] 
 **documentation_url** | **str** |  | [optional] 

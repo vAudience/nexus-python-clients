@@ -5,10 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**batch_cost_factor** | **float** |  | [optional] 
 **capability** | [**AIModelCapability**](AIModelCapability.md) |  | [optional] 
 **constraints** | [**List[AIModelConstraint]**](AIModelConstraint.md) |  | [optional] 
 **cost_item_templates** | [**List[ExecutionCostTemplate]**](ExecutionCostTemplate.md) |  | [optional] 
 **cost_items** | [**List[ExecutionUsageCost]**](ExecutionUsageCost.md) |  | [optional] 
+**long_context_threshold_tokens** | **int** |  | [optional] 
+**non_default_hosting_location_cost_factor** | **float** |  | [optional] 
 
 ## Example
 

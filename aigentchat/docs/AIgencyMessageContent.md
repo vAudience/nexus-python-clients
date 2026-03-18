@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **function_responses** | [**AIgencyFunctionResponse**](AIgencyFunctionResponse.md) |  | [optional] 
 **function_status_update** | [**AIgencyFunctionStatusUpdate**](AIgencyFunctionStatusUpdate.md) |  | [optional] 
 **text** | **str** |  | [optional] 
+**text_mime_type** | **str** |  | [optional] 
 **thinking** | [**AIgencyThinking**](AIgencyThinking.md) |  | [optional] 
 **type** | [**AIgencyMessageContentType**](AIgencyMessageContentType.md) |  | 
 

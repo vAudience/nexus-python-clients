@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **default** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
 **multi** | **bool** |  | [optional] 
 **name** | **str** |  | 
 **options** | [**List[PromptVariableOption]**](PromptVariableOption.md) |  | [optional] 
