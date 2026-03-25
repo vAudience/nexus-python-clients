@@ -18,20 +18,10 @@ pip install git+https://github.com/vAudience/nexus-python-clients.git#subdirecto
 
 ## Updating Clients
 
-To update the clients, execute the following commands:
+To regenerate a client, run its generate script. Each script pulls the latest main branch, regenerates the client from the OpenAPI spec, and if there are changes, commits, tags, and pushes automatically.
 
 ```bash
 ./generateCoreClient.sh
 ./generateAigentChatClient.sh
 ./generateFileManagerClient.sh
-```
-
-## Tags
-
-To create tags, use the following commands:
-
-```bash
-git tag core/v0.1.0
-git tag aigentchat/v0.1.0
-git tag filemanager/v0.1.0
 ```
