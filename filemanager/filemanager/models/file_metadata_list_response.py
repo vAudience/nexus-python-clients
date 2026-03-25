@@ -17,20 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictInt
+from typing import Any, ClassVar, Dict, List
+from filemanager.models.file_metadata_response import FileMetadataResponse
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ErrorDetail(BaseModel):
+class FileMetadataListResponse(BaseModel):
     """
-    ErrorDetail
+    FileMetadataListResponse
     """ # noqa: E501
-    var_field: Optional[StrictStr] = Field(default=None, alias="field")
-    tag: Optional[StrictStr] = None
-    value: Optional[StrictStr] = None
+    files: List[FileMetadataResponse]
+    limit: StrictInt
+    offset: StrictInt
+    total: StrictInt
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["field", "tag", "value"]
+    __properties: ClassVar[List[str]] = ["files", "limit", "offset", "total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +52,7 @@ class ErrorDetail(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ErrorDetail from a JSON string"""
+        """Create an instance of FileMetadataListResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,6 +75,13 @@ class ErrorDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in files (list)
+        _items = []
+        if self.files:
+            for _item_files in self.files:
+                if _item_files:
+                    _items.append(_item_files.to_dict())
+            _dict['files'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -82,7 +91,7 @@ class ErrorDetail(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ErrorDetail from a dict"""
+        """Create an instance of FileMetadataListResponse from a dict"""
         if obj is None:
             return None
 
@@ -90,9 +99,10 @@ class ErrorDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "field": obj.get("field"),
-            "tag": obj.get("tag"),
-            "value": obj.get("value")
+            "files": [FileMetadataResponse.from_dict(_item) for _item in obj["files"]] if obj.get("files") is not None else None,
+            "limit": obj.get("limit"),
+            "offset": obj.get("offset"),
+            "total": obj.get("total")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

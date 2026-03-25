@@ -5,10 +5,10 @@ All URIs are relative to *https://file-manager.dev.ai.vaud.one*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_file_access_token**](FilesApi.md#create_file_access_token) | **POST** /v1/file-access-tokens | Create a file access token
-[**delete_file**](FilesApi.md#delete_file) | **DELETE** /v1/files/{storage_path} | Delete a file
+[**delete_file**](FilesApi.md#delete_file) | **DELETE** /v1/files/{id_or_storage_path} | Delete a file
 [**duplicate_file**](FilesApi.md#duplicate_file) | **POST** /v1/organizations/{org_id}/files/duplicate | Duplicate a file
 [**get_file_upload_categories**](FilesApi.md#get_file_upload_categories) | **GET** /v1/organizations/{org_id}/files/categories | Get file upload categories
-[**serve_file**](FilesApi.md#serve_file) | **GET** /v1/files/{storage_path} | Serve a file
+[**serve_file**](FilesApi.md#serve_file) | **GET** /v1/files/{id_or_storage_path} | Serve a file
 [**upload_file**](FilesApi.md#upload_file) | **POST** /v1/organizations/{org_id}/files/{category} | Upload a file
 
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_file**
-> FileMetadataResponse delete_file(storage_path)
+> FileMetadataResponse delete_file(id_or_storage_path)
 
 Delete a file
 
@@ -135,11 +135,11 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 with filemanager.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = filemanager.FilesApi(api_client)
-    storage_path = 'storage_path_example' # str | Storage path
+    id_or_storage_path = 'id_or_storage_path_example' # str | File metadata ID (UUID) or storage path
 
     try:
         # Delete a file
-        api_response = api_instance.delete_file(storage_path)
+        api_response = api_instance.delete_file(id_or_storage_path)
         print("The response of FilesApi->delete_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -153,7 +153,7 @@ with filemanager.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_path** | **str**| Storage path | 
+ **id_or_storage_path** | **str**| File metadata ID (UUID) or storage path | 
 
 ### Return type
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serve_file**
-> bytearray serve_file(storage_path, download=download, filename=filename, fat=fat)
+> bytearray serve_file(id_or_storage_path, download=download, filename=filename, fat=fat)
 
 Serve a file
 
@@ -388,14 +388,14 @@ configuration.api_key['ApiKey'] = os.environ["API_KEY"]
 with filemanager.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = filemanager.FilesApi(api_client)
-    storage_path = 'storage_path_example' # str | Storage path
+    id_or_storage_path = 'id_or_storage_path_example' # str | File metadata ID (UUID) or storage path
     download = True # bool | Force download as attachment (optional)
     filename = 'filename_example' # str | Custom filename for download (optional)
     fat = 'fat_example' # str | File access token (optional)
 
     try:
         # Serve a file
-        api_response = api_instance.serve_file(storage_path, download=download, filename=filename, fat=fat)
+        api_response = api_instance.serve_file(id_or_storage_path, download=download, filename=filename, fat=fat)
         print("The response of FilesApi->serve_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -409,7 +409,7 @@ with filemanager.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_path** | **str**| Storage path | 
+ **id_or_storage_path** | **str**| File metadata ID (UUID) or storage path | 
  **download** | **bool**| Force download as attachment | [optional] 
  **filename** | **str**| Custom filename for download | [optional] 
  **fat** | **str**| File access token | [optional] 

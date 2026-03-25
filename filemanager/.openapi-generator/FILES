@@ -11,6 +11,7 @@ docs/FileAccessTokenResponse.md
 docs/FileDuplicateRequest.md
 docs/FileMetadataBatchGetRequest.md
 docs/FileMetadataBatchResponse.md
+docs/FileMetadataListResponse.md
 docs/FileMetadataResponse.md
 docs/FileUploadCategoryResponse.md
 docs/FileUploadResponse.md
@@ -41,6 +42,7 @@ filemanager/models/file_access_token_response.py
 filemanager/models/file_duplicate_request.py
 filemanager/models/file_metadata_batch_get_request.py
 filemanager/models/file_metadata_batch_response.py
+filemanager/models/file_metadata_list_response.py
 filemanager/models/file_metadata_response.py
 filemanager/models/file_upload_category_response.py
 filemanager/models/file_upload_response.py
@@ -63,6 +65,7 @@ test/test_file_access_token_response.py
 test/test_file_duplicate_request.py
 test/test_file_metadata_batch_get_request.py
 test/test_file_metadata_batch_response.py
+test/test_file_metadata_list_response.py
 test/test_file_metadata_response.py
 test/test_file_upload_category_response.py
 test/test_file_upload_response.py

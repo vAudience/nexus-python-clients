@@ -14,10 +14,10 @@
 
 import unittest
 
-from filemanager.models.file_metadata_batch_response import FileMetadataBatchResponse
+from filemanager.models.file_metadata_list_response import FileMetadataListResponse
 
-class TestFileMetadataBatchResponse(unittest.TestCase):
-    """FileMetadataBatchResponse unit test stubs"""
+class TestFileMetadataListResponse(unittest.TestCase):
+    """FileMetadataListResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,43 +25,16 @@ class TestFileMetadataBatchResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FileMetadataBatchResponse:
-        """Test FileMetadataBatchResponse
+    def make_instance(self, include_optional) -> FileMetadataListResponse:
+        """Test FileMetadataListResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `FileMetadataBatchResponse`
+        # uncomment below to create an instance of `FileMetadataListResponse`
         """
-        model = FileMetadataBatchResponse()
+        model = FileMetadataListResponse()
         if include_optional:
-            return FileMetadataBatchResponse(
-                files = [
-                    filemanager.models.file_metadata_response.FileMetadataResponse(
-                        created_at = '', 
-                        expires_at = '', 
-                        file_llm_input_type = 'embedded', 
-                        file_name = '', 
-                        file_size = 56, 
-                        file_storage_type = 'temp', 
-                        id = '', 
-                        metadata = filemanager.models.metadata.metadata(), 
-                        mime_type = '', 
-                        organization_id = '', 
-                        original_file_mime_type = '', 
-                        original_file_name = '', 
-                        original_file_size = 56, 
-                        original_file_storage_path = '', 
-                        original_file_url = '', 
-                        storage_path = '', 
-                        team_id = '', 
-                        updated_at = '', 
-                        upload_category = '', 
-                        url = '', 
-                        user_id = '', )
-                    ]
-            )
-        else:
-            return FileMetadataBatchResponse(
+            return FileMetadataListResponse(
                 files = [
                     filemanager.models.file_metadata_response.FileMetadataResponse(
                         created_at = '', 
@@ -86,11 +59,44 @@ class TestFileMetadataBatchResponse(unittest.TestCase):
                         url = '', 
                         user_id = '', )
                     ],
+                limit = 56,
+                offset = 56,
+                total = 56
+            )
+        else:
+            return FileMetadataListResponse(
+                files = [
+                    filemanager.models.file_metadata_response.FileMetadataResponse(
+                        created_at = '', 
+                        expires_at = '', 
+                        file_llm_input_type = 'embedded', 
+                        file_name = '', 
+                        file_size = 56, 
+                        file_storage_type = 'temp', 
+                        id = '', 
+                        metadata = filemanager.models.metadata.metadata(), 
+                        mime_type = '', 
+                        organization_id = '', 
+                        original_file_mime_type = '', 
+                        original_file_name = '', 
+                        original_file_size = 56, 
+                        original_file_storage_path = '', 
+                        original_file_url = '', 
+                        storage_path = '', 
+                        team_id = '', 
+                        updated_at = '', 
+                        upload_category = '', 
+                        url = '', 
+                        user_id = '', )
+                    ],
+                limit = 56,
+                offset = 56,
+                total = 56,
         )
         """
 
-    def testFileMetadataBatchResponse(self):
-        """Test FileMetadataBatchResponse"""
+    def testFileMetadataListResponse(self):
+        """Test FileMetadataListResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
