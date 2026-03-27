@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_prompt**](PromptsApi.md#create_prompt) | **POST** /v1/organizations/{org_id}/prompts | Create a new prompt
 [**delete_prompt**](PromptsApi.md#delete_prompt) | **DELETE** /v1/organizations/{org_id}/prompts/{prompt_id} | Delete a prompt
 [**duplicate_prompt**](PromptsApi.md#duplicate_prompt) | **POST** /v1/organizations/{org_id}/prompts/{prompt_id}/duplicate | Duplicate Prompt
+[**export_prompts**](PromptsApi.md#export_prompts) | **GET** /v1/organizations/{org_id}/prompts/export | Export prompts as CSV
 [**get_prompt**](PromptsApi.md#get_prompt) | **GET** /v1/organizations/{org_id}/prompts/{prompt_id} | Get a specific prompt
 [**list_prompts**](PromptsApi.md#list_prompts) | **GET** /v1/organizations/{org_id}/prompts | List prompts
 [**render_prompt**](PromptsApi.md#render_prompt) | **POST** /v1/organizations/{org_id}/prompts/render | Render Prompt
@@ -254,6 +255,74 @@ No authorization required
 **403** | Forbidden |  -  |
 **404** | Prompt not found |  -  |
 **500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_prompts**
+> export_prompts(org_id)
+
+Export prompts as CSV
+
+Download a CSV file containing all prompt templates in the organization for audit/compliance purposes.
+
+### Example
+
+
+```python
+import aigentchat
+from aigentchat.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = aigentchat.Configuration(
+    host = "https://aigentchat.dev.ai.vaud.one"
+)
+
+
+# Enter a context with an instance of the API client
+with aigentchat.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = aigentchat.PromptsApi(api_client)
+    org_id = 'org_id_example' # str | Organization ID
+
+    try:
+        # Export prompts as CSV
+        api_instance.export_prompts(org_id)
+    except Exception as e:
+        print("Exception when calling PromptsApi->export_prompts: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_id** | **str**| Organization ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/csv
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

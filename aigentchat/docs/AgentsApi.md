@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**add_attached_file_id**](AgentsApi.md#add_attached_file_id) | **PATCH** /v1/organizations/{org_id}/agents/{id}/add-file/{file_id} | Add an attached file ID to an agent
 [**create_agent**](AgentsApi.md#create_agent) | **POST** /v1/organizations/{org_id}/agents | Create a new agent
 [**delete_agent**](AgentsApi.md#delete_agent) | **DELETE** /v1/organizations/{org_id}/agents/{id} | Delete an agent
+[**export_agents**](AgentsApi.md#export_agents) | **GET** /v1/organizations/{org_id}/agents/export | Export agents as CSV
 [**get_agent**](AgentsApi.md#get_agent) | **GET** /v1/organizations/{org_id}/agents/{id} | Get an agent
 [**list_agents**](AgentsApi.md#list_agents) | **GET** /v1/organizations/{org_id}/agents | List agents
 [**remove_assigned_tool**](AgentsApi.md#remove_assigned_tool) | **PATCH** /v1/organizations/{org_id}/agents/{id}/remove-tool/{tool_id} | Remove an assigned tool from an agent
@@ -359,6 +360,74 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_agents**
+> export_agents(org_id)
+
+Export agents as CSV
+
+Download a CSV file containing all agents in the organization for audit/compliance purposes.
+
+### Example
+
+
+```python
+import aigentchat
+from aigentchat.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = aigentchat.Configuration(
+    host = "https://aigentchat.dev.ai.vaud.one"
+)
+
+
+# Enter a context with an instance of the API client
+with aigentchat.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = aigentchat.AgentsApi(api_client)
+    org_id = 'org_id_example' # str | Organization ID
+
+    try:
+        # Export agents as CSV
+        api_instance.export_agents(org_id)
+    except Exception as e:
+        print("Exception when calling AgentsApi->export_agents: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_id** | **str**| Organization ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/csv
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
