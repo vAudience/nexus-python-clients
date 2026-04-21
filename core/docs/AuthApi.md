@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**login**](AuthApi.md#login) | **GET** /v1/auth/login | Login
 [**logout**](AuthApi.md#logout) | **POST** /v1/auth/logout | Logout
 [**refresh**](AuthApi.md#refresh) | **POST** /v1/auth/refresh | Refresh
-[**remove2_fa**](AuthApi.md#remove2_fa) | **DELETE** /v1/auth/2fa | Remove 2FA
+[**remove2_fa**](AuthApi.md#remove2_fa) | **GET** /v1/auth/2fa/remove | Remove 2FA
 [**setup2_fa**](AuthApi.md#setup2_fa) | **GET** /v1/auth/2fa/setup | Setup 2FA
 
 
@@ -340,11 +340,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove2_fa**
-> remove2_fa()
+> remove2_fa(return_to, step=step)
 
 Remove 2FA
 
-Remove the 2FA credential from the keycloak user
+Starts login and triggers an app-initiated Keycloak 2FA removal via kc_action
 
 ### Example
 
@@ -365,10 +365,12 @@ configuration = core.Configuration(
 with core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = core.AuthApi(api_client)
+    return_to = 'return_to_example' # str | encoded return to url after the action
+    step = 'step_example' # str | Step of the removal process. Normally not set manually (optional)
 
     try:
         # Remove 2FA
-        api_instance.remove2_fa()
+        api_instance.remove2_fa(return_to, step=step)
     except Exception as e:
         print("Exception when calling AuthApi->remove2_fa: %s\n" % e)
 ```
@@ -377,7 +379,11 @@ with core.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **return_to** | **str**| encoded return to url after the action | 
+ **step** | **str**| Step of the removal process. Normally not set manually | [optional] 
 
 ### Return type
 
@@ -396,7 +402,7 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**302** | Redirect to keycloak delete credential page |  -  |
 **400** | Bad Request |  -  |
 **500** | Server or Database Internal Error |  -  |
 **503** | Service unavailable: 2FA is disabled |  -  |
