@@ -11,6 +11,7 @@ core/api/entitlements_api.py
 core/api/health_api.py
 core/api/metrics_api.py
 core/api/organizations_api.py
+core/api/products_api.py
 core/api/roles_api.py
 core/api/stripe_api.py
 core/api/user_settings_api.py
@@ -25,6 +26,7 @@ core/models/agent_filter_options.py
 core/models/agent_quick_filter.py
 core/models/agent_quick_filter_i18n.py
 core/models/authenticated_response.py
+core/models/billing_model.py
 core/models/credentials_response.py
 core/models/entitlement_response.py
 core/models/error_code.py
@@ -61,6 +63,9 @@ core/models/organization_settings_response.py
 core/models/organization_subscription_patch_request.py
 core/models/organization_subscription_post_request.py
 core/models/organization_subscription_response.py
+core/models/price_tier_response.py
+core/models/product_i18n_response.py
+core/models/product_response.py
 core/models/product_type.py
 core/models/refresh_response.py
 core/models/role_patch_request.py
@@ -88,6 +93,7 @@ docs/AgentQuickFilter.md
 docs/AgentQuickFilterI18n.md
 docs/AuthApi.md
 docs/AuthenticatedResponse.md
+docs/BillingModel.md
 docs/CredentialsResponse.md
 docs/EntitlementResponse.md
 docs/EntitlementsApi.md
@@ -128,7 +134,11 @@ docs/OrganizationSubscriptionPatchRequest.md
 docs/OrganizationSubscriptionPostRequest.md
 docs/OrganizationSubscriptionResponse.md
 docs/OrganizationsApi.md
+docs/PriceTierResponse.md
+docs/ProductI18nResponse.md
+docs/ProductResponse.md
 docs/ProductType.md
+docs/ProductsApi.md
 docs/RefreshResponse.md
 docs/RolePatchRequest.md
 docs/RolePostRequest.md
@@ -165,6 +175,7 @@ test/test_agent_quick_filter.py
 test/test_agent_quick_filter_i18n.py
 test/test_auth_api.py
 test/test_authenticated_response.py
+test/test_billing_model.py
 test/test_credentials_response.py
 test/test_entitlement_response.py
 test/test_entitlements_api.py
@@ -205,7 +216,11 @@ test/test_organization_subscription_patch_request.py
 test/test_organization_subscription_post_request.py
 test/test_organization_subscription_response.py
 test/test_organizations_api.py
+test/test_price_tier_response.py
+test/test_product_i18n_response.py
+test/test_product_response.py
 test/test_product_type.py
+test/test_products_api.py
 test/test_refresh_response.py
 test/test_role_patch_request.py
 test/test_role_post_request.py

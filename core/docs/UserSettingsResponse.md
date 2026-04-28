@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **color_scheme** | **str** |  | 
 **id** | **str** |  | 
 **language** | **str** |  | [optional] 
+**onboarding_completed_tours** | **List[str]** |  | [optional] 
 **onboarding_done** | **bool** |  | [optional] 
 **onboarding_hold_until** | **str** |  | [optional] 
+**onboarding_state** | **str** |  | [optional] 
 **user_id** | **str** |  | 
 
 ## Example

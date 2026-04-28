@@ -7,6 +7,7 @@ if __import__("typing").TYPE_CHECKING:
     from core.api.health_api import HealthApi
     from core.api.metrics_api import MetricsApi
     from core.api.organizations_api import OrganizationsApi
+    from core.api.products_api import ProductsApi
     from core.api.roles_api import RolesApi
     from core.api.stripe_api import StripeApi
     from core.api.user_settings_api import UserSettingsApi
@@ -25,6 +26,7 @@ from core.api.entitlements_api import EntitlementsApi
 from core.api.health_api import HealthApi
 from core.api.metrics_api import MetricsApi
 from core.api.organizations_api import OrganizationsApi
+from core.api.products_api import ProductsApi
 from core.api.roles_api import RolesApi
 from core.api.stripe_api import StripeApi
 from core.api.user_settings_api import UserSettingsApi
