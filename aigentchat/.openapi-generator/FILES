@@ -6,6 +6,7 @@
 README.md
 aigentchat/__init__.py
 aigentchat/api/__init__.py
+aigentchat/api/admin_api.py
 aigentchat/api/agents_api.py
 aigentchat/api/ai_model_services_api.py
 aigentchat/api/ai_models_api.py
@@ -119,6 +120,8 @@ aigentchat/models/prompt_variable_option.py
 aigentchat/models/prompt_version.py
 aigentchat/models/prompt_write_dto.py
 aigentchat/models/rendered_prompt.py
+aigentchat/models/resource_transfer_request.py
+aigentchat/models/resource_transfer_result.py
 aigentchat/models/result_file.py
 aigentchat/models/service_status.py
 aigentchat/models/tag.py
@@ -132,6 +135,7 @@ aigentchat/models/tool.py
 aigentchat/models/tool_continuation_instructions.py
 aigentchat/models/tool_function.py
 aigentchat/models/tool_i18n.py
+aigentchat/models/transferable_resource_type.py
 aigentchat/models/user_access_view.py
 aigentchat/models/version_response.py
 aigentchat/models/voice_chat_input_request_dto.py
@@ -171,6 +175,7 @@ docs/AIgencyMessageWriteDto.md
 docs/AIgencyThinking.md
 docs/AIgencyThumbnail.md
 docs/AccessScope.md
+docs/AdminApi.md
 docs/Agent.md
 docs/AgentI18n.md
 docs/AgentResults.md
@@ -242,6 +247,8 @@ docs/PromptVersion.md
 docs/PromptWriteDto.md
 docs/PromptsApi.md
 docs/RenderedPrompt.md
+docs/ResourceTransferRequest.md
+docs/ResourceTransferResult.md
 docs/ResultFile.md
 docs/ServiceStatus.md
 docs/Tag.md
@@ -257,6 +264,7 @@ docs/ToolContinuationInstructions.md
 docs/ToolFunction.md
 docs/ToolI18n.md
 docs/ToolsApi.md
+docs/TransferableResourceType.md
 docs/UserAccessView.md
 docs/VersionApi.md
 docs/VersionResponse.md
@@ -286,6 +294,7 @@ test/test_a_igency_message_write_dto.py
 test/test_a_igency_thinking.py
 test/test_a_igency_thumbnail.py
 test/test_access_scope.py
+test/test_admin_api.py
 test/test_agent.py
 test/test_agent_i18n.py
 test/test_agent_results.py
@@ -373,6 +382,8 @@ test/test_prompt_version.py
 test/test_prompt_write_dto.py
 test/test_prompts_api.py
 test/test_rendered_prompt.py
+test/test_resource_transfer_request.py
+test/test_resource_transfer_result.py
 test/test_result_file.py
 test/test_service_status.py
 test/test_tag.py
@@ -388,6 +399,7 @@ test/test_tool_continuation_instructions.py
 test/test_tool_function.py
 test/test_tool_i18n.py
 test/test_tools_api.py
+test/test_transferable_resource_type.py
 test/test_user_access_view.py
 test/test_version_api.py
 test/test_version_response.py

@@ -4,6 +4,7 @@ if __import__("typing").TYPE_CHECKING:
     # import apis into api package
     from aigentchat.api.ai_model_services_api import AIModelServicesApi
     from aigentchat.api.ai_models_api import AIModelsApi
+    from aigentchat.api.admin_api import AdminApi
     from aigentchat.api.agents_api import AgentsApi
     from aigentchat.api.audio_api import AudioApi
     from aigentchat.api.audit_trails_api import AuditTrailsApi
@@ -32,6 +33,7 @@ else:
             """# import apis into api package
 from aigentchat.api.ai_model_services_api import AIModelServicesApi
 from aigentchat.api.ai_models_api import AIModelsApi
+from aigentchat.api.admin_api import AdminApi
 from aigentchat.api.agents_api import AgentsApi
 from aigentchat.api.audio_api import AudioApi
 from aigentchat.api.audit_trails_api import AuditTrailsApi
