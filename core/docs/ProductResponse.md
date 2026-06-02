@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **badge** | **str** |  | [optional] 
-**banner_color** | **str** | optional; when present: \&quot;success\&quot; | \&quot;brand\&quot; — UI accent hint, not localized. Independent of bannerText | [optional] 
+**banner_color** | **str** | optional; when present: \&quot;success\&quot; | \&quot;brand\&quot; | \&quot;error\&quot; — UI accent hint, not localized. Independent of bannerText | [optional] 
 **banner_text** | **str** |  | [optional] 
 **banner_tooltip** | **str** | optional; when present: \&quot;tiersMenu\&quot; — UI tooltip hint, not localized. Independent of bannerText | [optional] 
 **billing_model** | [**BillingModel**](BillingModel.md) |  | 
