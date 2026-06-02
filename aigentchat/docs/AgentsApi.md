@@ -55,7 +55,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
+    id = 'id_example' # str | Agent ID, organization-scoped internal id, or predefined-agent internal id
     tool_id = 'tool_id_example' # str | Tool ID
 
     try:
@@ -75,7 +75,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
+ **id** | **str**| Agent ID, organization-scoped internal id, or predefined-agent internal id | 
  **tool_id** | **str**| Tool ID | 
 
 ### Return type
@@ -143,7 +143,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
+    id = 'id_example' # str | Agent ID, organization-scoped internal id, or predefined-agent internal id
     file_id = 'file_id_example' # str | File ID
 
     try:
@@ -163,7 +163,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
+ **id** | **str**| Agent ID, organization-scoped internal id, or predefined-agent internal id | 
  **file_id** | **str**| File ID | 
 
 ### Return type
@@ -317,7 +317,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
+    id = 'id_example' # str | Agent ID, organization-scoped internal id, or predefined-agent internal id
 
     try:
         # Delete an agent
@@ -336,7 +336,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
+ **id** | **str**| Agent ID, organization-scoped internal id, or predefined-agent internal id | 
 
 ### Return type
 
@@ -471,7 +471,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
+    id = 'id_example' # str | Agent ID, organization-scoped internal id, or predefined-agent internal id
 
     try:
         # Get an agent
@@ -490,7 +490,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
+ **id** | **str**| Agent ID, organization-scoped internal id, or predefined-agent internal id | 
 
 ### Return type
 
@@ -667,7 +667,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
+    id = 'id_example' # str | Agent ID, organization-scoped internal id, or predefined-agent internal id
     tool_id = 'tool_id_example' # str | Tool ID
 
     try:
@@ -687,7 +687,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
+ **id** | **str**| Agent ID, organization-scoped internal id, or predefined-agent internal id | 
  **tool_id** | **str**| Tool ID | 
 
 ### Return type
@@ -755,7 +755,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
+    id = 'id_example' # str | Agent ID, organization-scoped internal id, or predefined-agent internal id
     file_id = 'file_id_example' # str | File ID
 
     try:
@@ -775,7 +775,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
+ **id** | **str**| Agent ID, organization-scoped internal id, or predefined-agent internal id | 
  **file_id** | **str**| File ID | 
 
 ### Return type
@@ -844,7 +844,7 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.AgentsApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Agent ID
+    id = 'id_example' # str | Agent ID, organization-scoped internal id, or predefined-agent internal id
     agent = aigentchat.AgentWriteDto() # AgentWriteDto | Agent
 
     try:
@@ -864,7 +864,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Agent ID | 
+ **id** | **str**| Agent ID, organization-scoped internal id, or predefined-agent internal id | 
  **agent** | [**AgentWriteDto**](AgentWriteDto.md)| Agent | 
 
 ### Return type
