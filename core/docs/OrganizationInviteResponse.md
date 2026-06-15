@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **expires_at** | **str** |  | 
 **id** | **str** |  | 
 **organization_id** | **str** |  | 
+**role_id** | **str** |  | [optional] 
 **updated_at** | **str** |  | 
 
 ## Example

@@ -5,6 +5,7 @@ All URIs are relative to *https://core.dev.ai.vaud.one*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**accept_invite**](OrganizationsApi.md#accept_invite) | **POST** /v1/organizations/{id}/invites/{inviteId}/accept | Accept Organization Invite
+[**bulk_invite**](OrganizationsApi.md#bulk_invite) | **POST** /v1/organizations/{id}/invites/bulk | Bulk invite users to an Organization
 [**create_member**](OrganizationsApi.md#create_member) | **POST** /v1/organizations/{id}/members | Create a member for an Organization
 [**create_organization**](OrganizationsApi.md#create_organization) | **POST** /v1/organizations | Create an Organization
 [**create_organization_api_key**](OrganizationsApi.md#create_organization_api_key) | **POST** /v1/organizations/{id}/keys | Create an api key for an Organization
@@ -143,6 +144,97 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **404** | Invite Not Found |  -  |
 **409** | Invite Already Accepted |  -  |
+**500** | Server or Database Internal Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bulk_invite**
+> OrganizationBulkInviteResponse bulk_invite(id, organization_bulk_invite)
+
+Bulk invite users to an Organization
+
+Invite up to the configured maximum number of users to an Organization in a single request.
+Email format and batch shape are validated up-front: a malformed email, an empty or oversized
+batch, or a seat-cap violation rejects the whole request (400). Per-entry business-rule failures
+(duplicate email in batch, self-invite, already a member or already invited, invalid role) are
+best-effort and reported individually in the results as rejected.
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import core
+from core.models.organization_bulk_invite_request import OrganizationBulkInviteRequest
+from core.models.organization_bulk_invite_response import OrganizationBulkInviteResponse
+from core.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://core.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = core.Configuration(
+    host = "https://core.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = core.OrganizationsApi(api_client)
+    id = 'id_example' # str | id of the organization
+    organization_bulk_invite = core.OrganizationBulkInviteRequest() # OrganizationBulkInviteRequest | organization bulk invite object
+
+    try:
+        # Bulk invite users to an Organization
+        api_response = api_instance.bulk_invite(id, organization_bulk_invite)
+        print("The response of OrganizationsApi->bulk_invite:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->bulk_invite: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| id of the organization | 
+ **organization_bulk_invite** | [**OrganizationBulkInviteRequest**](OrganizationBulkInviteRequest.md)| organization bulk invite object | 
+
+### Return type
+
+[**OrganizationBulkInviteResponse**](OrganizationBulkInviteResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Organization Not Found |  -  |
 **500** | Server or Database Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1661,7 +1753,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_members**
-> bytes export_members(id)
+> bytearray export_members(id)
 
 Export all members for an Organization as CSV
 
@@ -1719,7 +1811,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytes**
+**bytearray**
 
 ### Authorization
 

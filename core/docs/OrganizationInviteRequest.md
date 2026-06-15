@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **str** |  | 
+**role_id** | **str** | RoleId validity is enforced by json.Unmarshal (uuid.UUID implements TextUnmarshaler); the validate tag only gates presence. | [optional] 
 
 ## Example
 
