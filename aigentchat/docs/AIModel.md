@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **accepted_file_mimetypes** | **List[str]** |  | [optional] 
 **actions** | **List[str]** |  | 
 **capabilities** | **List[str]** | Note: only set when returning the model (not stored at model level), derived from features | [optional] 
+**chat_max_input_tokens** | **int** | Note: only set when returning the model (not stored at model level), derived from features. Reflects GetMaxInputTokensByCapability(AIModelCapabilityTextToTextStreaming) — streaming is the default chat path and both text-to-text capabilities expose the same input limit in practice. | [optional] 
 **created_at** | **int** |  | [optional] 
 **default_hosting_location** | [**HostingLocation**](HostingLocation.md) |  | [optional] 
 **deleted** | **bool** |  | [optional] 

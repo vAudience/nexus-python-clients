@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **owner_organization_id** | **str** |  | 
 **parameters** | **object** |  | [optional] 
 **reference_id** | **str** |  | [optional] 
+**request_input_tokens** | **int** |  | [optional] 
+**request_output_tokens** | **int** |  | [optional] 
+**request_overhead_tokens** | **int** |  | [optional] 
 **response_to_id** | **str** |  | [optional] 
 **sender_conversation_role** | [**ConversationRole**](ConversationRole.md) |  | 
 **sender_id** | **str** |  | 

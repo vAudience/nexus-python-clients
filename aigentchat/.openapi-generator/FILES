@@ -77,6 +77,7 @@ aigentchat/models/audio_transcription.py
 aigentchat/models/audit_trail.py
 aigentchat/models/audit_trail_message.py
 aigentchat/models/channel.py
+aigentchat/models/channel_context_window.py
 aigentchat/models/channel_results.py
 aigentchat/models/channel_write_dto.py
 aigentchat/models/chat_completion_cost_tracking_request.py
@@ -192,6 +193,7 @@ docs/AuditTrail.md
 docs/AuditTrailMessage.md
 docs/AuditTrailsApi.md
 docs/Channel.md
+docs/ChannelContextWindow.md
 docs/ChannelResults.md
 docs/ChannelWriteDto.md
 docs/ChannelsApi.md
@@ -327,6 +329,7 @@ test/test_audit_trail.py
 test/test_audit_trail_message.py
 test/test_audit_trails_api.py
 test/test_channel.py
+test/test_channel_context_window.py
 test/test_channel_results.py
 test/test_channel_write_dto.py
 test/test_channels_api.py

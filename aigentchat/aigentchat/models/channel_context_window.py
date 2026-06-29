@@ -18,29 +18,27 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
-from aigentchat.models.a_igency_message_file import AIgencyMessageFile
-from aigentchat.models.tool_continuation_instructions import ToolContinuationInstructions
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class AIgencyFunctionResponse(BaseModel):
+class ChannelContextWindow(BaseModel):
     """
-    AIgencyFunctionResponse
+    ChannelContextWindow
     """ # noqa: E501
-    continuation_instructions: Optional[ToolContinuationInstructions] = None
-    function_name: Annotated[str, Field(min_length=1, strict=True, max_length=64)]
-    id: Annotated[str, Field(min_length=1, strict=True, max_length=64)]
-    is_error: Optional[StrictBool] = None
-    result: StrictStr
-    result_files: Optional[List[AIgencyMessageFile]] = None
-    result_meta_data: Optional[Dict[str, Any]] = None
-    tool_function_id: Optional[StrictStr] = None
+    anchor_message_id: Optional[StrictStr] = Field(default=None, description="assistant msg that produced a verified count (empty if estimated)")
+    is_verified: Optional[StrictBool] = Field(default=None, description="true = provider-reported; false = local estimate")
+    max_input_tokens: Optional[StrictInt] = Field(default=None, description="model's input limit (registry lookup at write time)")
+    model_id: Optional[StrictStr] = Field(default=None, description="AIModel.ID (mirrors AIgencyMessage.AIModelID)")
+    model_internal_id: Optional[StrictStr] = Field(default=None, description="AIModel.InternalId (provider-agnostic)")
+    overhead_tokens: Optional[StrictInt] = Field(default=None, description="overhead baked into a provider Tokens (the gate re-bases it); 0 for estimates")
+    source: Optional[StrictStr] = Field(default=None, description="provider (Tokens include overhead) or estimate (exclude)")
+    tokens: Optional[StrictInt] = Field(default=None, description="total input-token cost as of the last anchor")
+    updated_at: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["continuation_instructions", "function_name", "id", "is_error", "result", "result_files", "result_meta_data", "tool_function_id"]
+    __properties: ClassVar[List[str]] = ["anchor_message_id", "is_verified", "max_input_tokens", "model_id", "model_internal_id", "overhead_tokens", "source", "tokens", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -60,7 +58,7 @@ class AIgencyFunctionResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AIgencyFunctionResponse from a JSON string"""
+        """Create an instance of ChannelContextWindow from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -83,16 +81,6 @@ class AIgencyFunctionResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of continuation_instructions
-        if self.continuation_instructions:
-            _dict['continuation_instructions'] = self.continuation_instructions.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in result_files (list)
-        _items = []
-        if self.result_files:
-            for _item_result_files in self.result_files:
-                if _item_result_files:
-                    _items.append(_item_result_files.to_dict())
-            _dict['result_files'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -102,7 +90,7 @@ class AIgencyFunctionResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AIgencyFunctionResponse from a dict"""
+        """Create an instance of ChannelContextWindow from a dict"""
         if obj is None:
             return None
 
@@ -110,14 +98,15 @@ class AIgencyFunctionResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "continuation_instructions": ToolContinuationInstructions.from_dict(obj["continuation_instructions"]) if obj.get("continuation_instructions") is not None else None,
-            "function_name": obj.get("function_name"),
-            "id": obj.get("id"),
-            "is_error": obj.get("is_error"),
-            "result": obj.get("result"),
-            "result_files": [AIgencyMessageFile.from_dict(_item) for _item in obj["result_files"]] if obj.get("result_files") is not None else None,
-            "result_meta_data": obj.get("result_meta_data"),
-            "tool_function_id": obj.get("tool_function_id")
+            "anchor_message_id": obj.get("anchor_message_id"),
+            "is_verified": obj.get("is_verified"),
+            "max_input_tokens": obj.get("max_input_tokens"),
+            "model_id": obj.get("model_id"),
+            "model_internal_id": obj.get("model_internal_id"),
+            "overhead_tokens": obj.get("overhead_tokens"),
+            "source": obj.get("source"),
+            "tokens": obj.get("tokens"),
+            "updated_at": obj.get("updated_at")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

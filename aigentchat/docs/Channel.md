@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**context_window** | [**ChannelContextWindow**](ChannelContextWindow.md) |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | 
