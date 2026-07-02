@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | 
 **attached_files** | **List[str]** |  | [optional] 
+**generation_id** | **str** | GenerationID, if set, makes the generation cancellable under this caller-supplied id (unique per initiator while in progress). Restricted to [A-Za-z0-9._-] so it stays addressable as a single path segment by the cancel route. | [optional] 
 **message** | **str** |  | 
 **parameters** | **object** |  | [optional] 
 

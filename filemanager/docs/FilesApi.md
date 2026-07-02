@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serve_file**
-> bytearray serve_file(id_or_storage_path, download=download, filename=filename, fat=fat)
+> bytes serve_file(id_or_storage_path, download=download, filename=filename, fat=fat)
 
 Serve a file
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -480,7 +480,7 @@ with filemanager.ApiClient(configuration) as api_client:
     api_instance = filemanager.FilesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
     category = 'category_example' # str | category ID
-    file = None # bytearray | File to upload
+    file = None # bytes | File to upload
     for_user_id = 'for_user_id_example' # str | User ID to upload the file for (optional)
     metadata = None # object | Metadata for the uploaded file (optional)
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
  **category** | **str**| category ID | 
- **file** | **bytearray**| File to upload | 
+ **file** | **bytes**| File to upload | 
  **for_user_id** | **str**| User ID to upload the file for | [optional] 
  **metadata** | [**object**](object.md)| Metadata for the uploaded file | [optional] 
 
