@@ -5,7 +5,7 @@ description = "vAudience AI File Manager API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
-license = "LicenseRef-Copyrighted"
+license = { text = "LicenseRef-Copyrighted" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "vAudience AI File Manager API"]
 requires-python = ">=3.9"
@@ -13,9 +13,8 @@ requires-python = ">=3.9"
 dependencies = [
   "urllib3 (>=2.1.0,<3.0.0)",
   "python-dateutil (>=2.8.2)",
-  "pydantic (>=2)",
+  "pydantic (>=2.11)",
   "typing-extensions (>=4.7.1)",
-  "lazy-imports (>=1,<2)"
 ]
 
 [project.urls]

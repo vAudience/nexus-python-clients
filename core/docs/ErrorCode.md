@@ -13,6 +13,8 @@
 
 * `ErrCodeUnauthorized` (value: `'unauthorized'`)
 
+* `ErrCodeAuthSessionExpired` (value: `'auth_session_expired'`)
+
 * `ErrCodeUserEmailNotInToken` (value: `'user_email_not_in_token'`)
 
 * `ErrCodeUserIdNotInToken` (value: `'user_id_not_in_token'`)

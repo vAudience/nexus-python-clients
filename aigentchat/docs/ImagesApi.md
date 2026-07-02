@@ -4,12 +4,93 @@ All URIs are relative to *https://aigentchat.dev.ai.vaud.one*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cancel_image_generation**](ImagesApi.md#cancel_image_generation) | **POST** /v1/organizations/{org_id}/images/cancel/{generation_id} | Cancel an image generation
 [**create_images**](ImagesApi.md#create_images) | **POST** /v1/organizations/{org_id}/images | Generates a number of images
 [**create_images_costs**](ImagesApi.md#create_images_costs) | **POST** /v1/organizations/{org_id}/images/cost | Get the total costs of an image generation request.
 [**delete_image**](ImagesApi.md#delete_image) | **DELETE** /v1/organizations/{org_id}/images/{id} | Delete an image
 [**get_image**](ImagesApi.md#get_image) | **GET** /v1/organizations/{org_id}/images/{image_id} | Get an image
 [**list_images**](ImagesApi.md#list_images) | **GET** /v1/organizations/{org_id}/images | List images
 
+
+# **cancel_image_generation**
+> cancel_image_generation(org_id, generation_id)
+
+Cancel an image generation
+
+Cancel an in-progress image generation identified by a caller-supplied generation id. Idempotent: a generation id with no in-progress generation belonging to the caller returns 204.
+
+### Example
+
+* Api Key Authentication (ApiKey):
+
+```python
+import aigentchat
+from aigentchat.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://aigentchat.dev.ai.vaud.one
+# See configuration.py for a list of all supported configuration parameters.
+configuration = aigentchat.Configuration(
+    host = "https://aigentchat.dev.ai.vaud.one"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKey
+configuration.api_key['ApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with aigentchat.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = aigentchat.ImagesApi(api_client)
+    org_id = 'org_id_example' # str | organization ID
+    generation_id = 'generation_id_example' # str | caller-supplied generation ID
+
+    try:
+        # Cancel an image generation
+        api_instance.cancel_image_generation(org_id, generation_id)
+    except Exception as e:
+        print("Exception when calling ImagesApi->cancel_image_generation: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_id** | **str**| organization ID | 
+ **generation_id** | **str**| caller-supplied generation ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_images**
 > List[AIgencyImage] create_images(org_id, request)
@@ -90,10 +171,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**204** | Image generation was cancelled before any image was produced |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |
 **403** | Forbidden |  -  |
+**409** | Conflict |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

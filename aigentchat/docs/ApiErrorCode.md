@@ -129,6 +129,10 @@
 
 * `ErrCodeChatCompletionCancelled` (value: `'chat_completion_cancelled'`)
 
+* `ErrCodeImageGenerationInProgress` (value: `'image_generation_in_progress'`)
+
+* `ErrCodeImageGenerationCancelled` (value: `'image_generation_cancelled'`)
+
 * `ErrCodeFailedToCreateConnectionToken` (value: `'failed_to_create_connection_token'`)
 
 * `ErrCodeFailedToEmbedText` (value: `'failed_to_embed_text'`)
