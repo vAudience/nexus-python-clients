@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **add_tool_guidelines** | **bool** |  | [optional] 
+**assigned_collection_ids** | **List[str]** |  | [optional] 
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **default_file_upload_category** | **str** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **description** | **str** |  | [optional] 
+**has_assigned_collections** | **bool** | HasAssignedCollections is a derived flag (len(AssignedCollectionIDs) &gt; 0) kept in sync at every write so the orphaned-collection-assignments reconciliation job can query only agents that actually hold an assignment, instead of scanning the whole population. | [optional] 
 **i18n** | [**Dict[str, AgentI18n]**](AgentI18n.md) |  | [optional] 
 **id** | **str** |  | 
 **ignore_incoming_overwrite** | **bool** |  | [optional] 

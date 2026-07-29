@@ -5,9 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**assigned_collection_ids** | **List[str]** |  | [optional] 
 **context_window** | [**ChannelContextWindow**](ChannelContextWindow.md) |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
+**has_assigned_collections** | **bool** | HasAssignedCollections is a derived flag (len(AssignedCollectionIDs) &gt; 0) kept in sync at every write so the orphaned-collection-assignments reconciliation job can query only channels that actually hold an assignment, instead of scanning the whole population. | [optional] 
 **id** | **str** |  | 
 **is_org_public** | **bool** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
@@ -19,6 +21,7 @@ Name | Type | Description | Notes
 **summary** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **int** |  | [optional] 
+**updated_by** | **str** |  | [optional] 
 
 ## Example
 

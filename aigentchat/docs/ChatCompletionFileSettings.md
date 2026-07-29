@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **max_files** | **int** |  | [optional] 
 **max_total_file_size** | **int** |  | [optional] 
+**max_total_multimodal_file_size** | **int** |  | [optional] 
 
 ## Example
 

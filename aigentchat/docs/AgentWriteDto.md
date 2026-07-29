@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **add_tool_guidelines** | **bool** |  | [optional] 
+**assigned_collection_ids** | **List[str]** |  | [optional] 
 **assigned_tools** | **List[str]** |  | [optional] 
 **attached_file_ids** | **List[str]** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 

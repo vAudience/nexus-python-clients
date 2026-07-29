@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | [optional] 
+**assigned_collection_ids** | **List[str]** | AssignedCollectionIDs is accepted and stored UNVERIFIED at this layer; do NOT assume stored implies accessible. At completion time the ids are re-evaluated per requesting user+org by resolveAccessibleCorpusIDs (invoked via applyAssignedCollectionCorpora), which resolves them to accessible deepr corpora with 400/403/503 semantics. | [optional] 
 **attached_files** | **List[str]** |  | [optional] 
 **channel_id** | **str** |  | [optional] 
 **continue_instruction_on_max_tokens** | **str** |  | [optional] 

@@ -17,6 +17,12 @@
 
 * `ErrCodeInvalidParams` (value: `'invalid_params'`)
 
+* `ErrCodeInvalidAssignedCollections` (value: `'invalid_assigned_collections'`)
+
+* `ErrCodeCollectionNotAccessible` (value: `'collection_not_accessible'`)
+
+* `ErrCodeCollectionResolveUnavailable` (value: `'collection_resolve_unavailable'`)
+
 * `ErrCodeInvalidDate` (value: `'invalid_date'`)
 
 * `ErrCodeStartDateMustBeBeforeEndDate` (value: `'start_date_must_be_before_end_date'`)

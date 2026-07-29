@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**assigned_collection_ids** | **List[str]** |  | [optional] 
 **description** | **str** |  | [optional] 
 **is_org_public** | **bool** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
