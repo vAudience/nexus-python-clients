@@ -1,6 +1,7 @@
 # flake8: noqa
 
 # import apis into api package
+from filemanager.api.collections_api import CollectionsApi
 from filemanager.api.files_api import FilesApi
 from filemanager.api.files_metadata_api import FilesMetadataApi
 from filemanager.api.health_api import HealthApi

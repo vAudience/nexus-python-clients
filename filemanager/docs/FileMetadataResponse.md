@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**collection_id** | **str** |  | [optional] 
 **created_at** | **str** |  | 
 **expires_at** | **str** |  | [optional] 
 **file_llm_input_type** | **str** |  | 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **original_file_size** | **int** |  | 
 **original_file_storage_path** | **str** |  | [optional] 
 **original_file_url** | **str** |  | [optional] 
+**storage_backend** | **str** | StorageBackend is the backend that owns the file (local, s3). Additive and omitempty so existing generated clients are unaffected. | [optional] 
 **storage_path** | **str** |  | 
 **team_id** | **str** |  | [optional] 
 **updated_at** | **str** |  | 
