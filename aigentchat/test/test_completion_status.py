@@ -15,10 +15,10 @@
 
 import unittest
 
-from aigentchat.models.a_igency_message_results import AIgencyMessageResults
+from aigentchat.models.completion_status import CompletionStatus
 
-class TestAIgencyMessageResults(unittest.TestCase):
-    """AIgencyMessageResults unit test stubs"""
+class TestCompletionStatus(unittest.TestCase):
+    """CompletionStatus unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,17 +26,19 @@ class TestAIgencyMessageResults(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AIgencyMessageResults:
-        """Test AIgencyMessageResults
+    def make_instance(self, include_optional) -> CompletionStatus:
+        """Test CompletionStatus
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AIgencyMessageResults`
+        # uncomment below to create an instance of `CompletionStatus`
         """
-        model = AIgencyMessageResults()
+        model = CompletionStatus()
         if include_optional:
-            return AIgencyMessageResults(
-                results = [
+            return CompletionStatus(
+                channel_id = '',
+                client_message_id = '',
+                messages = [
                     aigentchat.models.a_igency_message.AIgencyMessage(
                         ai_model_id = '0', 
                         ai_service_id = '0', 
@@ -148,128 +150,16 @@ class TestAIgencyMessageResults(unittest.TestCase):
                         type = aigentchat.models.type.type(), 
                         updated_at = 56, )
                     ],
-                total_results = 56
+                retry_after_ms = 56,
+                state = ''
             )
         else:
-            return AIgencyMessageResults(
-                results = [
-                    aigentchat.models.a_igency_message.AIgencyMessage(
-                        ai_model_id = '0', 
-                        ai_service_id = '0', 
-                        attachments = aigentchat.models.attachments.attachments(), 
-                        channel_id = '0', 
-                        channel_name = '0', 
-                        client_message_id = '01234567', 
-                        content = aigentchat.models.a_igency_message_content_list.AIgencyMessageContentList(
-                            data = [
-                                aigentchat.models.a_igency_message_content.AIgencyMessageContent(
-                                    file = aigentchat.models.a_igency_message_file.AIgencyMessageFile(
-                                        embedded_content = '', 
-                                        file_name = '', 
-                                        file_size = 56, 
-                                        id = '', 
-                                        llm_input_type = '', 
-                                        meta_data = aigentchat.models.meta_data.meta_data(), 
-                                        mime_type = '', 
-                                        upload_category = '', 
-                                        url = '', ), 
-                                    function_call = aigentchat.models.a_igency_function_call.AIgencyFunctionCall(
-                                        arguments = aigentchat.models.arguments.arguments(), 
-                                        function_name = '0', 
-                                        id = '0', 
-                                        tool_function_id = '', ), 
-                                    function_responses = aigentchat.models.a_igency_function_response.AIgencyFunctionResponse(
-                                        continuation_instructions = aigentchat.models.tool_continuation_instructions.ToolContinuationInstructions(
-                                            continuation_function_call = '', 
-                                            continuation_id = '', 
-                                            human_input_prompt = '', ), 
-                                        function_name = '0', 
-                                        id = '0', 
-                                        is_error = True, 
-                                        result = '', 
-                                        result_files = [
-                                            aigentchat.models.a_igency_message_file.AIgencyMessageFile(
-                                                embedded_content = '', 
-                                                file_name = '', 
-                                                file_size = 56, 
-                                                id = '', 
-                                                llm_input_type = '', 
-                                                meta_data = aigentchat.models.meta_data.meta_data(), 
-                                                mime_type = '', 
-                                                upload_category = '', 
-                                                url = '', )
-                                            ], 
-                                        result_meta_data = aigentchat.models.result_meta_data.result_meta_data(), 
-                                        tool_function_id = '', ), 
-                                    function_status_update = aigentchat.models.a_igency_function_status_update.AIgencyFunctionStatusUpdate(
-                                        id = '0', 
-                                        updates = [
-                                            aigentchat.models.a_igency_function_status_update_data.AIgencyFunctionStatusUpdateData(
-                                                message = '', 
-                                                meta_data = aigentchat.models.meta_data.meta_data(), )
-                                            ], ), 
-                                    is_cancelled = True, 
-                                    text = '', 
-                                    text_meta_data = {
-                                        'key' : None
-                                        }, 
-                                    text_mime_type = '', 
-                                    thinking = aigentchat.models.a_igency_thinking.AIgencyThinking(
-                                        is_redacted = True, 
-                                        signature = '', ), 
-                                    type = 'text', )
-                                ], 
-                            full_text = '', 
-                            full_text_mime_type = '', ), 
-                        continuation_instructions = aigentchat.models.tool_continuation_instructions.ToolContinuationInstructions(
-                            continuation_function_call = '', 
-                            continuation_id = '', 
-                            human_input_prompt = '', ), 
-                        created_at = 56, 
-                        error = aigentchat.models.ai_service_error.AiServiceError(
-                            error_code = '', 
-                            message = '', 
-                            original_status_code = 56, 
-                            status_code = 56, ), 
-                        execution_id = '0', 
-                        feature_usage = [
-                            aigentchat.models.execution_feature_usage.ExecutionFeatureUsage(
-                                capability = '', 
-                                cost_items = [
-                                    aigentchat.models.execution_usage_cost.ExecutionUsageCost(
-                                        cost_per_unit_in_euro = 1.337, 
-                                        cost_unit = 'input-tokens-per-million', 
-                                        description = '', 
-                                        long_context_cost_per_unit_in_euro = 1.337, 
-                                        resulting_cost_in_euro = 1.337, 
-                                        used_units = 1.337, )
-                                    ], )
-                            ], 
-                        finish_reason = '', 
-                        id = '0', 
-                        meta_data = aigentchat.models.meta_data.meta_data(), 
-                        owner_organization_id = '0', 
-                        parameters = aigentchat.models.parameters.parameters(), 
-                        reference_id = '', 
-                        request_input_tokens = 56, 
-                        request_output_tokens = 56, 
-                        request_overhead_tokens = 56, 
-                        response_to_id = '', 
-                        sender_conversation_role = aigentchat.models.sender_conversation_role.sender_conversation_role(), 
-                        sender_id = '0', 
-                        sender_name = '0', 
-                        state = '', 
-                        token_count = 56, 
-                        token_direction = aigentchat.models.token_direction.token_direction(), 
-                        type = aigentchat.models.type.type(), 
-                        updated_at = 56, )
-                    ],
-                total_results = 56,
+            return CompletionStatus(
         )
         """
 
-    def testAIgencyMessageResults(self):
-        """Test AIgencyMessageResults"""
+    def testCompletionStatus(self):
+        """Test CompletionStatus"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

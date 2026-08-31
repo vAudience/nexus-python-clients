@@ -18,20 +18,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from aigentchat.models.a_igency_message import AIgencyMessage
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class OrgCostBudgetCheck(BaseModel):
+class CompletionStatus(BaseModel):
     """
-    OrgCostBudgetCheck
+    CompletionStatus
     """ # noqa: E501
-    org_id: StrictStr
-    sufficient_budget: StrictBool
+    channel_id: Optional[StrictStr] = None
+    client_message_id: Optional[StrictStr] = None
+    messages: Optional[List[AIgencyMessage]] = None
+    retry_after_ms: Optional[StrictInt] = None
+    state: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["org_id", "sufficient_budget"]
+    __properties: ClassVar[List[str]] = ["channel_id", "client_message_id", "messages", "retry_after_ms", "state"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -51,7 +55,7 @@ class OrgCostBudgetCheck(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OrgCostBudgetCheck from a JSON string"""
+        """Create an instance of CompletionStatus from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,6 +78,13 @@ class OrgCostBudgetCheck(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in messages (list)
+        _items = []
+        if self.messages:
+            for _item_messages in self.messages:
+                if _item_messages:
+                    _items.append(_item_messages.to_dict())
+            _dict['messages'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -83,7 +94,7 @@ class OrgCostBudgetCheck(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OrgCostBudgetCheck from a dict"""
+        """Create an instance of CompletionStatus from a dict"""
         if obj is None:
             return None
 
@@ -91,8 +102,11 @@ class OrgCostBudgetCheck(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "org_id": obj.get("org_id"),
-            "sufficient_budget": obj.get("sufficient_budget")
+            "channel_id": obj.get("channel_id"),
+            "client_message_id": obj.get("client_message_id"),
+            "messages": [AIgencyMessage.from_dict(_item) for _item in obj["messages"]] if obj.get("messages") is not None else None,
+            "retry_after_ms": obj.get("retry_after_ms"),
+            "state": obj.get("state")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

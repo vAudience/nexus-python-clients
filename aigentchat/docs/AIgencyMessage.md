@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **attachments** | [**AIgencyMessageFileList**](AIgencyMessageFileList.md) | Note: deprecated, but we need to keep it for backward compatibility or do a message data migration | 
 **channel_id** | **str** |  | 
 **channel_name** | **str** |  | 
+**client_message_id** | **str** | ClientMessageID is the caller-supplied idempotency key of the chat-completion request that produced this message, stored verbatim on the user message only — never on the assistant reply. readxs must stay \&quot;*\&quot;: the SSE frame is filtered once with the sender&#39;s access list and then broadcast to every subscriber, so an owner-scoped field would reach some clients but not others. | [optional] 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | 
 **continuation_instructions** | [**ToolContinuationInstructions**](ToolContinuationInstructions.md) |  | [optional] 
 **created_at** | **int** |  | 

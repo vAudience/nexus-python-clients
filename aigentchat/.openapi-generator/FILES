@@ -83,6 +83,7 @@ aigentchat/models/channel_write_dto.py
 aigentchat/models/chat_completion_cost_tracking_request.py
 aigentchat/models/chat_completion_file_settings.py
 aigentchat/models/chat_completion_request_dto.py
+aigentchat/models/completion_status.py
 aigentchat/models/connection_token_response.py
 aigentchat/models/conversation_role.py
 aigentchat/models/cost_estimation.py
@@ -201,6 +202,7 @@ docs/ChatCompletionCostTrackingRequest.md
 docs/ChatCompletionFileSettings.md
 docs/ChatCompletionRequestDto.md
 docs/ChatCompletionsApi.md
+docs/CompletionStatus.md
 docs/ConnectionTokenResponse.md
 docs/ConnectionTokensApi.md
 docs/ConversationRole.md
@@ -337,6 +339,7 @@ test/test_chat_completion_cost_tracking_request.py
 test/test_chat_completion_file_settings.py
 test/test_chat_completion_request_dto.py
 test/test_chat_completions_api.py
+test/test_completion_status.py
 test/test_connection_token_response.py
 test/test_connection_tokens_api.py
 test/test_conversation_role.py
