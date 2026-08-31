@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **default_member_role** | **bool** |  | [optional] 
 **name** | **str** |  | 
-**permissions** | **List[str]** |  | 
+**permissions** | **List[str]** | Permissions the role grants. An organization may grant only the permissions its owner holds, plus the org-admin and org-member struct-access levels; anything else is refused. Duplicates are removed, so the stored array can differ from the one posted. | 
 
 ## Example
 

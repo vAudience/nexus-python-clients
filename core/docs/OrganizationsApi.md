@@ -929,7 +929,7 @@ void (empty response body)
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
-**404** | Organization Not Found |  -  |
+**404** | Organization Subscription Not Found |  -  |
 **500** | Server or Database Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1753,7 +1753,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_members**
-> bytearray export_members(id)
+> bytes export_members(id)
 
 Export all members for an Organization as CSV
 
@@ -1811,7 +1811,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 

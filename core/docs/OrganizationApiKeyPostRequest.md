@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **organization_role_id** | **str** |  | [optional] 
-**role_ids** | **List[str]** |  | [optional] 
+**role_ids** | **List[str]** | Global roles to attach. Requires the manage-api-key-roles:organizations permission (vaudience staff only) whenever the field is present, an empty array included. Product roles are never assignable: the active subscription&#39;s role is attached automatically. Omit the field entirely to create a key without extra roles. | [optional] 
 **team_ids** | **List[str]** |  | [optional] 
 **user_email** | **str** |  | 
 **user_full_name** | **str** |  | 
