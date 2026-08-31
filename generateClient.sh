@@ -1,5 +1,6 @@
 #!/bin/bash
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR" || exit 1
 
 PACKAGE="$1"
 BASE_URL="$2"
@@ -7,6 +8,19 @@ if [ -z "$PACKAGE" ] || [ -z "$BASE_URL" ]; then
   echo "Usage: $0 <package-name> <base-url>"
   exit 1
 fi
+
+# The package name doubles as the output directory that gets rm -rf'd below
+if ! echo "$PACKAGE" | grep -qE '^[a-z][a-z0-9_-]*$'; then
+  echo "Invalid package name '${PACKAGE}'. Expected lowercase [a-z][a-z0-9_-]*."
+  exit 1
+fi
+
+for BIN in curl jq openapi-generator; do
+  if ! command -v "$BIN" > /dev/null; then
+    echo "Required command '${BIN}' not found. Please install it."
+    exit 1
+  fi
+done
 
 git pull origin main
 
@@ -29,13 +43,13 @@ openapi-generator generate \
   --git-user-id vaudience \
   --git-repo-id "nexus-python-clients/${PACKAGE}"
 
-cd "$PACKAGE"
+cd "$PACKAGE" || exit 1
 rm -rf .github
 rm -f .gitlab-ci.yml
 rm -f .travis.yml
 rm -f git_push.sh
 
-cd "$SCRIPT_DIR"
+cd "$SCRIPT_DIR" || exit 1
 
 # Stop if no changes
 if [ -z "$(git status --porcelain)" ]; then
