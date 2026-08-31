@@ -177,7 +177,10 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**409** | Conflict |  -  |
+**429** | Too Many Requests |  -  |
 **500** | Internal Server Error |  -  |
+**503** | Service Unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -307,7 +310,7 @@ with filemanager.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = filemanager.FilesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    model_capabilities = 'model_capabilities_example' # str | Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text (optional)
+    model_capabilities = 'model_capabilities_example' # str | Comma-separated model capabilities the caller supports (e.g. text-to-text,image-to-text,speech-to-text,pdf-to-text). Returns only categories the caller fully supports (all of a category's target capabilities); omit to list every category. (optional)
 
     try:
         # Get file upload categories
@@ -326,7 +329,7 @@ with filemanager.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **model_capabilities** | **str**| Comma separated list of model capabilities to filter by, e.g. text-to-text,image-to-text | [optional] 
+ **model_capabilities** | **str**| Comma-separated model capabilities the caller supports (e.g. text-to-text,image-to-text,speech-to-text,pdf-to-text). Returns only categories the caller fully supports (all of a category&#39;s target capabilities); omit to list every category. | [optional] 
 
 ### Return type
 
@@ -441,7 +444,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> FileUploadResponse upload_file(org_id, category, file, for_user_id=for_user_id, metadata=metadata)
+> FileUploadResponse upload_file(org_id, category, file, for_user_id=for_user_id, collection_id=collection_id, metadata=metadata)
 
 Upload a file
 
@@ -482,11 +485,12 @@ with filemanager.ApiClient(configuration) as api_client:
     category = 'category_example' # str | category ID
     file = None # bytes | File to upload
     for_user_id = 'for_user_id_example' # str | User ID to upload the file for (optional)
+    collection_id = 'collection_id_example' # str | Collection ID to upload into (required for the collection_file category) (optional)
     metadata = None # object | Metadata for the uploaded file (optional)
 
     try:
         # Upload a file
-        api_response = api_instance.upload_file(org_id, category, file, for_user_id=for_user_id, metadata=metadata)
+        api_response = api_instance.upload_file(org_id, category, file, for_user_id=for_user_id, collection_id=collection_id, metadata=metadata)
         print("The response of FilesApi->upload_file:\n")
         pprint(api_response)
     except Exception as e:
@@ -504,6 +508,7 @@ Name | Type | Description  | Notes
  **category** | **str**| category ID | 
  **file** | **bytes**| File to upload | 
  **for_user_id** | **str**| User ID to upload the file for | [optional] 
+ **collection_id** | **str**| Collection ID to upload into (required for the collection_file category) | [optional] 
  **metadata** | [**object**](object.md)| Metadata for the uploaded file | [optional] 
 
 ### Return type
@@ -528,8 +533,13 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**409** | Conflict |  -  |
 **413** | Request Entity Too Large |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 **500** | Internal Server Error |  -  |
+**502** | Bad Gateway |  -  |
+**503** | Service Unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
