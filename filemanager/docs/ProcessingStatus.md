@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **error** | **str** |  | [optional] 
-**error_code** | **str** | ErrorCode is the structured terminal error code for a failed file, drawn from the same vocabulary as the &#x60;code&#x60; of an error response (e.g. \&quot;corpus_token_quota_exceeded\&quot;), so the same condition reads identically whether it surfaced as an HTTP error or as a status on a file. Surfaced alongside Error so a token-quota failure is distinguishable from a generic one. Omitted when absent. | [optional] 
+**error_code** | **str** | ErrorCode is the structured terminal error code for a failed file, drawn from the same vocabulary as the &#x60;code&#x60; of an error response (e.g. \&quot;corpus_token_quota_exceeded\&quot;), so the same condition reads identically whether it surfaced as an HTTP error or as a status on a file. Two values occur only here -- \&quot;corpus_processing_failed\&quot; and \&quot;upstream_processing_failed\&quot; -- for failures the synchronous path can only report as a generic 500; see corpusStatusOnlyCodes in corpus_errors.go. Surfaced alongside Error so a token-quota failure is distinguishable from a generic one. Omitted when absent. | [optional] 
 **metadata** | **object** |  | [optional] 
 **processed_at** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
