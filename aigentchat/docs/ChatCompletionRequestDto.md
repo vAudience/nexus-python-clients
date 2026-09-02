@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** |  | [optional] 
-**assigned_collection_ids** | **List[str]** | AssignedCollectionIDs is accepted and stored UNVERIFIED at this layer; do NOT assume stored implies accessible. At completion time the ids are re-evaluated per requesting user+org by resolveAccessibleCorpusIDs (invoked via applyAssignedCollectionCorpora), which resolves the usable ones to deepr corpora, skips the rest, and fails the completion (503) only when the file manager is unreachable. | [optional] 
+**assigned_collection_ids** | **List[str]** | AssignedCollectionIDs is accepted and stored UNVERIFIED at this layer; do NOT assume stored implies accessible. At completion time the ids are re-evaluated per requesting user+org by resolveAccessibleCorpora (invoked via applyAssignedCollectionCorpora), which resolves the usable ones to deepr corpora, skips the rest, and fails the completion (503) only when the file manager is unreachable. | [optional] 
 **attached_files** | **List[str]** |  | [optional] 
 **channel_id** | **str** |  | [optional] 
 **client_message_id** | **str** | ClientMessageID is an opaque caller-generated id (a UUID in practice) that is stored on the user message and acts as an idempotency key: sending it again returns the messages of the first request instead of starting a second completion. | [optional] 
