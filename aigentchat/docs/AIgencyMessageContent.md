@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **function_status_update** | [**AIgencyFunctionStatusUpdate**](AIgencyFunctionStatusUpdate.md) |  | [optional] 
 **is_cancelled** | **bool** |  | [optional] 
 **text** | **str** |  | [optional] 
-**text_meta_data** | **Dict[str, object]** |  | [optional] 
+**text_meta_data** | **object** |  | [optional] 
 **text_mime_type** | **str** |  | [optional] 
 **thinking** | [**AIgencyThinking**](AIgencyThinking.md) |  | [optional] 
 **type** | [**AIgencyMessageContentType**](AIgencyMessageContentType.md) |  | 

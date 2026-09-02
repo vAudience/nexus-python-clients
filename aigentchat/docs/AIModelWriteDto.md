@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **model_stats** | [**AIModelStats**](AIModelStats.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **parameter_definitions** | **object** |  | [optional] 
-**parameters** | **Dict[str, object]** |  | [optional] 
+**parameters** | **object** |  | [optional] 
 **service_host_locations** | [**List[HostingLocation]**](HostingLocation.md) |  | [optional] 
 **service_id** | **str** |  | [optional] 
 
