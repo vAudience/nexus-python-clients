@@ -1,6 +1,6 @@
 [project]
 name = "core"
-version = "0.20.2"
+version = "0.20.3"
 description = "Vaudience AI Core API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
