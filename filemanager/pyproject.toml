@@ -1,6 +1,6 @@
 [project]
 name = "filemanager"
-version = "0.22.1"
+version = "0.25.1"
 description = "vAudience AI File Manager API"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
