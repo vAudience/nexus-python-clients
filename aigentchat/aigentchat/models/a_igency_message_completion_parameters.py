@@ -20,36 +20,32 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
+from aigentchat.models.hosting_location import HostingLocation
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ChatCompletionRequestDto(BaseModel):
+class AIgencyMessageCompletionParameters(BaseModel):
     """
-    ChatCompletionRequestDto
+    AIgencyMessageCompletionParameters
     """ # noqa: E501
     agent_id: Optional[StrictStr] = None
-    assigned_collection_ids: Optional[Annotated[List[StrictStr], Field(max_length=64)]] = Field(default=None, description="AssignedCollectionIDs is accepted and stored UNVERIFIED at this layer; do NOT assume stored implies accessible. At completion time the ids are re-evaluated per requesting user+org by resolveAccessibleCorpora (invoked via applyAssignedCollectionCorpora), which resolves the usable ones to deepr corpora, skips the rest, and fails the completion (503) only when the file manager is unreachable.")
-    attached_files: Optional[List[StrictStr]] = None
-    channel_id: Optional[StrictStr] = None
-    client_message_id: Optional[Annotated[str, Field(min_length=8, strict=True, max_length=128)]] = Field(default=None, description="ClientMessageID is an opaque caller-generated id (a UUID in practice) that is stored on the user message and acts as an idempotency key: sending it again returns the messages of the first request instead of starting a second completion.")
+    assigned_collection_ids: Optional[List[StrictStr]] = Field(default=None, description="AssignedCollectionIDs is the merged collection set the completion tried to resolve (ChatCompletionRequest.MergedCollectionIDs); the corpora they resolved to are in ToolConfigs.")
     continue_instruction_on_max_tokens: Optional[StrictStr] = None
     continue_on_max_tokens: Optional[StrictBool] = None
-    expire_messages: Optional[StrictBool] = None
-    message: StrictStr
-    message_reference_id: Optional[StrictStr] = None
-    message_response_to_id: Optional[StrictStr] = None
-    parameters: Optional[Dict[str, Any]] = None
-    selected_tools: Optional[List[StrictStr]] = None
-    service_channel: Optional[StrictBool] = None
-    set_message_history_ids: Optional[List[StrictStr]] = Field(default=None, description="If UseChannelMessagesAsHistory is false, this list of message IDs will be used as history, if empty, the history will be empty, ignored if UseChannelMessagesAsHistory is true")
-    use_channel_messages_as_history: Optional[StrictBool] = Field(default=None, description="If true, the channel messages will be used as history and SetMessageHistoryIds will be ignored")
-    use_summary_service: Optional[StrictBool] = None
+    deepr_tool_auto_activated: Optional[StrictBool] = None
+    model_host_location: Optional[HostingLocation] = None
+    model_parameters: Optional[Dict[str, Any]] = None
+    selected_tools: Optional[List[StrictStr]] = Field(default=None, description="SelectedTools is the effective selection, after resolveAgentToolDefaults and deepr auto-activation.")
+    set_message_history_ids: Optional[List[StrictStr]] = None
+    stream: Optional[StrictBool] = None
+    tool_configs: Optional[Dict[str, Any]] = Field(default=None, description="ToolConfigs is the effective runtime config per delivered tool id (ExecutionContextBase.BuildToolConfig), e.g. the deepr tool's resolved corpus_ids. Tools without any config are omitted.")
+    tool_function_ids: Optional[List[StrictStr]] = Field(default=None, description="ToolFunctionIDs are the functions actually delivered to the model (ExecutionContextBase.ToolFunctions). A selected tool that is unannounced, invisible to the org or outside its hosting locations is absent.")
+    use_channel_messages_as_history: Optional[StrictBool] = None
     use_tools: Optional[StrictBool] = None
     var_replacements: Optional[Dict[str, StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["agent_id", "assigned_collection_ids", "attached_files", "channel_id", "client_message_id", "continue_instruction_on_max_tokens", "continue_on_max_tokens", "expire_messages", "message", "message_reference_id", "message_response_to_id", "parameters", "selected_tools", "service_channel", "set_message_history_ids", "use_channel_messages_as_history", "use_summary_service", "use_tools", "var_replacements"]
+    __properties: ClassVar[List[str]] = ["agent_id", "assigned_collection_ids", "continue_instruction_on_max_tokens", "continue_on_max_tokens", "deepr_tool_auto_activated", "model_host_location", "model_parameters", "selected_tools", "set_message_history_ids", "stream", "tool_configs", "tool_function_ids", "use_channel_messages_as_history", "use_tools", "var_replacements"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -69,7 +65,7 @@ class ChatCompletionRequestDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ChatCompletionRequestDto from a JSON string"""
+        """Create an instance of AIgencyMessageCompletionParameters from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -101,7 +97,7 @@ class ChatCompletionRequestDto(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ChatCompletionRequestDto from a dict"""
+        """Create an instance of AIgencyMessageCompletionParameters from a dict"""
         if obj is None:
             return None
 
@@ -111,21 +107,17 @@ class ChatCompletionRequestDto(BaseModel):
         _obj = cls.model_validate({
             "agent_id": obj.get("agent_id"),
             "assigned_collection_ids": obj.get("assigned_collection_ids"),
-            "attached_files": obj.get("attached_files"),
-            "channel_id": obj.get("channel_id"),
-            "client_message_id": obj.get("client_message_id"),
             "continue_instruction_on_max_tokens": obj.get("continue_instruction_on_max_tokens"),
             "continue_on_max_tokens": obj.get("continue_on_max_tokens"),
-            "expire_messages": obj.get("expire_messages"),
-            "message": obj.get("message"),
-            "message_reference_id": obj.get("message_reference_id"),
-            "message_response_to_id": obj.get("message_response_to_id"),
-            "parameters": obj.get("parameters"),
+            "deepr_tool_auto_activated": obj.get("deepr_tool_auto_activated"),
+            "model_host_location": obj.get("model_host_location"),
+            "model_parameters": obj.get("model_parameters"),
             "selected_tools": obj.get("selected_tools"),
-            "service_channel": obj.get("service_channel"),
             "set_message_history_ids": obj.get("set_message_history_ids"),
+            "stream": obj.get("stream"),
+            "tool_configs": obj.get("tool_configs"),
+            "tool_function_ids": obj.get("tool_function_ids"),
             "use_channel_messages_as_history": obj.get("use_channel_messages_as_history"),
-            "use_summary_service": obj.get("use_summary_service"),
             "use_tools": obj.get("use_tools"),
             "var_replacements": obj.get("var_replacements")
         })

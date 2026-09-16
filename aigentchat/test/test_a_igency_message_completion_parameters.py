@@ -15,10 +15,10 @@
 
 import unittest
 
-from aigentchat.models.chat_completion_request_dto import ChatCompletionRequestDto
+from aigentchat.models.a_igency_message_completion_parameters import AIgencyMessageCompletionParameters
 
-class TestChatCompletionRequestDto(unittest.TestCase):
-    """ChatCompletionRequestDto unit test stubs"""
+class TestAIgencyMessageCompletionParameters(unittest.TestCase):
+    """AIgencyMessageCompletionParameters unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,54 +26,49 @@ class TestChatCompletionRequestDto(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ChatCompletionRequestDto:
-        """Test ChatCompletionRequestDto
+    def make_instance(self, include_optional) -> AIgencyMessageCompletionParameters:
+        """Test AIgencyMessageCompletionParameters
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ChatCompletionRequestDto`
+        # uncomment below to create an instance of `AIgencyMessageCompletionParameters`
         """
-        model = ChatCompletionRequestDto()
+        model = AIgencyMessageCompletionParameters()
         if include_optional:
-            return ChatCompletionRequestDto(
+            return AIgencyMessageCompletionParameters(
                 agent_id = '',
                 assigned_collection_ids = [
                     ''
                     ],
-                attached_files = [
-                    ''
-                    ],
-                channel_id = '',
-                client_message_id = '01234567',
                 continue_instruction_on_max_tokens = '',
                 continue_on_max_tokens = True,
-                expire_messages = True,
-                message = '',
-                message_reference_id = '',
-                message_response_to_id = '',
-                parameters = None,
+                deepr_tool_auto_activated = True,
+                model_host_location = '',
+                model_parameters = aigentchat.models.model_parameters.model_parameters(),
                 selected_tools = [
                     ''
                     ],
-                service_channel = True,
                 set_message_history_ids = [
                     ''
                     ],
+                stream = True,
+                tool_configs = aigentchat.models.tool_configs.tool_configs(),
+                tool_function_ids = [
+                    ''
+                    ],
                 use_channel_messages_as_history = True,
-                use_summary_service = True,
                 use_tools = True,
                 var_replacements = {
                     'key' : ''
                     }
             )
         else:
-            return ChatCompletionRequestDto(
-                message = '',
+            return AIgencyMessageCompletionParameters(
         )
         """
 
-    def testChatCompletionRequestDto(self):
-        """Test ChatCompletionRequestDto"""
+    def testAIgencyMessageCompletionParameters(self):
+        """Test AIgencyMessageCompletionParameters"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

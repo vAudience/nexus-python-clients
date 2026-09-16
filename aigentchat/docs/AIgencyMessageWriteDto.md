@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **channel_name** | **str** |  | 
 **content** | [**AIgencyMessageContentList**](AIgencyMessageContentList.md) |  | [optional] 
 **meta_data** | **object** |  | [optional] 
-**parameters** | **object** |  | [optional] 
+**parameters** | [**AIgencyMessageCompletionParameters**](AIgencyMessageCompletionParameters.md) |  | [optional] 
 **reference_id** | **str** |  | [optional] 
 **response_to_id** | **str** |  | [optional] 
 **sender_conversation_role** | [**ConversationRole**](ConversationRole.md) |  | 

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**cancel_image_generation**](ImagesApi.md#cancel_image_generation) | **POST** /v1/organizations/{org_id}/images/cancel/{generation_id} | Cancel an image generation
 [**create_images**](ImagesApi.md#create_images) | **POST** /v1/organizations/{org_id}/images | Generates a number of images
 [**create_images_costs**](ImagesApi.md#create_images_costs) | **POST** /v1/organizations/{org_id}/images/cost | Get the total costs of an image generation request.
-[**delete_image**](ImagesApi.md#delete_image) | **DELETE** /v1/organizations/{org_id}/images/{id} | Delete an image
+[**delete_image**](ImagesApi.md#delete_image) | **DELETE** /v1/organizations/{org_id}/images/{image_id} | Delete an image
 [**get_image**](ImagesApi.md#get_image) | **GET** /v1/organizations/{org_id}/images/{image_id} | Get an image
 [**list_images**](ImagesApi.md#list_images) | **GET** /v1/organizations/{org_id}/images | List images
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_image**
-> AIgencyImage delete_image(org_id, id)
+> AIgencyImage delete_image(org_id, image_id)
 
 Delete an image
 
@@ -306,11 +306,11 @@ with aigentchat.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aigentchat.ImagesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    id = 'id_example' # str | Image ID
+    image_id = 'image_id_example' # str | Image ID
 
     try:
         # Delete an image
-        api_response = api_instance.delete_image(org_id, id)
+        api_response = api_instance.delete_image(org_id, image_id)
         print("The response of ImagesApi->delete_image:\n")
         pprint(api_response)
     except Exception as e:
@@ -325,7 +325,7 @@ with aigentchat.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **id** | **str**| Image ID | 
+ **image_id** | **str**| Image ID | 
 
 ### Return type
 
@@ -431,6 +431,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 **404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 

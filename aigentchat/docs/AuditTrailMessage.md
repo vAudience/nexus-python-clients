@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **meta_data** | **object** |  | [optional] 
 **owner_organization_id** | **str** |  | 
-**parameters** | **object** |  | [optional] 
+**parameters** | [**AIgencyMessageCompletionParameters**](AIgencyMessageCompletionParameters.md) |  | [optional] 
 **reference_id** | **str** |  | [optional] 
 **response_to_id** | **str** |  | [optional] 
 **sender_conversation_role** | [**ConversationRole**](ConversationRole.md) |  | 
@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **token_direction** | [**TokenDirection**](TokenDirection.md) |  | 
 **type** | [**AIgencyMessageType**](AIgencyMessageType.md) |  | 
 **updated_at** | **int** |  | 
+**used_credits** | **float** |  | [optional] 
 
 ## Example
 

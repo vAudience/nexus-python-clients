@@ -1,6 +1,6 @@
 [project]
 name = "aigentchat"
-version = "0.47.2"
+version = "0.50.0"
 description = "vAudience AIgentChat API"
 authors = [
   {name = "vAudience",email = "contact@vaudience.ai"},

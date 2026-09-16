@@ -39,6 +39,7 @@ aigentchat/models/a_igency_function_status_update_data.py
 aigentchat/models/a_igency_image.py
 aigentchat/models/a_igency_image_results.py
 aigentchat/models/a_igency_message.py
+aigentchat/models/a_igency_message_completion_parameters.py
 aigentchat/models/a_igency_message_content.py
 aigentchat/models/a_igency_message_content_list.py
 aigentchat/models/a_igency_message_content_type.py
@@ -166,6 +167,7 @@ docs/AIgencyFunctionStatusUpdateData.md
 docs/AIgencyImage.md
 docs/AIgencyImageResults.md
 docs/AIgencyMessage.md
+docs/AIgencyMessageCompletionParameters.md
 docs/AIgencyMessageContent.md
 docs/AIgencyMessageContentList.md
 docs/AIgencyMessageContentType.md
@@ -287,6 +289,7 @@ test/test_a_igency_function_status_update_data.py
 test/test_a_igency_image.py
 test/test_a_igency_image_results.py
 test/test_a_igency_message.py
+test/test_a_igency_message_completion_parameters.py
 test/test_a_igency_message_content.py
 test/test_a_igency_message_content_list.py
 test/test_a_igency_message_content_type.py

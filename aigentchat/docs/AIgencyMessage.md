@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **meta_data** | **object** |  | [optional] 
 **owner_organization_id** | **str** |  | 
-**parameters** | **object** |  | [optional] 
+**parameters** | [**AIgencyMessageCompletionParameters**](AIgencyMessageCompletionParameters.md) | CompletionParameters is the effective completion configuration that produced this message pair; set on both messages of a pair, nil for messages not created by a chat completion. | [optional] 
 **reference_id** | **str** |  | [optional] 
 **request_input_tokens** | **int** |  | [optional] 
 **request_output_tokens** | **int** |  | [optional] 
@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **token_direction** | [**TokenDirection**](TokenDirection.md) |  | 
 **type** | [**AIgencyMessageType**](AIgencyMessageType.md) |  | 
 **updated_at** | **int** |  | 
+**used_credits** | **float** | UsedCredits is the execution log&#39;s recorded billing amount for this turn (1 credit &#x3D;&#x3D; 1 EUR): its FinalCostInEuro, including multipliers and the minimal-cost floor. The log is recorded even when the budget debit itself fails, so this is what the turn was billed, not proof that the debit succeeded. Set only on the assistant message once tracked (success and cancel); 0 on the user message and on error paths. | [optional] 
 
 ## Example
 
