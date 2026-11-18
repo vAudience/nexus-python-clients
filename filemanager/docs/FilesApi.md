@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 Get file upload categories
 
-Get file upload categories
+List the upload categories. An upload category is a named set of processing settings that an upload is validated and processed with: the MIME types and file size range it accepts, its processing steps and where the file is stored. A category's category value is the {category} path segment of POST /v1/organizations/{org_id}/files/{category}. Without model_capabilities, every category is returned, in a fixed server-defined order. With model_capabilities, a category is returned only if the caller sends all of its target capabilities (the model capabilities its content needs, which are not part of the response). Categories without target capabilities are never returned. At most one category per llm_input_type is returned: the one with the most target capabilities, or on a tie the one the server defines first. The result is ordered by the categories' server-defined rank, then by category name.
 
 ### Example
 
@@ -310,7 +310,7 @@ with filemanager.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = filemanager.FilesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    model_capabilities = 'model_capabilities_example' # str | Comma-separated model capabilities the caller supports (e.g. text-to-text,image-to-text,speech-to-text,pdf-to-text). Returns only categories the caller fully supports (all of a category's target capabilities); omit to list every category. (optional)
+    model_capabilities = 'model_capabilities_example' # str | Comma-separated model capabilities the caller's model supports: text-to-text, image-to-text, speech-to-text, pdf-to-text. document-to-text and video-to-text are accepted, but no category requires them yet. Entries are trimmed and empty entries ignored. When set, the list is filtered as the endpoint description explains (all target capabilities required, at most one category per llm_input_type). Omit it to list every category. (optional)
 
     try:
         # Get file upload categories
@@ -329,7 +329,7 @@ with filemanager.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **model_capabilities** | **str**| Comma-separated model capabilities the caller supports (e.g. text-to-text,image-to-text,speech-to-text,pdf-to-text). Returns only categories the caller fully supports (all of a category&#39;s target capabilities); omit to list every category. | [optional] 
+ **model_capabilities** | **str**| Comma-separated model capabilities the caller&#39;s model supports: text-to-text, image-to-text, speech-to-text, pdf-to-text. document-to-text and video-to-text are accepted, but no category requires them yet. Entries are trimmed and empty entries ignored. When set, the list is filtered as the endpoint description explains (all target capabilities required, at most one category per llm_input_type). Omit it to list every category. | [optional] 
 
 ### Return type
 
@@ -482,7 +482,7 @@ with filemanager.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = filemanager.FilesApi(api_client)
     org_id = 'org_id_example' # str | organization ID
-    category = 'category_example' # str | category ID
+    category = 'category_example' # str | upload category, one of the category values returned by GET /v1/organizations/{org_id}/files/categories; an unknown category returns 404
     file = None # bytes | File to upload
     for_user_id = 'for_user_id_example' # str | User ID to upload the file for (optional)
     collection_id = 'collection_id_example' # str | Collection ID to upload into (required for the collection_file category) (optional)
@@ -505,7 +505,7 @@ with filemanager.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org_id** | **str**| organization ID | 
- **category** | **str**| category ID | 
+ **category** | **str**| upload category, one of the category values returned by GET /v1/organizations/{org_id}/files/categories; an unknown category returns 404 | 
  **file** | **bytes**| File to upload | 
  **for_user_id** | **str**| User ID to upload the file for | [optional] 
  **collection_id** | **str**| Collection ID to upload into (required for the collection_file category) | [optional] 
